@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DominionToolkitMenu" >
+
+	<Button android:id="@+id/randomizer_button"
+	    android:text="@string/randomizer_button_name"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" 
+	    android:onClick="startRandomizerActivity" />
+	<Button android:id="@+id/setup_reminders_button"
+	    android:text="@string/setup_reminders_button_name"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" 
+	    android:onClick="startSetupRemindersActivity" />
+	<Button android:id="@+id/card_listing_button"
+	    android:text="@string/card_listing_button_name"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" 
+	    android:onClick="startCardListingActivity" />
+	<Button android:id="@+id/preferences_button"
+	    android:text="@string/preferences_button_name"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" 
+	    android:onClick="startPreferencesActivity" />
+
+</LinearLayout>

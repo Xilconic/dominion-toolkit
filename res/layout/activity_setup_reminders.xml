@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <!-- Title row -->
+    <TextView
+        android:id="@+id/setupRemindersTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/SetupReminders.ActivityTitleText"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <!-- Player amount input row -->
+    <Button
+        android:id="@+id/removePlayerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/setupRemindersTitle"
+        android:onClick="remove_player"
+        android:text="@string/SetupReminders.RemovePlayerButtonText" />
+    <TextView
+        android:id="@+id/playerCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/removePlayerButton"
+        android:layout_alignBottom="@+id/removePlayerButton"
+        android:layout_centerHorizontal="true"
+        android:text="@string/SetupReminders.PlayerCountDefaultText" />
+    <Button
+        android:id="@+id/addPlayerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/removePlayerButton"
+        android:layout_below="@+id/setupRemindersTitle"
+        android:layout_alignParentRight="true"
+        android:onClick="add_player"
+        android:text="@string/SetupReminders.AddPlayerButtonText" />
+    
+    <!-- Game Setup Section -->
+    <TextView
+        android:id="@+id/setupSectionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/removePlayerButton"
+        android:text="@string/SetupReminders.SetupHeaderText"
+        android:layout_marginTop="20dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    	<!-- Curse Card Row -->
+    	<TextView
+	        android:id="@+id/numberOfCurseCardsPlainTextTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/setupSectionTitle"
+	        android:layout_below="@+id/setupSectionTitle"
+	        android:text="@string/SetupReminders.NumberOfCuseCardsPlainText" />
+    	<TextView
+	        android:id="@+id/curseCountTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/numberOfCurseCardsPlainTextTextView"
+	        android:layout_centerHorizontal="true"
+	        android:text="@string/SetupReminders.CurseCardCountDefaultText" />
+    	    
+    	<!-- Victory Card Row -->
+	    <TextView
+	        android:id="@+id/numberOfVictoryPointCardsPlainTextTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/setupSectionTitle"
+	        android:layout_below="@+id/numberOfCurseCardsPlainTextTextView"
+	        android:text="@string/SetupReminders.NumberOfVictoryCardsPlainText" />
+	    <TextView
+	        android:id="@+id/victoryCountTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/numberOfVictoryPointCardsPlainTextTextView"
+	        android:layout_centerHorizontal="true"
+	        android:text="@string/SetupReminders.VictoryCardCountDefaultText" />
+	    
+	    <!-- Each player gets section -->
+        <TextView
+	        android:id="@+id/starterDeckPlainTextTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/setupSectionTitle"
+	        android:layout_below="@+id/numberOfVictoryPointCardsPlainTextTextView"
+	        android:layout_marginTop="10dp"
+	        android:text="@string/SetupReminders.StarterDeckPlainText" />
+
+	<!-- End Game Section -->
+    <TextView
+        android:id="@+id/endGameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/starterDeckPlainTextTextView"
+        android:layout_marginTop="20dp"
+        android:text="@string/SetupReminders.EndGameHeaderText"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <TextView
+        android:id="@+id/endConditionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/endGameTextView"
+        android:layout_below="@+id/endGameTextView"
+        android:text="@string/SetupReminders.EndGamePlainText" />
+    <TextView
+        android:id="@+id/endConditionProvinceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/endConditionTextView"
+        android:layout_below="@+id/endConditionTextView"
+        android:paddingLeft="15dp"
+        android:text="@string/SetupReminders.EndConditionProvincePlainText" />
+    <TextView
+        android:id="@+id/endConditionKingdomCardsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/endConditionTextView"
+        android:layout_below="@+id/endConditionProvinceTextView"
+        android:paddingLeft="15dp"
+        android:text="@string/SetupReminders.EndConditionKingdomCardsPlainText" />
+
+</RelativeLayout>
