@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/preferencesActivityTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/preferences_button_name"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/preferencesCardSetsHeaderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Preferences.CardSets" />
+
+    <CheckBox
+        android:id="@+id/preferencesDominionBaseCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="@string/CardSet.Dominion" />
+
+    <CheckBox
+        android:id="@+id/preferencesDominionIntrigueCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/CardSet.Intrigue" />
+
+    <CheckBox
+        android:id="@+id/preferencesSeasideCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="@string/CardSet.Seaside" />
+
+    <CheckBox
+        android:id="@+id/preferencesAlchemyCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="@string/CardSet.Alchemy" />
+
+    <CheckBox
+        android:id="@+id/preferencesProsperityCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="@string/CardSet.Prosperity" />
+
+    <CheckBox
+        android:id="@+id/preferencesCornucopiaCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="@string/CardSet.Cornucopia" />
+
+    <CheckBox
+        android:id="@+id/preferencesHinterlandsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="@string/CardSet.Hinterlands" />
+
+    <CheckBox
+        android:id="@+id/preferencesDarkAgesCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="@string/CardSet.DarkAges" />
+
+    <CheckBox
+        android:id="@+id/preferencesPromoCardsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="@string/CardSet.PromoCards" />
+
+    <TextView
+        android:id="@+id/preferencesToDo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TODO: Set Order preferences" />
+
+</LinearLayout>

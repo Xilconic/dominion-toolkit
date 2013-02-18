@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:id="@+id/randomizerActivityTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="@string/Randomizer.ActivityTitleText"
+    	android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/randomizerShuffleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/randomizerKingdomCardListingTextView"
+        android:layout_alignParentRight="true"
+        android:onClick="shuffleKingdomDeck"
+        android:text="@string/Randomizer.ShuffleButtonText" />
+
+    <TextView
+        android:id="@+id/randomizerKingdomCardListingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/randomizerActivityTitleTextView"
+        android:text="@string/Randomizer.KingdomCardsPlainText"
+    	android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ListView
+        android:id="@+id/randomizerKingdomCardsListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/randomizerShuffleButton"/>
+
+</RelativeLayout>
