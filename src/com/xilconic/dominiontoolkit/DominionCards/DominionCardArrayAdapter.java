@@ -16,11 +16,13 @@ import android.widget.TextView;
 public class DominionCardArrayAdapter extends ArrayAdapter<DominionCard> {
 	private final ArrayList<DominionCard> _cardList;
 	private final Context _context;
+	private final StringBuilder stringBuilder;
 	
 	public DominionCardArrayAdapter(Context context, ArrayList<DominionCard> cardList) {
 		super(context, R.layout.dominion_card_array_item, cardList);
 		_context = context;
 		_cardList = cardList;
+		stringBuilder = new StringBuilder(" ");
 	}
 	
 	@Override
@@ -35,6 +37,7 @@ public class DominionCardArrayAdapter extends ArrayAdapter<DominionCard> {
 			ViewHolder viewHolder = new ViewHolder();
 			viewHolder.costText = (TextView) dominionCardView.findViewById(R.id.costText);
 			viewHolder.nameText = (TextView) dominionCardView.findViewById(R.id.cardNameText);
+			viewHolder.cardTypesText = (TextView) dominionCardView.findViewById(R.id.cardTypeText);
 			viewHolder.iconPlaceHolder = (RelativeLayout) dominionCardView.findViewById(R.id.set_icon);
 			
 			dominionCardView.setTag(viewHolder);
@@ -49,16 +52,62 @@ public class DominionCardArrayAdapter extends ArrayAdapter<DominionCard> {
 		// Set card name text:
 		viewHolder.nameText.setText(card.get_name());
 		
+		// Set cardTypeText:
+		viewHolder.cardTypesText.setText(getCardTypes(card));
+		
 		// Set icon image:
 		viewHolder.iconPlaceHolder.setBackgroundDrawable(DominionResourcesHelper.GetSetIcon(_context, card.get_dominionSet()));
 		
 		return dominionCardView;
 	}
 	
+	private CharSequence getCardTypes(DominionCard card) {
+		stringBuilder.delete(0, stringBuilder.length());
+		
+		boolean firstType = true;
+		if (card.isAction()){
+			stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Action));
+			firstType = false;
+		}
+		
+		if (card.isAttack()){
+			if (!firstType) stringBuilder.append(", ");
+			stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Attack));
+			firstType = false;
+		}
+		
+		if (card.isReaction()){
+			if (!firstType) stringBuilder.append(", ");
+			stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Reaction));
+			firstType = false;
+		}
+		
+		if (card.isCurse()){
+			if (!firstType) stringBuilder.append(", ");
+			stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Curse));
+			firstType = false;
+		}
+		
+		if (card.isTreasure()){
+			if (!firstType) stringBuilder.append(", ");
+			stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Treasure));
+			firstType = false;
+		}
+		
+		if (card.isVictory()){
+			if (!firstType) stringBuilder.append(", ");
+			stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Victory));
+			firstType = false;
+		}
+
+		return stringBuilder.toString();
+	}
+
 	// View Holder pattern - Optimization
 	private static class ViewHolder {
 		public TextView costText;
 		public TextView nameText;
+		public TextView cardTypesText;
 		public RelativeLayout iconPlaceHolder;
 	}
 	

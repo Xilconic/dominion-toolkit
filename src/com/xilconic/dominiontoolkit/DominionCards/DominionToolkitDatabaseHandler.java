@@ -20,7 +20,7 @@ import android.util.Log;
 
 public class DominionToolkitDatabaseHandler extends SQLiteOpenHelper {
 	// Database Version:
-	private static final int DATABASE_VERSION = 10;
+	private static final int DATABASE_VERSION = 11;
 	
 	// Database Name:
 	private static final String DATABASE_NAME = "dominionToolkitDatabase";
@@ -359,8 +359,8 @@ public class DominionToolkitDatabaseHandler extends SQLiteOpenHelper {
 						strings[2].length() > 0,
 						strings[3].length() > 0,
 						strings[4].length() > 0,
-						strings[5].length() > 0,
 						strings[6].length() > 0,
+						strings[5].length() > 0,
 						strings[7].length() > 0,
 						DominionSet.valueOf(strings[8]));
 					long id = DominionCardsTable.insertDominionCard(db, card);
