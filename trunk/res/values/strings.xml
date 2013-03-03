@@ -113,7 +113,7 @@
 	<string name="Randomizer.ShuffleButtonText">Schudden</string>
 	
 	<!-- dominion card arry item -->
-	<string name="DominionCardArrayItem.CostDefaultText">CardCost</string>
+	<string name="DominionCardArrayItem.CostDefaultText">0</string>
 	<string name="DominionCardArrayItem.NameDefaultText">CardName</string>
 
 </resources>

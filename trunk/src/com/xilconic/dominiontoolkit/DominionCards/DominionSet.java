@@ -4,6 +4,17 @@ package com.xilconic.dominiontoolkit.DominionCards;
 // * new version of database
 public enum DominionSet {
 	Basic,
+	Alchemy,
+	BlackMarketPromo,
+	Cornucopia,
+	DarkAges,
 	Dominion,
-	Intrigue
+	EnvoyPromo,
+	GovernorPromo,
+	Hinterlands,
+	Intrigue,
+	Prosperity,
+	Seaside,
+	StashPromo,
+	WalledVillagePromo
 }

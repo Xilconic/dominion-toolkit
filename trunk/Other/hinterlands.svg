@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--Generator: Xara Designer (www.xara.com), SVG filter version: 3.0.0.4-->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   overflow="visible"
+   width="256"
+   height="256"
+   viewBox="0 0 204.80002 204.8"
+   id="svg6737"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="hinterlands.svg"
+   style="fill-rule:evenodd;stroke-width:0.50099999;stroke-linejoin:bevel;overflow:visible"
+   inkscape:export-filename="C:\Users\Bas des Bouvrie\workspace\DominionToolkit\res\drawable-ldpi\hinterlands_icon.png"
+   inkscape:export-xdpi="11.25"
+   inkscape:export-ydpi="11.25">
+  <metadata
+     id="metadata6825">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview6823"
+     showgrid="false"
+     inkscape:zoom="0.22425706"
+     inkscape:cx="-160.82254"
+     inkscape:cy="526.18188"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg6737" />
+  <defs
+     id="defs6739">
+    <marker
+       id="DefaultArrow2"
+       markerUnits="strokeWidth"
+       viewBox="0 0 1 1"
+       markerWidth="1"
+       markerHeight="1"
+       overflow="visible"
+       orient="auto"
+       style="overflow:visible">
+      <!-- REF_ARROW_STRAIGHT (-2) -->
+      <g
+         transform="scale(0.00925926,0.00925926)"
+         id="g6742">
+        <!-- 1/108 -->
+        <path
+           d="M -9,54 -9,-54 117,0 z"
+           id="path6744"
+           inkscape:connector-curvature="0" />
+      </g>
+    </marker>
+    <marker
+       id="DefaultArrow3"
+       markerUnits="strokeWidth"
+       viewBox="0 0 1 1"
+       markerWidth="1"
+       markerHeight="1"
+       overflow="visible"
+       orient="auto"
+       style="overflow:visible">
+      <!-- REF_ARROW_ANGLED -->
+      <g
+         transform="scale(0.00925926,0.00925926)"
+         id="g6747">
+        <path
+           d="M -27,54 -9,0 -27,-54 135,0 z"
+           id="path6749"
+           inkscape:connector-curvature="0" />
+      </g>
+    </marker>
+    <marker
+       id="DefaultArrow4"
+       markerUnits="strokeWidth"
+       viewBox="0 0 1 1"
+       markerWidth="1"
+       markerHeight="1"
+       overflow="visible"
+       orient="auto"
+       style="overflow:visible">
+      <!-- REF_ARROW_ROUNDED -->
+      <g
+         transform="scale(0.00925926,0.00925926)"
+         id="g6752">
+        <path
+           d="m -9,0 0,-45 c 0,-6.708 11.808,-11.58 18,-9 l 108,45 c 3.916,1.631 9,4.758 9,9 0,4.242 -5.084,7.369 -9,9 L 9,54 C 2.808,56.58 -9,51.708 -9,45 z"
+           id="path6754"
+           inkscape:connector-curvature="0" />
+      </g>
+    </marker>
+    <marker
+       id="DefaultArrow5"
+       markerUnits="strokeWidth"
+       viewBox="0 0 1 1"
+       markerWidth="1"
+       markerHeight="1"
+       overflow="visible"
+       orient="auto"
+       style="overflow:visible">
+      <!-- REF_ARROW_SPOT -->
+      <g
+         transform="scale(0.00925926,0.00925926)"
+         id="g6757">
+        <path
+           d="M -54,0 C -54,29.807 -29.807,54 0,54 29.807,54 54,29.807 54,0 54,-29.807 29.807,-54 0,-54 -29.807,-54 -54,-29.807 -54,0 z"
+           id="path6759"
+           inkscape:connector-curvature="0" />
+      </g>
+    </marker>
+    <marker
+       id="DefaultArrow6"
+       markerUnits="strokeWidth"
+       viewBox="0 0 1 1"
+       markerWidth="1"
+       markerHeight="1"
+       overflow="visible"
+       orient="auto"
+       style="overflow:visible">
+      <!-- REF_ARROW_DIAMOND -->
+      <g
+         transform="scale(0.00925926,0.00925926)"
+         id="g6762">
+        <path
+           d="M -63,0 0,63 63,0 0,-63 z"
+           id="path6764"
+           inkscape:connector-curvature="0" />
+      </g>
+    </marker>
+    <marker
+       id="DefaultArrow7"
+       markerUnits="strokeWidth"
+       viewBox="0 0 1 1"
+       markerWidth="1"
+       markerHeight="1"
+       overflow="visible"
+       orient="auto"
+       style="overflow:visible">
+      <!-- REF_ARROW_FEATHER -->
+      <g
+         transform="scale(0.00925926,0.00925926)"
+         id="g6767">
+        <path
+           d="m 18,-54 90,0 L 63,0 108,54 18,54 -36,0 z"
+           id="path6769"
+           inkscape:connector-curvature="0" />
+      </g>
+    </marker>
+    <marker
+       id="DefaultArrow8"
+       markerUnits="strokeWidth"
+       viewBox="0 0 1 1"
+       markerWidth="1"
+       markerHeight="1"
+       overflow="visible"
+       orient="auto"
+       style="overflow:visible">
+      <!-- REF_ARROW_FEATHER2 -->
+      <g
+         transform="scale(0.00925926,0.00925926)"
+         id="g6772">
+        <path
+           d="m -36,0 54,-54 36,0 -36,36 9,0 36,-36 36,0 -36,36 9,0 36,-36 36,0 -54,54 54,54 -36,0 -36,-36 -9,0 36,36 -36,0 -36,-36 -9,0 36,36 -36,0 z"
+           id="path6774"
+           inkscape:connector-curvature="0" />
+      </g>
+    </marker>
+    <marker
+       id="DefaultArrow9"
+       markerUnits="strokeWidth"
+       viewBox="0 0 1 1"
+       markerWidth="1"
+       markerHeight="1"
+       overflow="visible"
+       orient="auto"
+       style="overflow:visible">
+      <!-- REF_ARROW_HOLLOWDIAMOND -->
+      <g
+         transform="scale(0.00925926,0.00925926)"
+         id="g6777">
+        <path
+           d="M 0,45 -45,0 0,-45 45,0 z M 0,63 -63,0 0,-63 63,0 z"
+           id="path6779"
+           inkscape:connector-curvature="0" />
+      </g>
+    </marker>
+    <filter
+       id="StainedFilter"
+       color-interpolation-filters="sRGB">
+      <feBlend
+         mode="multiply"
+         in2="BackgroundImage"
+         in="SourceGraphic"
+         result="blend"
+         id="feBlend6782" />
+      <feComposite
+         in="blend"
+         in2="SourceAlpha"
+         operator="in"
+         result="comp"
+         id="feComposite6784" />
+    </filter>
+    <filter
+       id="BleachFilter"
+       color-interpolation-filters="sRGB">
+      <feBlend
+         mode="screen"
+         in2="BackgroundImage"
+         in="SourceGraphic"
+         result="blend"
+         id="feBlend6787" />
+      <feComposite
+         in="blend"
+         in2="SourceAlpha"
+         operator="in"
+         result="comp"
+         id="feComposite6789" />
+    </filter>
+    <filter
+       id="InvertTransparencyBitmapFilter"
+       color-interpolation-filters="sRGB">
+      <feComponentTransfer
+         id="feComponentTransfer6792">
+        <feFuncR
+           type="gamma"
+           amplitude="1.055"
+           exponent=".416666666"
+           offset="-0.055"
+           id="feFuncR6794" />
+        <feFuncG
+           type="gamma"
+           amplitude="1.055"
+           exponent=".416666666"
+           offset="-0.055"
+           id="feFuncG6796" />
+        <feFuncB
+           type="gamma"
+           amplitude="1.055"
+           exponent=".416666666"
+           offset="-0.055"
+           id="feFuncB6798" />
+      </feComponentTransfer>
+      <feComponentTransfer
+         id="feComponentTransfer6800">
+        <feFuncR
+           type="linear"
+           slope="-1"
+           intercept="1"
+           id="feFuncR6802" />
+        <feFuncG
+           type="linear"
+           slope="-1"
+           intercept="1"
+           id="feFuncG6804" />
+        <feFuncB
+           type="linear"
+           slope="-1"
+           intercept="1"
+           id="feFuncB6806" />
+        <feFuncA
+           type="linear"
+           slope="1"
+           intercept="0"
+           id="feFuncA6808" />
+      </feComponentTransfer>
+      <feComponentTransfer
+         id="feComponentTransfer6810">
+        <feFuncR
+           type="gamma"
+           amplitude="1"
+           exponent="2.4"
+           offset="0"
+           id="feFuncR6812" />
+        <feFuncG
+           type="gamma"
+           amplitude="1"
+           exponent="2.4"
+           offset="0"
+           id="feFuncG6814" />
+        <feFuncB
+           type="gamma"
+           amplitude="1"
+           exponent="2.4"
+           offset="0"
+           id="feFuncB6816" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <g
+     id="Document"
+     font-size="16"
+     transform="matrix(1,0,0,-1,-6.3029017,5.6041576)"
+     style="font-size:16px;fill:none;stroke:#000000;font-family:Times New Roman">
+    <g
+       id="Spread"
+       transform="translate(0,-841.891)">
+      <g
+         id="Layer 1">
+        <path
+           d="m 170.947,676.904 c 3.022,6.647 4.377,4.651 6.821,8.848 2.462,8.319 0.845,16.837 -1.312,23.216 -4.968,9.283 -9.364,12.479 -12.982,20.537 l -1.841,0.541 c -0.559,-5.813 -0.933,-12.448 -0.572,-22.259 -1.243,-5.832 -4.166,-10.265 -4.725,-16.943 0.261,-2.86 -0.523,-4.408 -2.904,-3.917 -3.208,-0.398 -4.924,-1.753 -4.06,-4.794 0.236,-1.915 -0.143,-3.295 -1.585,-3.774 l -5.665,-0.435 c -1.48,-0.274 -2.263,-0.1 -0.988,1.809 1.411,2.419 2.934,4.352 5.49,5.596 0.665,1.262 1.592,2.518 3.046,3.774 4.204,5.515 2.711,12.305 3.918,18.871 -0.392,9.401 -5.354,16.346 -7.263,24.522 -0.771,3.836 -0.814,6.702 -0.317,8.785 -1.33,1.076 -2.673,1.567 -4.377,0.777 -19.791,-9.774 -38.91,-12.509 -57.177,-6.242 -3.252,0.131 -4.327,-1.592 -2.618,-5.658 0.877,-6.479 1.343,-13.125 -0.286,-20.605 1.536,-5.87 -1.629,-8.288 1.71,-18.205 0.498,-2.948 0,-3.084 -2.288,-4.726 -1.076,-1.66 -2.213,-3.32 -0.311,-5.254 0.709,-0.839 0.417,-1.486 -0.118,-2.083 -1.424,-0.223 -1.934,-0.913 -2.332,-1.66 l -4.352,0 c -3.836,-0.056 -1.15,3.973 1.331,5.559 4.464,4.104 4.004,10.433 2.729,17.08 -2.86,5.148 -1.635,8.866 -3.189,13.641 -1.716,5.378 -4.434,9.084 -6.243,14.22 -1.909,5.857 -1.517,10.439 -4.215,11.757 -4.72,5.012 -5.839,9.886 -4.34,14.655 1.56,4.806 -0.976,10.918 -4.216,18.728 -1.43,5.11 -0.622,9.674 -3.774,12.628 -1.672,2.07 -3.208,2.269 -4.644,1.013 -3.028,-2.406 -7.207,-0.957 -8.208,-1.592 -3.351,-2.17 -5.148,-3.755 -9.059,-3.631 -2.058,0.093 -3.09,-0.951 -2.754,-3.482 -1.791,-0.87 -6.013,-1.585 -7.99,-0.733 -3.071,4.147 -4.887,8.692 8.276,18 5.092,3.904 4.004,8.437 9.724,12.043 2.263,1.275 0.622,2.568 -0.05,4.887 -1.137,3.121 -0.503,3.569 1.312,1.76 1.617,-1.642 2.655,-3.252 5.982,-4.893 10.887,-1.002 16.06,-2.599 31.573,-16.968 4.166,-3.992 5.888,-8.506 15.867,-9.526 9.432,-1.088 8.984,-8.064 25.051,-6.385 16.091,3.463 33.015,8.984 46.153,5.229 8.972,-2.922 12.243,-6.187 21.19,-10.166 8.58,-2.624 15.998,-5.366 15.96,-12.771 -0.51,-7.281 0.224,-13.735 -4.937,-20.605 -3.102,-5.459 -8.002,-5.907 -12.18,-8.997 -5.434,-1.803 -4.669,0.18 -2.394,1.666 3.153,2.5 6.007,5.758 7.399,12.771 0.013,6.597 -2.362,11.64 -7.834,14.655 -0.149,-8.773 -5.241,-13.231 -5.073,-20.033 0.08,-3.357 3.021,-11.422 6.988,-18.964 1.921,-1.79 2.375,-1.517 2.002,-8.456 -0.957,-8.611 0.827,-16.458 -0.292,-25.392 -0.877,-0.864 -5.415,-0.504 -5.08,-5.229 0.715,-1.312 1.287,-2.661 -0.87,-4.508 l -7.107,-0.572 c -1.231,-0.23 -1.156,0.454 0,1.89 z"
+           stroke-miterlimit="79.8403193612775"
+           id="path6821"
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke:none;stroke-width:0.193;marker-start:none;marker-end:none" />
+      </g>
+    </g>
+  </g>
+</svg>
