@@ -3,12 +3,14 @@ package com.xilconic.dominiontoolkit.DominionCards;
 import java.util.ArrayList;
 
 import com.xilconic.dominiontoolkit.R;
+import com.xilconic.dominiontoolkit.Utils.DominionResourcesHelper;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class DominionCardArrayAdapter extends ArrayAdapter<DominionCard> {
@@ -33,6 +35,7 @@ public class DominionCardArrayAdapter extends ArrayAdapter<DominionCard> {
 			ViewHolder viewHolder = new ViewHolder();
 			viewHolder.costText = (TextView) dominionCardView.findViewById(R.id.costText);
 			viewHolder.nameText = (TextView) dominionCardView.findViewById(R.id.cardNameText);
+			viewHolder.iconPlaceHolder = (RelativeLayout) dominionCardView.findViewById(R.id.set_icon);
 			
 			dominionCardView.setTag(viewHolder);
 		}
@@ -46,13 +49,17 @@ public class DominionCardArrayAdapter extends ArrayAdapter<DominionCard> {
 		// Set card name text:
 		viewHolder.nameText.setText(card.get_name());
 		
+		// Set icon image:
+		viewHolder.iconPlaceHolder.setBackgroundDrawable(DominionResourcesHelper.GetSetIcon(_context, card.get_dominionSet()));
+		
 		return dominionCardView;
 	}
 	
-	// View Holder pattern - Optimalization
+	// View Holder pattern - Optimization
 	private static class ViewHolder {
 		public TextView costText;
 		public TextView nameText;
+		public RelativeLayout iconPlaceHolder;
 	}
 	
 }
