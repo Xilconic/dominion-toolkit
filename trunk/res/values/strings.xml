@@ -9,6 +9,14 @@
     <string name="preferences_button_name">Instellingen</string>
     
     <!-- Cards: -->
+    <!-- Card Types: -->
+    <string name="Cards.Types.Action">Actie</string>
+    <string name="Cards.Types.Attack">Aanval</string>
+    <string name="Cards.Types.Reaction">Reactie</string>
+    <string name="Cards.Types.Curse">Vloek</string>
+    <string name="Cards.Types.Treasure">Geld</string>
+    <string name="Cards.Types.Victory">Overwinning</string>
+    
     <!-- Basic cards: -->
     <string name="Cards.Base.Koper">Koper</string>
     <string name="Cards.Base.Zilver">Zilver</string>
@@ -115,5 +123,6 @@
 	<!-- dominion card arry item -->
 	<string name="DominionCardArrayItem.CostDefaultText">0</string>
 	<string name="DominionCardArrayItem.NameDefaultText">CardName</string>
+	<string name="DominionCardArrayItem.CardTypeDefaultText">Types</string>
 
 </resources>

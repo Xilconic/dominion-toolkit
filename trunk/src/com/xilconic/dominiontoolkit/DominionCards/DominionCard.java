@@ -24,13 +24,13 @@ public class DominionCard implements Parcelable {
 	 * @param _isAction Indicates if the card is an action card.
 	 * @param _isAttack Indicates if the card is an attack card.
 	 * @param _isReaction Indicates if the card is a reaction card.
-	 * @param _isVictory Indicates if the card is a victory card.
 	 * @param _isTreasure Indicates if the card is a treasure card.
+	 * @param _isVictory Indicates if the card is a victory card.
 	 * @param _dominionSet Indicates the set of the DominionCard.
 	 */
 	public DominionCard(int _id, String _name, int _cost, boolean _isAction,
-			boolean _isAttack, boolean _isReaction, boolean _isVictory,
-			boolean _isTreasure, boolean _isCurse, DominionSet _dominionSet) {
+			boolean _isAttack, boolean _isReaction, boolean _isTreasure,
+			boolean _isVictory, boolean _isCurse, DominionSet _dominionSet) {
 		this._id = _id;
 		this._name = _name;
 		this._cost = _cost;

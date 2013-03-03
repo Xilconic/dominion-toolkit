@@ -38,4 +38,15 @@
         android:layout_alignParentTop="true"
         android:background="@drawable/dominion_icon" />
 
+    <TextView
+        android:id="@+id/cardTypeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cardNameText"
+        android:layout_below="@+id/cardNameText"
+        android:layout_marginLeft="25dp"
+        android:text="@string/DominionCardArrayItem.CardTypeDefaultText"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="italic" />
+
 </RelativeLayout>
