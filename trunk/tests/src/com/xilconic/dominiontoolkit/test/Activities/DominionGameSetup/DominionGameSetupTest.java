@@ -112,20 +112,7 @@ public class DominionGameSetupTest extends AndroidTestCase {
 	}
 	
 	public void testSettingPlayerCountCorectNumberOfVictoryCards(){
-		ArrayList<DominionCard> kingdomCardsReference = new ArrayList<DominionCard>();
-		// Regular card:
-		kingdomCardsReference.add(new DominionCard(0, "card 1", 1, true, false, false, false, false, false, DominionSet.Dominion));
-		// Victory card:
-		kingdomCardsReference.add(new DominionCard(0, "card 2", 1, true, false, false, false, true, false, DominionSet.Dominion));
-		// More regular cards:
-		kingdomCardsReference.add(new DominionCard(0, "card 3", 1, true, false, false, false, false, false, DominionSet.Dominion));
-		kingdomCardsReference.add(new DominionCard(0, "card 4", 1, true, false, false, false, false, false, DominionSet.Dominion));
-		kingdomCardsReference.add(new DominionCard(0, "card 5", 1, true, false, false, false, false, false, DominionSet.Dominion));
-		kingdomCardsReference.add(new DominionCard(0, "card 6", 1, true, false, false, false, false, false, DominionSet.Dominion));
-		kingdomCardsReference.add(new DominionCard(0, "card 7", 1, true, false, false, false, false, false, DominionSet.Dominion));
-		kingdomCardsReference.add(new DominionCard(0, "card 8", 1, true, false, false, false, false, false, DominionSet.Dominion));
-		kingdomCardsReference.add(new DominionCard(0, "card 9", 1, true, false, false, false, false, false, DominionSet.Dominion));
-		kingdomCardsReference.add(new DominionCard(0, "card 10", 1, true, false, false, false, false, false, DominionSet.Dominion));
+		ArrayList<DominionCard> kingdomCardsReference = createSimpleKingdomCardList();
 		
 		gameSetup.setKingdomCardSet(kingdomCardsReference);
 		ArrayList<AmountOfDominionGameItem> kingdomCardSetup = gameSetup.getKingdomCardSetup();
@@ -140,20 +127,7 @@ public class DominionGameSetupTest extends AndroidTestCase {
 	}
 	
 	public void testPlayersStartWith(){
-		ArrayList<DominionCard> kingdomCardsReference = new ArrayList<DominionCard>();
-		// Regular card:
-		kingdomCardsReference.add(new DominionCard(0, "card 1", 1, true, false, false, false, false, false, DominionSet.Dominion));
-		// Victory card:
-		kingdomCardsReference.add(new DominionCard(0, "card 2", 1, true, false, false, false, true, false, DominionSet.Dominion));
-		// More regular cards:
-		kingdomCardsReference.add(new DominionCard(0, "card 3", 1, true, false, false, false, false, false, DominionSet.Dominion));
-		kingdomCardsReference.add(new DominionCard(0, "card 4", 1, true, false, false, false, false, false, DominionSet.Dominion));
-		kingdomCardsReference.add(new DominionCard(0, "card 5", 1, true, false, false, false, false, false, DominionSet.Dominion));
-		kingdomCardsReference.add(new DominionCard(0, "card 6", 1, true, false, false, false, false, false, DominionSet.Dominion));
-		kingdomCardsReference.add(new DominionCard(0, "card 7", 1, true, false, false, false, false, false, DominionSet.Dominion));
-		kingdomCardsReference.add(new DominionCard(0, "card 8", 1, true, false, false, false, false, false, DominionSet.Dominion));
-		kingdomCardsReference.add(new DominionCard(0, "card 9", 1, true, false, false, false, false, false, DominionSet.Dominion));
-		kingdomCardsReference.add(new DominionCard(0, "card 10", 1, true, false, false, false, false, false, DominionSet.Dominion));
+		ArrayList<DominionCard> kingdomCardsReference = createSimpleKingdomCardList();
 		
 		gameSetup.setKingdomCardSet(kingdomCardsReference);
 		gameSetup.SetUp();
@@ -178,5 +152,78 @@ public class DominionGameSetupTest extends AndroidTestCase {
 		assertEquals("Start with coppers",
 				mContext.getString(R.string.Cards_Base_Landgoed), estateCard.get_name());
 		assertEquals(3, secondEntry.getCount());
+	}
+	
+	public void testGlobalStartsWith(){
+		ArrayList<DominionCard> kingdomCardsReference = createSimpleKingdomCardList();
+		
+		gameSetup.setKingdomCardSet(kingdomCardsReference);
+		gameSetup.SetUp();
+		assertTrue("Should be fully set up after call.", gameSetup.isFullySetup());
+		ArrayList<AmountOfDominionGameItem> gameGlobalStartingItems = gameSetup.getGlobalStartingItems();
+		
+		assertEquals("6 banks cards", 6, gameGlobalStartingItems.size());
+		
+		String copperName = mContext.getResources().getString(R.string.Cards_Base_Koper);
+		String silverName = mContext.getResources().getString(R.string.Cards_Base_Zilver);
+		String goldName = mContext.getResources().getString(R.string.Cards_Base_Goud);
+		String estateName = mContext.getResources().getString(R.string.Cards_Base_Landgoed);
+		String duchyName = mContext.getResources().getString(R.string.Cards_Base_Hertogdom);
+		String provinceName = mContext.getResources().getString(R.string.Cards_Base_Provincie);
+		for(int i = 0; i < 6; i++){
+			AmountOfDominionGameItem item = gameGlobalStartingItems.get(i);
+			assertTrue("For i = "+ i, item.isCard());
+			
+			switch(i){
+			case 0: // Copper
+				assertEquals(copperName, item.getItem().get_name());
+				assertEquals(60 - 4*7, item.getCount()); // 60 total, - 7 x #players
+				break;
+			case 1: // Silver
+				assertEquals(silverName, item.getItem().get_name());
+				assertEquals(40, item.getCount()); // 40 total
+				break;
+			case 2: // Gold
+				assertEquals(goldName, item.getItem().get_name());
+				assertEquals(30, item.getCount()); // 30 total
+				break;
+			case 3: // Estate
+				assertEquals(estateName, item.getItem().get_name());
+				assertEquals(12, item.getCount()); // 12 for 4 players
+				break;
+			case 4: // Duchy
+				assertEquals(duchyName, item.getItem().get_name());
+				assertEquals(12, item.getCount()); // 12 for 4 players
+				break;
+			case 5: // Province
+				assertEquals(provinceName, item.getItem().get_name());
+				assertEquals(12, item.getCount()); // 12 for 4 players
+				break;
+			}
+		}
+	}
+	
+	/**
+	 * Creates a list of dummy cards. The first card is a regular card, the second is a regular victory card.
+	 * The rest as filler.
+	 * @return A list of dummy cards.
+	 */
+	private ArrayList<DominionCard> createSimpleKingdomCardList(){
+		ArrayList<DominionCard> kingdomCardsReference = new ArrayList<DominionCard>();
+		// Regular card:
+		kingdomCardsReference.add(new DominionCard(0, "card 1", 1, true, false, false, false, false, false, DominionSet.Dominion));
+		// Victory card:
+		kingdomCardsReference.add(new DominionCard(0, "card 2", 1, true, false, false, false, true, false, DominionSet.Dominion));
+		// More regular cards:
+		kingdomCardsReference.add(new DominionCard(0, "card 3", 1, true, false, false, false, false, false, DominionSet.Dominion));
+		kingdomCardsReference.add(new DominionCard(0, "card 4", 1, true, false, false, false, false, false, DominionSet.Dominion));
+		kingdomCardsReference.add(new DominionCard(0, "card 5", 1, true, false, false, false, false, false, DominionSet.Dominion));
+		kingdomCardsReference.add(new DominionCard(0, "card 6", 1, true, false, false, false, false, false, DominionSet.Dominion));
+		kingdomCardsReference.add(new DominionCard(0, "card 7", 1, true, false, false, false, false, false, DominionSet.Dominion));
+		kingdomCardsReference.add(new DominionCard(0, "card 8", 1, true, false, false, false, false, false, DominionSet.Dominion));
+		kingdomCardsReference.add(new DominionCard(0, "card 9", 1, true, false, false, false, false, false, DominionSet.Dominion));
+		kingdomCardsReference.add(new DominionCard(0, "card 10", 1, true, false, false, false, false, false, DominionSet.Dominion));
+		
+		return kingdomCardsReference;
 	}
 }
