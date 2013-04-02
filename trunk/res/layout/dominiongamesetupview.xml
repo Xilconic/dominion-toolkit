@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/dominionGameSetupViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Title"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <LinearLayout
+        android:id="@+id/t1"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/dominionGameSetupViewTitle"
+        android:clickable="true"
+        android:onClick="gameSetupCollapseableClick"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/expandIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="An icon to visualize the expanded state of the setup layout"
+            android:scaleType="centerCrop"
+            android:src="@drawable/alchemy_icon" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Game Setup"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/t1"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp" 
+        android:visibility="visible"
+        android:paddingLeft="8dp"
+        >
+        
+        <ExpandableListView 
+            android:id="@+id/expandableListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            
+        </ExpandableListView>
+<!-- 
+        <TextView
+            android:id="@+id/eachPlayerReceivesTextBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="Each player receives:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+        <ListView
+            android:id="@+id/setupEachPlayerReceivesList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:layout_below="@+id/eachPlayerReceivesTextBox" >
+        </ListView>
+        
+        <TextView
+            android:id="@+id/generalSetupTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="General Setup:"
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:layout_below="@+id/setupEachPlayerReceivesList"/>"
+        
+        <ListView
+            android:id="@+id/generalSetupList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:layout_below="@+id/generalSetupTextView" >
+        </ListView>
+-->
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/kingdomCardsHeaderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Kingdom Cards:"
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+        android:layout_below="@+id/relativeLayout1" />
+    
+</RelativeLayout>

@@ -41,6 +41,7 @@ public class DominionCardTest extends AndroidTestCase {
 	public void testEquals(){
 		DominionCard cardToEquate = new DominionCard(1, "test", 4, true, false, false, false, false, false, DominionSet.Basic);
 		assertEquals("Cards should be equal", cardToTest, cardToEquate);
+		assertEquals("Cards should be equal", cardToEquate, cardToTest);
 		
 		cardToEquate = new DominionCard(2, "test", 4, true, false, false, false, false, false, DominionSet.Basic);
 		assertFalse("Cards should not be equal", cardToTest.equals(cardToEquate));

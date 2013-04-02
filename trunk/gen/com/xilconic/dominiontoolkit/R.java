@@ -40,10 +40,14 @@ public final class R {
         public static final int coin_bg=0x7f090024;
         public static final int costText=0x7f090025;
         public static final int curseCountTextView=0x7f09001c;
+        public static final int dominionGameSetupViewTitle=0x7f090029;
         public static final int endConditionKingdomCardsTextView=0x7f090023;
         public static final int endConditionProvinceTextView=0x7f090022;
         public static final int endConditionTextView=0x7f090021;
         public static final int endGameTextView=0x7f090020;
+        public static final int expandIcon=0x7f09002b;
+        public static final int expandableListView=0x7f09002e;
+        public static final int kingdomCardsHeaderTextView=0x7f09002f;
         public static final int numberOfCurseCardsPlainTextTextView=0x7f09001b;
         public static final int numberOfVictoryPointCardsPlainTextTextView=0x7f09001d;
         public static final int playerCountTextView=0x7f090018;
@@ -65,12 +69,15 @@ public final class R {
         public static final int randomizerKingdomCardsListView=0x7f090015;
         public static final int randomizerShuffleButton=0x7f090013;
         public static final int randomizer_button=0x7f090002;
+        public static final int relativeLayout1=0x7f09002d;
         public static final int removePlayerButton=0x7f090017;
         public static final int set_icon=0x7f090027;
         public static final int setupRemindersTitle=0x7f090016;
         public static final int setupSectionTitle=0x7f09001a;
         public static final int setup_reminders_button=0x7f090003;
         public static final int starterDeckPlainTextTextView=0x7f09001f;
+        public static final int t1=0x7f09002a;
+        public static final int textView1=0x7f09002c;
         public static final int victoryCountTextView=0x7f09001e;
     }
     public static final class layout {
@@ -80,6 +87,7 @@ public final class R {
         public static final int activity_randomizer=0x7f030003;
         public static final int activity_setup_reminders=0x7f030004;
         public static final int dominion_card_array_item=0x7f030005;
+        public static final int dominiongamesetupview=0x7f030006;
     }
     public static final class menu {
         public static final int activity_card_listing_menu=0x7f080000;
