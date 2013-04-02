@@ -29,6 +29,8 @@ import android.widget.ListView;
 
 public class CardListingActivity extends Activity {
 	
+	public static final String EXTRA_CARD_LIST_KEY = "cardList";
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,7 +38,7 @@ public class CardListingActivity extends Activity {
 		
 		// Get list of DominionCards from intent:
 		Intent i = getIntent();
-		ArrayList<DominionCard> cardList = i.getParcelableArrayListExtra("cardList");
+		ArrayList<DominionCard> cardList = i.getParcelableArrayListExtra(EXTRA_CARD_LIST_KEY);
 		
 		ListView listview = (ListView)findViewById(R.id.cardListingListView);
 		DominionCardArrayAdapter adapter = new DominionCardArrayAdapter(this, cardList);

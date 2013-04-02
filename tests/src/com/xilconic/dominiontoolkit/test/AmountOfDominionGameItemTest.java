@@ -18,6 +18,7 @@ package com.xilconic.dominiontoolkit.test;
 
 import com.xilconic.dominiontoolkit.DominionCards.AmountOfDominionGameItem;
 import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
+import com.xilconic.dominiontoolkit.DominionCards.DominionItemType;
 import com.xilconic.dominiontoolkit.DominionCards.DominionGameItem;
 import com.xilconic.dominiontoolkit.DominionCards.DominionSet;
 
@@ -28,7 +29,7 @@ public class AmountOfDominionGameItemTest extends AndroidTestCase {
 	public AmountOfDominionGameItemTest() {}
 	
 	public void testAmountOfDominionGameItemAsItem(){
-		DominionGameItem item = new DominionGameItem(1, "test", DominionSet.Basic);
+		DominionGameItem item = new DominionGameItem(DominionItemType.Copper, "test", DominionSet.Basic);
 		AmountOfDominionGameItem itemToTest = new AmountOfDominionGameItem(item, 3);
 		
 		assertEquals(3, itemToTest.getCount());

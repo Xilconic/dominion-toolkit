@@ -31,6 +31,7 @@ import android.widget.ListView;
 
 public class RandomizerActivity extends Activity {
 	private static final String STATE_CURRENT_CARD_LIST = "currentCardList";
+	public static final String EXTRA_CARD_LIST_KEY = "cardList";
 	
 	private DominionCardRandomizer randomizer;
 	private ListView listview;
@@ -44,7 +45,7 @@ public class RandomizerActivity extends Activity {
 		
 		// Get list of DominionCards from intent:
 		Intent i = getIntent();
-		ArrayList<DominionCard> cardList = i.getParcelableArrayListExtra("cardList");
+		ArrayList<DominionCard> cardList = i.getParcelableArrayListExtra(EXTRA_CARD_LIST_KEY);
 		
 		// Create randomizer and...
 		randomizer = new DominionCardRandomizer(cardList);
