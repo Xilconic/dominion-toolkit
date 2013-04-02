@@ -17,6 +17,8 @@
 package com.xilconic.dominiontoolkit.test;
 
 import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
+import com.xilconic.dominiontoolkit.DominionCards.DominionCardBuilder;
+import com.xilconic.dominiontoolkit.DominionCards.DominionItemType;
 import com.xilconic.dominiontoolkit.DominionCards.DominionSet;
 
 import android.os.Parcel;
@@ -29,7 +31,7 @@ public class DominionCardTest extends AndroidTestCase {
 	public DominionCardTest(){}
 	
 	protected void setUp() throws Exception{
-		cardToTest = new DominionCard(1, "test", 4, true, false, false, false, false, false, DominionSet.Basic);
+		cardToTest = new DominionCardBuilder(DominionItemType.Adventurer, DominionSet.Dominion, 4).action().create();
 		super.setUp();
 	}
 	
@@ -39,27 +41,25 @@ public class DominionCardTest extends AndroidTestCase {
 	}
 	
 	public void testEquals(){
-		DominionCard cardToEquate = new DominionCard(1, "test", 4, true, false, false, false, false, false, DominionSet.Basic);
+		DominionCard cardToEquate = new DominionCardBuilder(DominionItemType.Adventurer, DominionSet.Dominion, 4).action().create();
 		assertEquals("Cards should be equal", cardToTest, cardToEquate);
 		assertEquals("Cards should be equal", cardToEquate, cardToTest);
 		
-		cardToEquate = new DominionCard(2, "test", 4, true, false, false, false, false, false, DominionSet.Basic);
+		cardToEquate = new DominionCardBuilder(DominionItemType.Baron, DominionSet.Dominion, 4).action().create();
 		assertFalse("Cards should not be equal", cardToTest.equals(cardToEquate));
-		cardToEquate = new DominionCard(1, "test1", 4, true, false, false, false, false, false, DominionSet.Basic);
+		cardToEquate = new DominionCardBuilder(DominionItemType.Adventurer, DominionSet.Basic, 4).action().create();
 		assertFalse("Cards should not be equal", cardToTest.equals(cardToEquate));
-		cardToEquate = new DominionCard(1, "test", 3, false, false, false, false, false, false, DominionSet.Basic);
+		cardToEquate = new DominionCardBuilder(DominionItemType.Adventurer, DominionSet.Dominion, 3).action().create();
 		assertFalse("Cards should not be equal", cardToTest.equals(cardToEquate));
-		cardToEquate = new DominionCard(1, "test", 4, true, true, false, false, false, false, DominionSet.Basic);
+		cardToEquate = new DominionCardBuilder(DominionItemType.Adventurer, DominionSet.Dominion, 4).action().attack().create();
 		assertFalse("Cards should not be equal", cardToTest.equals(cardToEquate));
-		cardToEquate = new DominionCard(1, "test", 4, true, false, true, false, false, false, DominionSet.Basic);
+		cardToEquate = new DominionCardBuilder(DominionItemType.Adventurer, DominionSet.Dominion, 4).action().reaction().create();
 		assertFalse("Cards should not be equal", cardToTest.equals(cardToEquate));
-		cardToEquate = new DominionCard(1, "test", 4, true, false, false, true, false, false, DominionSet.Basic);
+		cardToEquate = new DominionCardBuilder(DominionItemType.Adventurer, DominionSet.Dominion, 4).action().treasure().create();
 		assertFalse("Cards should not be equal", cardToTest.equals(cardToEquate));
-		cardToEquate = new DominionCard(1, "test", 4, true, false, false, false, true, false, DominionSet.Basic);
+		cardToEquate = new DominionCardBuilder(DominionItemType.Adventurer, DominionSet.Dominion, 4).action().victory().create();
 		assertFalse("Cards should not be equal", cardToTest.equals(cardToEquate));
-		cardToEquate = new DominionCard(1, "test", 4, true, false, false, false, false, true, DominionSet.Basic);
-		assertFalse("Cards should not be equal", cardToTest.equals(cardToEquate));
-		cardToEquate = new DominionCard(1, "test", 4, true, false, false, false, false, false, DominionSet.Dominion);
+		cardToEquate = new DominionCardBuilder(DominionItemType.Adventurer, DominionSet.Dominion, 4).action().curse().create();
 		assertFalse("Cards should not be equal", cardToTest.equals(cardToEquate));
 	}
 

@@ -66,7 +66,7 @@ public class DominionCardArrayAdapter extends ArrayAdapter<DominionCard> {
 		viewHolder.costText.setText(Integer.toString(card.get_cost()));
 		
 		// Set card name text:
-		viewHolder.nameText.setText(card.get_name());
+		viewHolder.nameText.setText(DominionResourcesHelper.GetDominionCardName(_context, card));
 		
 		// Set cardTypeText:
 		viewHolder.cardTypesText.setText(getCardTypes(card));

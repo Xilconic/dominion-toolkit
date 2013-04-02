@@ -21,13 +21,17 @@ import android.os.Parcelable;
 
 public class DominionCard extends DominionGameItem implements Parcelable {
 	// private variables:
-	private int _cost; // Card cost
-	private boolean _isAction; // Is card an Action card
-	private boolean _isAttack; // Is card an Attack card
-	private boolean _isReaction; // Is card a Reaction card
-	private boolean _isVictory; // Is card a Victory card
-	private boolean _isTreasure; // Is card a Treasure card
-	private boolean _isCurse; // Is card a Curse card
+	private int _cost = 0; // Card cost
+	private boolean _isAction = false; // Is card an Action card
+	private boolean _isAttack = false; // Is card an Attack card
+	private boolean _isReaction = false; // Is card a Reaction card
+	private boolean _isVictory = false; // Is card a Victory card
+	private boolean _isTreasure = false; // Is card a Treasure card
+	private boolean _isCurse = false; // Is card a Curse card
+	
+	public DominionCard(DominionItemType id, String name, DominionSet set){
+		super(id, name, set);
+	}
 	
 	/**
 	 * @param _id ID of the card.
@@ -44,7 +48,7 @@ public class DominionCard extends DominionGameItem implements Parcelable {
 	public DominionCard(int _id, String _name, int _cost, boolean _isAction,
 			boolean _isAttack, boolean _isReaction, boolean _isTreasure,
 			boolean _isVictory, boolean _isCurse, DominionSet _dominionSet) {
-		super(_id, _name, _dominionSet);
+		super(DominionItemType.TODO, _name, _dominionSet);
 		this._cost = _cost;
 		this._isAction = _isAction;
 		this._isAttack = _isAttack;

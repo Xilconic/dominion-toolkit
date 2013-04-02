@@ -19,6 +19,7 @@ package com.xilconic.dominiontoolkit.test;
 import android.os.Parcel;
 import android.test.AndroidTestCase;
 
+import com.xilconic.dominiontoolkit.DominionCards.DominionItemType;
 import com.xilconic.dominiontoolkit.DominionCards.DominionGameItem;
 import com.xilconic.dominiontoolkit.DominionCards.DominionSet;
 
@@ -31,7 +32,7 @@ public class DominionGameItemTest extends AndroidTestCase {
 	}
 	
 	protected void setUp() throws Exception{
-		itemToTest = new DominionGameItem(1, "test", DominionSet.Basic);
+		itemToTest = new DominionGameItem(DominionItemType.Copper, "test", DominionSet.Basic);
 		super.setUp();
 	}
 	
@@ -40,7 +41,7 @@ public class DominionGameItemTest extends AndroidTestCase {
 	}
 	
 	public void testEquals(){
-		DominionGameItem itemToEquate = new DominionGameItem(1, "test", DominionSet.Basic);
+		DominionGameItem itemToEquate = new DominionGameItem(DominionItemType.Copper, "test", DominionSet.Basic);
 		assertEquals("Items should be equal", itemToTest, itemToEquate);
 		assertEquals("Items should be equal", itemToEquate, itemToTest);
 	}

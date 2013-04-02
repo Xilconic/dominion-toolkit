@@ -21,20 +21,20 @@ import android.os.Parcelable;
 
 public class DominionGameItem implements Parcelable{
 	// private variables:
-	protected int _id; // database ID
+	protected DominionItemType _id; // database ID
 	protected String _name; // Game item name
 	protected DominionSet _dominionSet; // Card set that this card belongs to
 	
-	public DominionGameItem(int id, String name, DominionSet set) {
+	public DominionGameItem(DominionItemType id, String name, DominionSet set) {
 		this._id = id;
 		this._name = name;
 		this._dominionSet = set;
 	}
 	
-	public int get_id() {
+	public DominionItemType get_id() {
 		return _id;
 	}
-	public void set_id(int _id) {
+	public void set_id(DominionItemType _id) {
 		this._id = _id;
 	}
 	
@@ -61,13 +61,13 @@ public class DominionGameItem implements Parcelable{
 
 	@Override
 	public void writeToParcel(Parcel parcel, int flags) {
-		parcel.writeInt(_id);
+		parcel.writeString(_id.name());
 		parcel.writeString(_name);
 		parcel.writeString(_dominionSet.name());
 	}
 	
 	protected DominionGameItem(Parcel parcel){
-		_id = parcel.readInt();
+		_id = DominionItemType.valueOf(parcel.readString());
 		_name = parcel.readString();
 		_dominionSet = DominionSet.valueOf(parcel.readString());
 	}
@@ -90,7 +90,7 @@ public class DominionGameItem implements Parcelable{
 		int result = 1;
 		result = prime * result
 				+ ((_dominionSet == null) ? 0 : _dominionSet.hashCode());
-		result = prime * result + _id;
+		result = prime * result + ((_id == null) ? 0 : _id.hashCode());
 		result = prime * result + ((_name == null) ? 0 : _name.hashCode());
 		return result;
 	}
