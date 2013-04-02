@@ -18,6 +18,8 @@ package com.xilconic.dominiontoolkit.Activities.DominionGameSetupActivityClasses
 
 import java.util.ArrayList;
 
+import android.provider.Settings.Global;
+
 import com.xilconic.dominiontoolkit.DominionCards.AmountOfDominionGameItem;
 import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
 import com.xilconic.dominiontoolkit.DominionCards.DominionSet;
@@ -31,6 +33,7 @@ import com.xilconic.dominiontoolkit.DominionCards.DominionSet;
 public class DominionGameSetup {
 	private ArrayList<AmountOfDominionGameItem> kingdomCardsAndCount;
 	private ArrayList<AmountOfDominionGameItem> eachPlayerReceives;
+	private ArrayList<AmountOfDominionGameItem> gameStartsWith;
 	private int playerCount;
 	private boolean isFullySetUp;
 	
@@ -39,7 +42,8 @@ public class DominionGameSetup {
 	 */
 	public DominionGameSetup(){
 		kingdomCardsAndCount = new ArrayList<AmountOfDominionGameItem>(10);
-		eachPlayerReceives = new ArrayList<AmountOfDominionGameItem>(2); 
+		eachPlayerReceives = new ArrayList<AmountOfDominionGameItem>(2);
+		gameStartsWith = new ArrayList<AmountOfDominionGameItem>(6);
 		playerCount = 4;
 		isFullySetUp = false;
 	}
@@ -128,6 +132,13 @@ public class DominionGameSetup {
 	 * Configures the game based on the selected kingdom cards.
 	 */
 	public void SetUp() {
+		setUpPlayerStartingItems();
+		setUpGameStartingItems();
+		
+		isFullySetUp = true;
+	}
+	
+	private void setUpPlayerStartingItems(){
 		eachPlayerReceives.clear();
 		
 		// HACK: TODO: Replace this with a call from data base
@@ -135,11 +146,32 @@ public class DominionGameSetup {
 		eachPlayerReceives.add(new AmountOfDominionGameItem(card, 7));
 		card = new DominionCard(0, "Landgoed", 0, false, false, false, false, true, false, DominionSet.Basic);
 		eachPlayerReceives.add(new AmountOfDominionGameItem(card, 3));
+	}
+	
+	private void setUpGameStartingItems(){
+		gameStartsWith.clear();
 		
-		isFullySetUp = true;
+		// HACK: TODO: Replace this with a call from data base
+		DominionCard card = new DominionCard(0, "Koper", 0, false, false, false, true, false, false, DominionSet.Basic);
+		gameStartsWith.add(new AmountOfDominionGameItem(card, 60 - 4*7));
+		card = new DominionCard(0, "Zilver", 0, false, false, false, true, false, false, DominionSet.Basic);
+		gameStartsWith.add(new AmountOfDominionGameItem(card, 40));
+		card = new DominionCard(0, "Goud", 0, false, false, false, true, false, false, DominionSet.Basic);
+		gameStartsWith.add(new AmountOfDominionGameItem(card, 30));
+		
+		card = new DominionCard(0, "Landgoed", 0, false, false, false, false, true, false, DominionSet.Basic);
+		gameStartsWith.add(new AmountOfDominionGameItem(card, getNumberOfOccurences(card)));
+		card = new DominionCard(0, "Hertogdom", 0, false, false, false, false, true, false, DominionSet.Basic);
+		gameStartsWith.add(new AmountOfDominionGameItem(card, getNumberOfOccurences(card)));
+		card = new DominionCard(0, "Provincie", 0, false, false, false, false, true, false, DominionSet.Basic);
+		gameStartsWith.add(new AmountOfDominionGameItem(card, getNumberOfOccurences(card)));
 	}
 
 	public ArrayList<AmountOfDominionGameItem> GetPlayerStartingItems() {
 		return eachPlayerReceives;
+	}
+
+	public ArrayList<AmountOfDominionGameItem> getGlobalStartingItems() {
+		return gameStartsWith;
 	}
 }
