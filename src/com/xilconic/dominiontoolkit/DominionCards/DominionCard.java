@@ -19,11 +19,8 @@ package com.xilconic.dominiontoolkit.DominionCards;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class DominionCard implements Parcelable {
-
+public class DominionCard extends DominionGameItem implements Parcelable {
 	// private variables:
-	private int _id; // database ID
-	private String _name; // Card name
 	private int _cost; // Card cost
 	private boolean _isAction; // Is card an Action card
 	private boolean _isAttack; // Is card an Attack card
@@ -31,7 +28,6 @@ public class DominionCard implements Parcelable {
 	private boolean _isVictory; // Is card a Victory card
 	private boolean _isTreasure; // Is card a Treasure card
 	private boolean _isCurse; // Is card a Curse card
-	private DominionSet _dominionSet; // Card set that this card belongs to
 	
 	/**
 	 * @param _id ID of the card.
@@ -42,13 +38,13 @@ public class DominionCard implements Parcelable {
 	 * @param _isReaction Indicates if the card is a reaction card.
 	 * @param _isTreasure Indicates if the card is a treasure card.
 	 * @param _isVictory Indicates if the card is a victory card.
+	 * @param _isCurse Indicates if the card is a curse card.
 	 * @param _dominionSet Indicates the set of the DominionCard.
 	 */
 	public DominionCard(int _id, String _name, int _cost, boolean _isAction,
 			boolean _isAttack, boolean _isReaction, boolean _isTreasure,
 			boolean _isVictory, boolean _isCurse, DominionSet _dominionSet) {
-		this._id = _id;
-		this._name = _name;
+		super(_id, _name, _dominionSet);
 		this._cost = _cost;
 		this._isAction = _isAction;
 		this._isAttack = _isAttack;
@@ -56,20 +52,6 @@ public class DominionCard implements Parcelable {
 		this._isVictory = _isVictory;
 		this._isTreasure = _isTreasure;
 		this._isCurse = _isCurse;
-		this._dominionSet = _dominionSet;
-	}
-
-	public int get_id() {
-		return _id;
-	}
-	public void set_id(int _id) {
-		this._id = _id;
-	}
-	public String get_name() {
-		return _name;
-	}
-	public void set_name(String _name) {
-		this._name = _name;
 	}
 	
 	public int get_cost() {
@@ -120,31 +102,58 @@ public class DominionCard implements Parcelable {
 	public void set_isCurse(boolean _isCurse) {
 		this._isCurse = _isCurse;
 	}
-	
-	public DominionSet get_dominionSet() {
-		return _dominionSet;
-	}
-
-	public void set_dominionSet(DominionSet _dominionSet) {
-		this._dominionSet = _dominionSet;
-	}
-	
+	/*
 	@Override
 	public boolean equals(Object o){
-		if (!o.getClass().equals(DominionCard.class)){
-			super.equals(o);
+		if (o == null){ return false;}
+		if (getClass() != o.getClass()){return false;}
+		
+		if (!super.equals(o)){
+			return false;
 		}
-		DominionCard other = (DominionCard)o;
-		return _id == other.get_id() &&
-				_name.equals(other.get_name()) &&
-				_cost == other.get_cost() &&
-				_isAction == other.isAction() &&
-				_isAttack == other.isAttack() &&
-				_isReaction == other.isReaction() &&
-				_isVictory == other.isVictory() &&
-				_isTreasure == other.isTreasure() &&
-				_isCurse == other.isCurse() &&
-				_dominionSet == other.get_dominionSet();
+		else {
+			DominionCard other = (DominionCard)o;
+			return  _cost == other.get_cost() &&
+					_isAction == other.isAction() &&
+					_isAttack == other.isAttack() &&
+					_isReaction == other.isReaction() &&
+					_isVictory == other.isVictory() &&
+					_isTreasure == other.isTreasure() &&
+					_isCurse == other.isCurse();
+		}
+	}*/
+	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + _cost;
+		result = prime * result + (_isAction ? 1231 : 1237);
+		result = prime * result + (_isAttack ? 1231 : 1237);
+		result = prime * result + (_isCurse ? 1231 : 1237);
+		result = prime * result + (_isReaction ? 1231 : 1237);
+		result = prime * result + (_isTreasure ? 1231 : 1237);
+		result = prime * result + (_isVictory ? 1231 : 1237);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (!super.equals(obj)) return false;
+		if (getClass() != obj.getClass()) return false;
+		
+		DominionCard other = (DominionCard) obj;
+		if (_cost != other._cost) return false;
+		if (_isAction != other._isAction) return false;
+		if (_isAttack != other._isAttack) return false;
+		if (_isCurse != other._isCurse)	return false;
+		if (_isReaction != other._isReaction) return false;
+		if (_isTreasure != other._isTreasure) return false;
+		if (_isVictory != other._isVictory)	return false;
+		
+		return true;
 	}
 
 	// ==== Interface: Parcelable =======================
@@ -155,16 +164,13 @@ public class DominionCard implements Parcelable {
 
 	@Override
 	public void writeToParcel(Parcel parcel, int flags) {
-		parcel.writeInt(_id);
-		parcel.writeString(_name);
+		super.writeToParcel(parcel, flags);
 		parcel.writeInt(_cost);
 		parcel.writeBooleanArray(new boolean[]{_isAction, _isAttack, _isReaction, _isVictory, _isTreasure, _isCurse});
-		parcel.writeString(_dominionSet.name());
 	}
 	
-	private DominionCard(Parcel parcel){
-		_id = parcel.readInt();
-		_name = parcel.readString();
+	protected DominionCard(Parcel parcel){
+		super(parcel);
 		_cost = parcel.readInt();
 		boolean[] flags = new boolean[6];
 		parcel.readBooleanArray(flags);
@@ -174,7 +180,6 @@ public class DominionCard implements Parcelable {
 		_isVictory = flags[3];
 		_isTreasure = flags[4];
 		_isCurse = flags[5];
-		_dominionSet = DominionSet.valueOf(parcel.readString());
 	}
 
 	public static final Parcelable.Creator<DominionCard> CREATOR = new Parcelable.Creator<DominionCard>()
