@@ -24,8 +24,10 @@ import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.ExpandableListView;
+import android.widget.Spinner;
 
+// TODO: Add syncing player selection:
 /**
  * This activity visualizes everything required to play a game of Dominion.
  * It features a list of Kingdom cards, setting up information based on a
@@ -36,6 +38,8 @@ import android.view.View;
  */
 public class DominionGameSetupActivity extends Activity {
 	public static final String ExpectedCardListExtraKey = "cardList";
+	private DominionGameSetup gameSetup;
+	private ExpandableListView expandableList;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -46,11 +50,20 @@ public class DominionGameSetupActivity extends Activity {
 		Intent i = getIntent();
 		ArrayList<DominionCard> cardList = i.getParcelableArrayListExtra(ExpectedCardListExtraKey);
 		
+		gameSetup = new DominionGameSetup(cardList);
+		gameSetup.SetUp();
 		
-	}
-	
-	public void gameSetupCollapseableClick(View v){
+		// Setup player count selection Spinner:
+		Spinner playerSpinner = (Spinner) findViewById(R.id.dominoinGameSetupPlayerSpinner);
+		playerSpinner.setSelection(gameSetup.getPlayerCount()-2);
 		
+		// Setup ExpandableList:
+		expandableList = (ExpandableListView)findViewById(R.id.dominionGameSetupExpandableListView);
+		DominionGameSetupExpandableListAdapter adapter = new DominionGameSetupExpandableListAdapter(this, gameSetup);
+		expandableList.setAdapter(adapter);
+		
+		// Expand the Kingdom Cards group:
+		int kingdomCardsGroupId = adapter.getKingdomCardsGroupId();
+		expandableList.expandGroup(kingdomCardsGroupId);
 	}
-
 }

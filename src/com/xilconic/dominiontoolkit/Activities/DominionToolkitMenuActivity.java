@@ -16,15 +16,17 @@
  */
 package com.xilconic.dominiontoolkit.Activities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.xilconic.dominiontoolkit.R;
 import com.xilconic.dominiontoolkit.Activities.CardListingActivityClasses.CardListingActivity;
+import com.xilconic.dominiontoolkit.Activities.DominionGameSetupActivityClasses.DominionGameSetup;
+import com.xilconic.dominiontoolkit.Activities.DominionGameSetupActivityClasses.DominionGameSetupActivity;
 import com.xilconic.dominiontoolkit.Activities.RandomizerActivityClasses.RandomizerActivity;
 import com.xilconic.dominiontoolkit.DominionCards.CardsDB;
+import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
 import com.xilconic.dominiontoolkit.DominionCards.DominionSet;
-import com.xilconic.dominiontoolkit.DominionCards.DominionToolkitDatabaseHandler;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -34,7 +36,6 @@ import android.view.View;
 public class DominionToolkitMenuActivity extends Activity {
 	
 	//private DominionToolkitDatabaseHandler database;
-	private CardsDB cardsDB;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +83,20 @@ public class DominionToolkitMenuActivity extends Activity {
 	
 	public void startPreferencesActivity(View v){
 		Intent intent = new Intent(DominionToolkitMenuActivity.this, PreferencesActivity.class);
+		startActivity(intent);
+	}
+	
+	public void startGameSetupActivity(View v){
+		Intent intent = new Intent(DominionToolkitMenuActivity.this, DominionGameSetupActivity.class);
+		List<DominionSet> cardSets = DominionToolkitPreferences.getActiveDominionSets(this);
+		ArrayList<DominionCard> allCards = CardsDB.getAllCardsFromSets(cardSets);
+		ArrayList<DominionCard> intentExtras = new ArrayList<DominionCard>(10);
+		for (int i = 0; i < 10; i++) {
+			intentExtras.add(allCards.get(i));
+		}
+		
+		intent.putParcelableArrayListExtra(DominionGameSetupActivity.ExpectedCardListExtraKey, intentExtras);
+		
 		startActivity(intent);
 	}
 

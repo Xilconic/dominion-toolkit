@@ -42,6 +42,7 @@
         <activity android:name=".Activities.PreferencesActivity"></activity>
         <activity android:name=".Activities.RandomizerActivityClasses.RandomizerActivity"></activity>
         <activity android:name="com.xilconic.dominiontoolkit.Activities.SetupRemindersActivity"></activity>
+        <activity android:name=".Activities.DominionGameSetupActivityClasses.DominionGameSetupActivity"></activity>
     </application>
 
 </manifest>

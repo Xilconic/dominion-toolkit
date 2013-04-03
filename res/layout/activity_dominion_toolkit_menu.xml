@@ -42,5 +42,12 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content" 
 	    android:onClick="startPreferencesActivity" />
+	
+	<Button android:id="@+id/test_gameSetupView"
+	    android:text="Temp: Test game setup"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" 
+	    android:layout_marginTop="20dp"
+	    android:onClick="startGameSetupActivity" />
 
 </LinearLayout>
