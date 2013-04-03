@@ -26,9 +26,9 @@ public class CardsDB {
 		public static final DominionCard Silver = new DominionCardBuilder(DominionItemType.Silver, Set, 3).treasure().create();
 		public static final DominionCard Gold = new DominionCardBuilder(DominionItemType.Gold, Set, 6).treasure().create();
 		
-		public static final DominionCard Estate = new DominionCardBuilder(DominionItemType.Estate, Set, 0).victory().create();
-		public static final DominionCard Duchy = new DominionCardBuilder(DominionItemType.Duchy, Set, 0).victory().create();
-		public static final DominionCard Province = new DominionCardBuilder(DominionItemType.Province, Set, 0).victory().create();
+		public static final DominionCard Estate = new DominionCardBuilder(DominionItemType.Estate, Set, 2).victory().create();
+		public static final DominionCard Duchy = new DominionCardBuilder(DominionItemType.Duchy, Set, 5).victory().create();
+		public static final DominionCard Province = new DominionCardBuilder(DominionItemType.Province, Set, 8).victory().create();
 		
 		public static final DominionCard Curse = new DominionCardBuilder(DominionItemType.Curse, Set, 0).curse().create();
 	}
