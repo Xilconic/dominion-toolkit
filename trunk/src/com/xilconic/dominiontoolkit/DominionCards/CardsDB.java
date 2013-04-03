@@ -20,10 +20,90 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CardsDB {
+	public static class Basic {
+		public static final DominionSet Set = DominionSet.Basic;
+		public static final DominionCard Copper = new DominionCardBuilder(DominionItemType.Copper, Set, 0).treasure().create();
+		public static final DominionCard Silver = new DominionCardBuilder(DominionItemType.Silver, Set, 3).treasure().create();
+		public static final DominionCard Gold = new DominionCardBuilder(DominionItemType.Gold, Set, 6).treasure().create();
+		
+		public static final DominionCard Estate = new DominionCardBuilder(DominionItemType.Estate, Set, 0).victory().create();
+		public static final DominionCard Duchy = new DominionCardBuilder(DominionItemType.Duchy, Set, 0).victory().create();
+		public static final DominionCard Province = new DominionCardBuilder(DominionItemType.Province, Set, 0).victory().create();
+		
+		public static final DominionCard Curse = new DominionCardBuilder(DominionItemType.Curse, Set, 0).curse().create();
+	}
 	public static ArrayList<DominionGameItem> nonKingdomCards = new ArrayList<DominionGameItem>();
-	public static ArrayList<DominionCard> dominionCards = new ArrayList<DominionCard>(25);
-	public static ArrayList<DominionCard> intrigueCards = new ArrayList<DominionCard>(25);
 	
+	public static class Dominion {
+		public static final DominionSet Set = DominionSet.Dominion;
+		
+		public static final DominionCard Cellar = new DominionCardBuilder(DominionItemType.Cellar, Set, 2).action().create();
+		public static final DominionCard Chapel = new DominionCardBuilder(DominionItemType.Chapel, Set, 2).action().create();
+		public static final DominionCard Moat = new DominionCardBuilder(DominionItemType.Moat, Set, 2).action().reaction().create();
+		
+		public static final DominionCard Chancellor = new DominionCardBuilder(DominionItemType.Chancellor, Set, 3).action().create();
+		public static final DominionCard Village = new DominionCardBuilder(DominionItemType.Village, Set, 3).action().create();
+		public static final DominionCard Woodcutter = new DominionCardBuilder(DominionItemType.Woodcutter, Set, 3).action().create();
+		public static final DominionCard Workshop = new DominionCardBuilder(DominionItemType.Worshop, Set, 3).action().create();
+		
+		public static final DominionCard Bureaucrat = new DominionCardBuilder(DominionItemType.Bureaucrat, Set, 4).action().attack().create();
+		public static final DominionCard Feast = new DominionCardBuilder(DominionItemType.Feast, Set, 4).action().create();
+		public static final DominionCard Gardens = new DominionCardBuilder(DominionItemType.Gardens, Set, 4).victory().create();
+		public static final DominionCard Militia = new DominionCardBuilder(DominionItemType.Militia, Set, 4).action().attack().create();
+		public static final DominionCard Moneylender = new DominionCardBuilder(DominionItemType.Moneylender, Set, 4).action().create();
+		public static final DominionCard Remodel = new DominionCardBuilder(DominionItemType.Remodel, Set, 4).action().create();
+		public static final DominionCard Smithy = new DominionCardBuilder(DominionItemType.Smithy, Set, 4).action().create();
+		public static final DominionCard Spy = new DominionCardBuilder(DominionItemType.Spy, Set, 4).action().attack().create();
+		public static final DominionCard Thief = new DominionCardBuilder(DominionItemType.Thief, Set, 4).action().attack().create();
+		public static final DominionCard ThroneRoom = new DominionCardBuilder(DominionItemType.ThroneRoom, Set, 4).action().create();
+		
+		public static final DominionCard CouncilRoom = new DominionCardBuilder(DominionItemType.CouncilRoom, Set, 5).action().create();
+		public static final DominionCard Festival = new DominionCardBuilder(DominionItemType.Festival, Set, 5).action().create();
+		public static final DominionCard Laboratory = new DominionCardBuilder(DominionItemType.Laboratory, Set, 5).action().create();
+		public static final DominionCard Library = new DominionCardBuilder(DominionItemType.Library, Set, 5).action().create();
+		public static final DominionCard Market = new DominionCardBuilder(DominionItemType.Market, Set, 5).action().create();
+		public static final DominionCard Mine = new DominionCardBuilder(DominionItemType.Mine, Set, 5).action().create();
+		public static final DominionCard Witch = new DominionCardBuilder(DominionItemType.Witch, Set, 5).action().attack().create();
+		
+		public static final DominionCard Adventurer = new DominionCardBuilder(DominionItemType.Adventurer, Set, 6).action().create();
+	}
+	public static ArrayList<DominionCard> dominionCards = new ArrayList<DominionCard>(25);
+	
+	public static class Intrigue {
+		public static final DominionSet Set = DominionSet.Intrigue;
+		
+		public static final DominionCard Courtyard = new DominionCardBuilder(DominionItemType.Courtyard, Set, 2).action().create();
+		public static final DominionCard Pawn = new DominionCardBuilder(DominionItemType.Pawn, Set, 2).action().create();
+		public static final DominionCard SecretChamber = new DominionCardBuilder(DominionItemType.SecretChamber, Set, 2).action().reaction().create();
+		
+		public static final DominionCard GreatHall = new DominionCardBuilder(DominionItemType.GreatHall, Set, 3).action().victory().create();
+		public static final DominionCard Masquerade = new DominionCardBuilder(DominionItemType.Masquerade, Set, 3).action().create();
+		public static final DominionCard ShantyTown = new DominionCardBuilder(DominionItemType.ShantyTown, Set, 3).action().create();
+		public static final DominionCard Steward = new DominionCardBuilder(DominionItemType.Steward, Set, 3).action().create();
+		public static final DominionCard Swindler = new DominionCardBuilder(DominionItemType.Swindler, Set, 3).action().attack().create();
+		public static final DominionCard WishingWell = new DominionCardBuilder(DominionItemType.WishingWell, Set, 3).action().create();
+		
+		public static final DominionCard Baron = new DominionCardBuilder(DominionItemType.Baron, Set, 4).action().create();
+		public static final DominionCard Bridge = new DominionCardBuilder(DominionItemType.Bridge, Set, 4).action().create();
+		public static final DominionCard Conspirator = new DominionCardBuilder(DominionItemType.Conspirator, Set, 4).action().create();
+		public static final DominionCard Coppersmith = new DominionCardBuilder(DominionItemType.Coppersmith, Set, 4).action().create();
+		public static final DominionCard Ironworks = new DominionCardBuilder(DominionItemType.Ironworks, Set, 4).action().create();
+		public static final DominionCard MiningVillage = new DominionCardBuilder(DominionItemType.MiningVillage, Set, 4).action().create();
+		public static final DominionCard Scout = new DominionCardBuilder(DominionItemType.Scout, Set, 4).action().create();
+		
+		public static final DominionCard Duke = new DominionCardBuilder(DominionItemType.Duke, Set, 5).victory().create();
+		public static final DominionCard Minion = new DominionCardBuilder(DominionItemType.Minion, Set, 5).action().attack().create();
+		public static final DominionCard Saboteur = new DominionCardBuilder(DominionItemType.Saboteur, Set, 5).action().attack().create();
+		public static final DominionCard Torturer = new DominionCardBuilder(DominionItemType.Torturer, Set, 5).action().attack().create();
+		public static final DominionCard TradingPost = new DominionCardBuilder(DominionItemType.TradingPost, Set, 5).action().create();
+		public static final DominionCard Tribute = new DominionCardBuilder(DominionItemType.Tribute, Set, 5).action().create();
+		public static final DominionCard Upgrade = new DominionCardBuilder(DominionItemType.Upgrade, Set, 5).action().create();
+		
+		public static final DominionCard Harem = new DominionCardBuilder(DominionItemType.Harem, Set, 6).treasure().victory().create();
+		public static final DominionCard Nobles = new DominionCardBuilder(DominionItemType.Nobles, Set, 6).action().victory().create();
+	}
+	public static ArrayList<DominionCard> intrigueCards = new ArrayList<DominionCard>(25);
+
 	public static ArrayList<DominionCard> getAllCardsFromSets(List<DominionSet> sets){
 		ArrayList<DominionCard> allCards = new ArrayList<DominionCard>();
 		for (DominionSet set : sets) {
@@ -46,78 +126,78 @@ public class CardsDB {
 	}
 	
 	private static void createBasicCards(){
-		nonKingdomCards.add(new DominionCardBuilder(DominionItemType.Copper, DominionSet.Basic, 0).treasure().create());
-		nonKingdomCards.add(new DominionCardBuilder(DominionItemType.Silver, DominionSet.Basic, 3).treasure().create());
-		nonKingdomCards.add(new DominionCardBuilder(DominionItemType.Gold, DominionSet.Basic, 6).treasure().create());
+		nonKingdomCards.add(Basic.Copper);
+		nonKingdomCards.add(Basic.Silver);
+		nonKingdomCards.add(Basic.Gold);
 		
-		nonKingdomCards.add(new DominionCardBuilder(DominionItemType.Estate, DominionSet.Basic, 0).victory().create());
-		nonKingdomCards.add(new DominionCardBuilder(DominionItemType.Duchy, DominionSet.Basic, 0).victory().create());
-		nonKingdomCards.add(new DominionCardBuilder(DominionItemType.Province, DominionSet.Basic, 0).victory().create());
+		nonKingdomCards.add(Basic.Estate);
+		nonKingdomCards.add(Basic.Duchy);
+		nonKingdomCards.add(Basic.Province);
 		
-		nonKingdomCards.add(new DominionCardBuilder(DominionItemType.Curse, DominionSet.Basic, 0).curse().create());
+		nonKingdomCards.add(Basic.Curse);
 	}
 	
 	private static void createBaseDominionCards(){
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Cellar, DominionSet.Dominion, 2).action().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Chapel, DominionSet.Dominion, 2).action().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Moat, DominionSet.Dominion, 2).action().reaction().create());
+		dominionCards.add(Dominion.Cellar);
+		dominionCards.add(Dominion.Chapel);
+		dominionCards.add(Dominion.Moat);
 		
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Chancellor, DominionSet.Dominion, 3).action().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Village, DominionSet.Dominion, 3).action().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Woodcutter, DominionSet.Dominion, 3).action().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Worshop, DominionSet.Dominion, 3).action().create());
+		dominionCards.add(Dominion.Chancellor);
+		dominionCards.add(Dominion.Village);
+		dominionCards.add(Dominion.Woodcutter);
+		dominionCards.add(Dominion.Workshop);
 		
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Bureaucrat, DominionSet.Dominion, 4).action().attack().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Feast, DominionSet.Dominion, 4).action().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Gardens, DominionSet.Dominion, 4).victory().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Militia, DominionSet.Dominion, 4).action().attack().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Moneylender, DominionSet.Dominion, 4).action().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Remodel, DominionSet.Dominion, 4).action().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Smithy, DominionSet.Dominion, 4).action().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Spy, DominionSet.Dominion, 4).action().attack().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Thief, DominionSet.Dominion, 4).action().attack().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.ThroneRoom, DominionSet.Dominion, 4).action().create());
+		dominionCards.add(Dominion.Bureaucrat);
+		dominionCards.add(Dominion.Feast);
+		dominionCards.add(Dominion.Gardens);
+		dominionCards.add(Dominion.Militia);
+		dominionCards.add(Dominion.Moneylender);
+		dominionCards.add(Dominion.Remodel);
+		dominionCards.add(Dominion.Smithy);
+		dominionCards.add(Dominion.Spy);
+		dominionCards.add(Dominion.Thief);
+		dominionCards.add(Dominion.ThroneRoom);
 		
-		dominionCards.add(new DominionCardBuilder(DominionItemType.CouncilRoom, DominionSet.Dominion, 5).action().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Festival, DominionSet.Dominion, 5).action().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Laboratory, DominionSet.Dominion, 5).action().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Library, DominionSet.Dominion, 5).action().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Market, DominionSet.Dominion, 5).action().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Mine, DominionSet.Dominion, 5).action().create());
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Witch, DominionSet.Dominion, 5).action().attack().create());
+		dominionCards.add(Dominion.CouncilRoom);
+		dominionCards.add(Dominion.Festival);
+		dominionCards.add(Dominion.Laboratory);
+		dominionCards.add(Dominion.Library);
+		dominionCards.add(Dominion.Market);
+		dominionCards.add(Dominion.Mine);
+		dominionCards.add(Dominion.Witch);
 		
-		dominionCards.add(new DominionCardBuilder(DominionItemType.Adventurer, DominionSet.Dominion, 6).action().create());
+		dominionCards.add(Dominion.Adventurer);
 	}
 	
 	private static void createIntrigueCards(){
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Courtyard, DominionSet.Intrigue, 2).action().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Pawn, DominionSet.Intrigue, 2).action().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.SecretChamber, DominionSet.Intrigue, 2).action().reaction().create());
+		intrigueCards.add(Intrigue.Courtyard);
+		intrigueCards.add(Intrigue.Pawn);
+		intrigueCards.add(Intrigue.SecretChamber);
 		
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.GreatHall, DominionSet.Intrigue, 3).action().victory().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Masquerade, DominionSet.Intrigue, 3).action().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.ShantyTown, DominionSet.Intrigue, 3).action().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Steward, DominionSet.Intrigue, 3).action().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Swindler, DominionSet.Intrigue, 3).action().attack().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.WishingWell, DominionSet.Intrigue, 3).action().create());
+		intrigueCards.add(Intrigue.GreatHall);
+		intrigueCards.add(Intrigue.Masquerade);
+		intrigueCards.add(Intrigue.ShantyTown);
+		intrigueCards.add(Intrigue.Steward);
+		intrigueCards.add(Intrigue.Swindler);
+		intrigueCards.add(Intrigue.WishingWell);
 		
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Baron, DominionSet.Intrigue, 4).action().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Bridge, DominionSet.Intrigue, 4).action().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Conspirator, DominionSet.Intrigue, 4).action().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Coppersmith, DominionSet.Intrigue, 4).action().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Ironworks, DominionSet.Intrigue, 4).action().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.MiningVillage, DominionSet.Intrigue, 4).action().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Scout, DominionSet.Intrigue, 4).action().create());
+		intrigueCards.add(Intrigue.Baron);
+		intrigueCards.add(Intrigue.Bridge);
+		intrigueCards.add(Intrigue.Conspirator);
+		intrigueCards.add(Intrigue.Coppersmith);
+		intrigueCards.add(Intrigue.Ironworks);
+		intrigueCards.add(Intrigue.MiningVillage);
+		intrigueCards.add(Intrigue.Scout);
 		
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Duke, DominionSet.Intrigue, 5).victory().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Minion, DominionSet.Intrigue, 5).action().attack().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Saboteur, DominionSet.Intrigue, 5).action().attack().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Torturer, DominionSet.Intrigue, 5).action().attack().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.TradingPost, DominionSet.Intrigue, 5).action().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Tribute, DominionSet.Intrigue, 5).action().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Upgrade, DominionSet.Intrigue, 5).action().create());
+		intrigueCards.add(Intrigue.Duke);
+		intrigueCards.add(Intrigue.Minion);
+		intrigueCards.add(Intrigue.Saboteur);
+		intrigueCards.add(Intrigue.Torturer);
+		intrigueCards.add(Intrigue.TradingPost);
+		intrigueCards.add(Intrigue.Tribute);
+		intrigueCards.add(Intrigue.Upgrade);
 		
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Harem, DominionSet.Intrigue, 6).treasure().victory().create());
-		intrigueCards.add(new DominionCardBuilder(DominionItemType.Nobles, DominionSet.Intrigue, 6).action().victory().create());
+		intrigueCards.add(Intrigue.Harem);
+		intrigueCards.add(Intrigue.Nobles);
 	}
 }
