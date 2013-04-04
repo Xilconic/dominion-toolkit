@@ -24,7 +24,7 @@ import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
 import com.xilconic.dominiontoolkit.DominionCards.DominionGameItem;
 import com.xilconic.dominiontoolkit.DominionCards.DominionSet;
 
-public class DominionResourcesHelper {
+public class ResourcesHelper {
 
 	/**
 	 * Returns the set icon corresponding with the given set.
@@ -90,19 +90,19 @@ public class DominionResourcesHelper {
 	private static String getBasicSetName(Context context, DominionCard card) {
 		switch (card.get_id()) {
 		case Copper:
-			return context.getResources().getString(R.string.Cards_Base_Koper);
+			return context.getResources().getString(R.string.Cards_Base_Copper);
 		case Silver:
-			return context.getResources().getString(R.string.Cards_Base_Zilver);
+			return context.getResources().getString(R.string.Cards_Base_Silver);
 		case Gold:
-			return context.getResources().getString(R.string.Cards_Base_Goud);
+			return context.getResources().getString(R.string.Cards_Base_Gold);
 		case Estate:
-			return context.getResources().getString(R.string.Cards_Base_Landgoed);
+			return context.getResources().getString(R.string.Cards_Base_Estate);
 		case Duchy:
-			return context.getResources().getString(R.string.Cards_Base_Hertogdom);
+			return context.getResources().getString(R.string.Cards_Base_Duchy);
 		case Province:
-			return context.getResources().getString(R.string.Cards_Base_Provincie);
+			return context.getResources().getString(R.string.Cards_Base_Province);
 		case Curse:
-			return context.getResources().getString(R.string.Cards_Base_Vloek);
+			return context.getResources().getString(R.string.Cards_Base_Curse);
 		default:
 			return "<no basic name matched>";
 		}
@@ -111,59 +111,59 @@ public class DominionResourcesHelper {
 	private static String getBaseDominionSetName(Context context, DominionCard card) {
 		switch (card.get_id()) {
 		case Cellar:
-			return context.getResources().getString(R.string.Cards_Dominion_Kelder);
+			return context.getResources().getString(R.string.Cards_Dominion_Cellar);
 		case Chapel:
-			return context.getResources().getString(R.string.Cards_Dominion_Kapel);
+			return context.getResources().getString(R.string.Cards_Dominion_Chapel);
 		case Moat:
-			return context.getResources().getString(R.string.Cards_Dominion_Slotgracht);
+			return context.getResources().getString(R.string.Cards_Dominion_Moat);
 			
 		case Chancellor:
-			return context.getResources().getString(R.string.Cards_Dominion_Raadsheer);
+			return context.getResources().getString(R.string.Cards_Dominion_Chancellor);
 		case Village:
-			return context.getResources().getString(R.string.Cards_Dominion_Dorp);
+			return context.getResources().getString(R.string.Cards_Dominion_Village);
 		case Woodcutter:
-			return context.getResources().getString(R.string.Cards_Dominion_Houthakker);
+			return context.getResources().getString(R.string.Cards_Dominion_Woodcutter);
 		case Worshop:
-			return context.getResources().getString(R.string.Cards_Dominion_Werkplaats);
+			return context.getResources().getString(R.string.Cards_Dominion_Workshop);
 			
 		case Bureaucrat:
-			return context.getResources().getString(R.string.Cards_Dominion_Bureaucraat);
+			return context.getResources().getString(R.string.Cards_Dominion_Bureaucrat);
 		case Feast:
-			return context.getResources().getString(R.string.Cards_Dominion_Feest);
+			return context.getResources().getString(R.string.Cards_Dominion_Feast);
 		case Gardens:
-			return context.getResources().getString(R.string.Cards_Dominion_Tuinen);
+			return context.getResources().getString(R.string.Cards_Dominion_Gardens);
 		case Militia:
-			return context.getResources().getString(R.string.Cards_Dominion_Militie);
+			return context.getResources().getString(R.string.Cards_Dominion_Militia);
 		case Moneylender:
-			return context.getResources().getString(R.string.Cards_Dominion_Geldschieter);
+			return context.getResources().getString(R.string.Cards_Dominion_Moneylender);
 		case Remodel:
-			return context.getResources().getString(R.string.Cards_Dominion_Verbouwing);
+			return context.getResources().getString(R.string.Cards_Dominion_Remodel);
 		case Smithy:
-			return context.getResources().getString(R.string.Cards_Dominion_Smidse);
+			return context.getResources().getString(R.string.Cards_Dominion_Smithy);
 		case Spy:
-			return context.getResources().getString(R.string.Cards_Dominion_Spion);
+			return context.getResources().getString(R.string.Cards_Dominion_Spy);
 		case Thief:
-			return context.getResources().getString(R.string.Cards_Dominion_Dief);
+			return context.getResources().getString(R.string.Cards_Dominion_Thief);
 		case ThroneRoom:
-			return context.getResources().getString(R.string.Cards_Dominion_Troonzaal);
+			return context.getResources().getString(R.string.Cards_Dominion_ThroneRoom);
 			
 		case CouncilRoom:
-			return context.getResources().getString(R.string.Cards_Dominion_Raadzaal);
+			return context.getResources().getString(R.string.Cards_Dominion_CouncilRoom);
 		case Festival:
 			return context.getResources().getString(R.string.Cards_Dominion_Festival);
 		case Laboratory:
-			return context.getResources().getString(R.string.Cards_Dominion_Laboratorium);
+			return context.getResources().getString(R.string.Cards_Dominion_Laboratory);
 		case Library:
-			return context.getResources().getString(R.string.Cards_Dominion_Bibliotheek);
+			return context.getResources().getString(R.string.Cards_Dominion_Library);
 		case Market:
-			return context.getResources().getString(R.string.Cards_Dominion_Markt);
+			return context.getResources().getString(R.string.Cards_Dominion_Market);
 		case Mine:
-			return context.getResources().getString(R.string.Cards_Dominion_Mijn);
+			return context.getResources().getString(R.string.Cards_Dominion_Mine);
 		case Witch:
-			return context.getResources().getString(R.string.Cards_Dominion_Heks);
+			return context.getResources().getString(R.string.Cards_Dominion_Witch);
 			
 		case Adventurer:
-			return context.getResources().getString(R.string.Cards_Dominion_Avonturier);
+			return context.getResources().getString(R.string.Cards_Dominion_Adventurer);
 		default:
 			return "<no base dominion name matched>";
 		}
@@ -172,59 +172,59 @@ public class DominionResourcesHelper {
 	private static String getIntrigueSetName(Context context, DominionCard card) {
 		switch (card.get_id()) {
 		case Courtyard:
-			return context.getResources().getString(R.string.Cards_Intrigue_Binneplaats);
+			return context.getResources().getString(R.string.Cards_Intrigue_Courtyard);
 		case Pawn:
-			return context.getResources().getString(R.string.Cards_Intrigue_Pion);
+			return context.getResources().getString(R.string.Cards_Intrigue_Pawn);
 		case SecretChamber:
-			return context.getResources().getString(R.string.Cards_Intrigue_Geheime_Kamer);
+			return context.getResources().getString(R.string.Cards_Intrigue_SecretChamber);
 
 		case GreatHall:
-			return context.getResources().getString(R.string.Cards_Intrigue_Grote_Zaal);
+			return context.getResources().getString(R.string.Cards_Intrigue_GreatHall);
 		case Masquerade:
-			return context.getResources().getString(R.string.Cards_Intrigue_Maskerade);
+			return context.getResources().getString(R.string.Cards_Intrigue_Masquerade);
 		case ShantyTown:
-			return context.getResources().getString(R.string.Cards_Intrigue_Sloppenwijk);
+			return context.getResources().getString(R.string.Cards_Intrigue_ShantyTown);
 		case Steward:
-			return context.getResources().getString(R.string.Cards_Intrigue_Lakei);
+			return context.getResources().getString(R.string.Cards_Intrigue_Steward);
 		case Swindler:
-			return context.getResources().getString(R.string.Cards_Intrigue_Oplichter);
+			return context.getResources().getString(R.string.Cards_Intrigue_Swindler);
 		case WishingWell:
-			return context.getResources().getString(R.string.Cards_Intrigue_Wensput);
+			return context.getResources().getString(R.string.Cards_Intrigue_WishingWell);
 
 		case Baron:
 			return context.getResources().getString(R.string.Cards_Intrigue_Baron);
 		case Bridge:
-			return context.getResources().getString(R.string.Cards_Intrigue_Brug);
+			return context.getResources().getString(R.string.Cards_Intrigue_Bridge);
 		case Conspirator:
-			return context.getResources().getString(R.string.Cards_Intrigue_Samenzweerder);
+			return context.getResources().getString(R.string.Cards_Intrigue_Conspirator);
 		case Coppersmith:
-			return context.getResources().getString(R.string.Cards_Intrigue_Kopersmid);
+			return context.getResources().getString(R.string.Cards_Intrigue_Coppersmith);
 		case Ironworks:
-			return context.getResources().getString(R.string.Cards_Intrigue_IJzergieterij);
+			return context.getResources().getString(R.string.Cards_Intrigue_Ironworks);
 		case MiningVillage:
-			return context.getResources().getString(R.string.Cards_Intrigue_Mijndorp);
+			return context.getResources().getString(R.string.Cards_Intrigue_MiningVillage);
 		case Scout:
-			return context.getResources().getString(R.string.Cards_Intrigue_Verkenner);
+			return context.getResources().getString(R.string.Cards_Intrigue_Scout);
 
 		case Duke:
-			return context.getResources().getString(R.string.Cards_Intrigue_Hertog);
+			return context.getResources().getString(R.string.Cards_Intrigue_Duke);
 		case Minion:
-			return context.getResources().getString(R.string.Cards_Intrigue_Dienaar);
+			return context.getResources().getString(R.string.Cards_Intrigue_Minion);
 		case Saboteur:
 			return context.getResources().getString(R.string.Cards_Intrigue_Saboteur);
 		case Torturer:
-			return context.getResources().getString(R.string.Cards_Intrigue_Folteraar);
+			return context.getResources().getString(R.string.Cards_Intrigue_Torturer);
 		case TradingPost:
-			return context.getResources().getString(R.string.Cards_Intrigue_Handelspost);
+			return context.getResources().getString(R.string.Cards_Intrigue_Tradingpost);
 		case Tribute:
-			return context.getResources().getString(R.string.Cards_Intrigue_Tolheffing);
+			return context.getResources().getString(R.string.Cards_Intrigue_Tribute);
 		case Upgrade:
-			return context.getResources().getString(R.string.Cards_Intrigue_Opwaardering);
+			return context.getResources().getString(R.string.Cards_Intrigue_Upgrade);
 
 		case Harem:
 			return context.getResources().getString(R.string.Cards_Intrigue_Harem);
 		case Nobles:
-			return context.getResources().getString(R.string.Cards_Intrigue_Adel);
+			return context.getResources().getString(R.string.Cards_Intrigue_Nobles);
 		default:
 			return "<no intrigue name matched>";
 		}

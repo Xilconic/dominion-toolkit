@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.xilconic.dominiontoolkit.Activities.DominionGameSetupActivityClasses;
+package com.xilconic.dominiontoolkit.Activities.GameSetup;
 
 import java.util.ArrayList;
 
@@ -36,9 +36,9 @@ import android.widget.Spinner;
  * @author Bas des Bouvrie
  *
  */
-public class DominionGameSetupActivity extends Activity {
+public class GameSetupActivity extends Activity {
 	public static final String ExpectedCardListExtraKey = "cardList";
-	private DominionGameSetup gameSetup;
+	private GameSetup gameSetup;
 	private ExpandableListView expandableList;
 	
 	@Override
@@ -50,7 +50,7 @@ public class DominionGameSetupActivity extends Activity {
 		Intent i = getIntent();
 		ArrayList<DominionCard> cardList = i.getParcelableArrayListExtra(ExpectedCardListExtraKey);
 		
-		gameSetup = new DominionGameSetup(cardList);
+		gameSetup = new GameSetup(cardList);
 		gameSetup.SetUp();
 		
 		// Setup player count selection Spinner:
@@ -59,7 +59,7 @@ public class DominionGameSetupActivity extends Activity {
 		
 		// Setup ExpandableList:
 		expandableList = (ExpandableListView)findViewById(R.id.dominionGameSetupExpandableListView);
-		DominionGameSetupExpandableListAdapter adapter = new DominionGameSetupExpandableListAdapter(this, gameSetup);
+		GameSetupExpandableListAdapter adapter = new GameSetupExpandableListAdapter(this, gameSetup);
 		expandableList.setAdapter(adapter);
 		
 		// Expand the Kingdom Cards group:

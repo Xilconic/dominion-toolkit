@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of Dominion Toolkit.
+  
+  Dominion Toolkit is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  Dominion Toolkit is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+   	<string name="Cards.Dominion.Adventurer">Avonturier</string>
+	<string name="Cards.Dominion.Bureaucrat">Bureaucraat</string>
+	<string name="Cards.Dominion.Cellar">Kelder</string>
+	<string name="Cards.Dominion.Chancellor">Raadsheer</string>
+	<string name="Cards.Dominion.Chapel">Kapel</string>
+	<string name="Cards.Dominion.CouncilRoom">Raadzaal</string>
+	<string name="Cards.Dominion.Feast">Feest</string>
+	<string name="Cards.Dominion.Festival">Festival</string>
+	<string name="Cards.Dominion.Laboratory">Laboratorium</string>
+	<string name="Cards.Dominion.Library">Bibliotheek</string>
+	<string name="Cards.Dominion.Market">Markt</string>
+	<string name="Cards.Dominion.Militia">Militie</string>
+	<string name="Cards.Dominion.Mine">Mijn</string>
+	<string name="Cards.Dominion.Moat">Slotgracht</string>
+	<string name="Cards.Dominion.Moneylender">Geldschieter</string>
+	<string name="Cards.Dominion.Remodel">Verbouwing</string>
+	<string name="Cards.Dominion.Smithy">Smidse</string>
+	<string name="Cards.Dominion.Spy">Spion</string>
+	<string name="Cards.Dominion.Thief">Dief</string>
+	<string name="Cards.Dominion.ThroneRoom">Troonzaal</string>
+	<string name="Cards.Dominion.Village">Dorp</string>
+	<string name="Cards.Dominion.Witch">Heks</string>
+	<string name="Cards.Dominion.Woodcutter">Houthakker</string>
+	<string name="Cards.Dominion.Workshop">Werkplaats</string>
+	<string name="Cards.Dominion.Gardens">Tuinen</string>
+</resources>

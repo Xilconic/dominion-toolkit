@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.xilconic.dominiontoolkit.Activities.DominionGameSetupActivityClasses;
+package com.xilconic.dominiontoolkit.Activities.GameSetup;
 
 import java.util.ArrayList;
 
@@ -28,7 +28,7 @@ import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
  * @author Bas des Bouvrie
  *
  */
-public class DominionGameSetup {
+public class GameSetup {
 	private ArrayList<AmountOfDominionGameItem> kingdomCardsAndCount;
 	private ArrayList<AmountOfDominionGameItem> eachPlayerReceives;
 	private ArrayList<AmountOfDominionGameItem> gameStartsWith;
@@ -38,7 +38,7 @@ public class DominionGameSetup {
 	/**
 	 * Constructor without a set of cards to play with, assuming 4 players.
 	 */
-	public DominionGameSetup(){
+	public GameSetup(){
 		kingdomCardsAndCount = new ArrayList<AmountOfDominionGameItem>(10);
 		eachPlayerReceives = new ArrayList<AmountOfDominionGameItem>(2);
 		gameStartsWith = new ArrayList<AmountOfDominionGameItem>(6);
@@ -50,13 +50,13 @@ public class DominionGameSetup {
 	 * Constructor with a set of Kingdom cards to play with.
 	 * @param kingdomCards
 	 */
-	public DominionGameSetup(ArrayList<DominionCard> kingdomCards){
+	public GameSetup(ArrayList<DominionCard> kingdomCards){
 		this();
 		setKingdomCardSet(kingdomCards);
 	}
 	
 	/**
-	 * Checks if {@link DominionGameSetup} has been fully configured for
+	 * Checks if {@link GameSetup} has been fully configured for
 	 * the given set of 
 	 * @return
 	 */

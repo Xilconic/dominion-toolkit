@@ -20,20 +20,20 @@ import java.util.ArrayList;
 
 import android.test.AndroidTestCase;
 
-import com.xilconic.dominiontoolkit.Activities.DominionGameSetupActivityClasses.DominionGameSetup;
+import com.xilconic.dominiontoolkit.Activities.GameSetup.GameSetup;
 import com.xilconic.dominiontoolkit.DominionCards.AmountOfDominionGameItem;
 import com.xilconic.dominiontoolkit.DominionCards.CardsDB;
 import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
 import com.xilconic.dominiontoolkit.DominionCards.DominionSet;
 
-public class DominionGameSetupTest extends AndroidTestCase {
-	private DominionGameSetup gameSetup;
+public class GameSetupTest extends AndroidTestCase {
+	private GameSetup gameSetup;
 	
 	// Required for JUnit
-	public DominionGameSetupTest(){}
+	public GameSetupTest(){}
 	
 	protected void setUp() throws Exception{
-		gameSetup = new DominionGameSetup();
+		gameSetup = new GameSetup();
 	}
 	
 	public void testPreCondition(){
