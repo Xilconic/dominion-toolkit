@@ -9,12 +9,12 @@ package com.xilconic.dominiontoolkit;
 
 public final class R {
     public static final class array {
-        public static final int dominion_game_setup_player_count=0x7f060000;
+        public static final int dominion_game_setup_player_count=0x7f070000;
     }
     public static final class attr {
     }
     public static final class color {
-        public static final int coin_text_color=0x7f050000;
+        public static final int coin_text_color=0x7f060000;
     }
     public static final class drawable {
         public static final int alchemy_icon=0x7f020000;
@@ -106,126 +106,120 @@ public final class R {
     public static final class string {
         /**  activity card Listing 
          */
-        public static final int CardListing_ActivityTitleText=0x7f07005e;
-        public static final int CardSet_Alchemy=0x7f070049;
+        public static final int CardListing_ActivityTitleText=0x7f05005e;
+        public static final int CardSet_Alchemy=0x7f050043;
         /**  Dominion Cardsets: 
          */
-        public static final int CardSet_Base=0x7f070045;
-        public static final int CardSet_Cornucopia=0x7f07004b;
-        public static final int CardSet_DarkAges=0x7f07004d;
-        public static final int CardSet_Dominion=0x7f070046;
-        public static final int CardSet_Hinterlands=0x7f07004c;
-        public static final int CardSet_Intrigue=0x7f070047;
-        public static final int CardSet_PromoCards=0x7f07004e;
-        public static final int CardSet_Prosperity=0x7f07004a;
-        public static final int CardSet_Seaside=0x7f070048;
-        public static final int Cards_Base_Goud=0x7f07000e;
-        public static final int Cards_Base_Hertogdom=0x7f070010;
-        /**  Basic cards: 
+        public static final int CardSet_Base=0x7f05003f;
+        public static final int CardSet_Cornucopia=0x7f050045;
+        public static final int CardSet_DarkAges=0x7f050047;
+        public static final int CardSet_Dominion=0x7f050040;
+        public static final int CardSet_Hinterlands=0x7f050046;
+        public static final int CardSet_Intrigue=0x7f050041;
+        public static final int CardSet_PromoCards=0x7f050048;
+        public static final int CardSet_Prosperity=0x7f050044;
+        public static final int CardSet_Seaside=0x7f050042;
+        public static final int Cards_Base_Copper=0x7f050000;
+        public static final int Cards_Base_Curse=0x7f050006;
+        public static final int Cards_Base_Duchy=0x7f050004;
+        public static final int Cards_Base_Estate=0x7f050003;
+        public static final int Cards_Base_Gold=0x7f050002;
+        public static final int Cards_Base_Province=0x7f050005;
+        public static final int Cards_Base_Silver=0x7f050001;
+        public static final int Cards_Dominion_Adventurer=0x7f050007;
+        public static final int Cards_Dominion_Bureaucrat=0x7f050008;
+        public static final int Cards_Dominion_Cellar=0x7f050009;
+        public static final int Cards_Dominion_Chancellor=0x7f05000a;
+        public static final int Cards_Dominion_Chapel=0x7f05000b;
+        public static final int Cards_Dominion_CouncilRoom=0x7f05000c;
+        public static final int Cards_Dominion_Feast=0x7f05000d;
+        public static final int Cards_Dominion_Festival=0x7f05000e;
+        public static final int Cards_Dominion_Gardens=0x7f05001f;
+        public static final int Cards_Dominion_Laboratory=0x7f05000f;
+        public static final int Cards_Dominion_Library=0x7f050010;
+        public static final int Cards_Dominion_Market=0x7f050011;
+        public static final int Cards_Dominion_Militia=0x7f050012;
+        public static final int Cards_Dominion_Mine=0x7f050013;
+        public static final int Cards_Dominion_Moat=0x7f050014;
+        public static final int Cards_Dominion_Moneylender=0x7f050015;
+        public static final int Cards_Dominion_Remodel=0x7f050016;
+        public static final int Cards_Dominion_Smithy=0x7f050017;
+        public static final int Cards_Dominion_Spy=0x7f050018;
+        public static final int Cards_Dominion_Thief=0x7f050019;
+        public static final int Cards_Dominion_ThroneRoom=0x7f05001a;
+        public static final int Cards_Dominion_Village=0x7f05001b;
+        public static final int Cards_Dominion_Witch=0x7f05001c;
+        public static final int Cards_Dominion_Woodcutter=0x7f05001d;
+        public static final int Cards_Dominion_Workshop=0x7f05001e;
+        public static final int Cards_Intrigue_Baron=0x7f050020;
+        public static final int Cards_Intrigue_Bridge=0x7f050021;
+        public static final int Cards_Intrigue_Conspirator=0x7f050022;
+        public static final int Cards_Intrigue_Coppersmith=0x7f050037;
+        public static final int Cards_Intrigue_Courtyard=0x7f050038;
+        public static final int Cards_Intrigue_Duke=0x7f050024;
+        public static final int Cards_Intrigue_GreatHall=0x7f050034;
+        public static final int Cards_Intrigue_Harem=0x7f050035;
+        public static final int Cards_Intrigue_Ironworks=0x7f050036;
+        public static final int Cards_Intrigue_Masquerade=0x7f050031;
+        public static final int Cards_Intrigue_MiningVillage=0x7f050032;
+        public static final int Cards_Intrigue_Minion=0x7f050033;
+        public static final int Cards_Intrigue_Nobles=0x7f05002e;
+        public static final int Cards_Intrigue_Pawn=0x7f05002f;
+        public static final int Cards_Intrigue_Saboteur=0x7f050030;
+        public static final int Cards_Intrigue_Scout=0x7f05002b;
+        public static final int Cards_Intrigue_SecretChamber=0x7f05002c;
+        public static final int Cards_Intrigue_ShantyTown=0x7f05002d;
+        public static final int Cards_Intrigue_Steward=0x7f050028;
+        public static final int Cards_Intrigue_Swindler=0x7f050029;
+        public static final int Cards_Intrigue_Torturer=0x7f05002a;
+        public static final int Cards_Intrigue_Tradingpost=0x7f050025;
+        public static final int Cards_Intrigue_Tribute=0x7f050026;
+        public static final int Cards_Intrigue_Upgrade=0x7f050027;
+        public static final int Cards_Intrigue_WishingWell=0x7f050023;
+        /**  Card Types: 
          */
-        public static final int Cards_Base_Koper=0x7f07000c;
-        public static final int Cards_Base_Landgoed=0x7f07000f;
-        public static final int Cards_Base_Provincie=0x7f070011;
-        public static final int Cards_Base_Vloek=0x7f070012;
-        public static final int Cards_Base_Zilver=0x7f07000d;
-        /**  Dominion Cardbase: 
-         */
-        public static final int Cards_Dominion_Avonturier=0x7f070013;
-        public static final int Cards_Dominion_Bibliotheek=0x7f07001c;
-        public static final int Cards_Dominion_Bureaucraat=0x7f070014;
-        public static final int Cards_Dominion_Dief=0x7f070025;
-        public static final int Cards_Dominion_Dorp=0x7f070027;
-        public static final int Cards_Dominion_Feest=0x7f070019;
-        public static final int Cards_Dominion_Festival=0x7f07001a;
-        public static final int Cards_Dominion_Geldschieter=0x7f070021;
-        public static final int Cards_Dominion_Heks=0x7f070028;
-        public static final int Cards_Dominion_Houthakker=0x7f070029;
-        public static final int Cards_Dominion_Kapel=0x7f070017;
-        public static final int Cards_Dominion_Kelder=0x7f070015;
-        public static final int Cards_Dominion_Laboratorium=0x7f07001b;
-        public static final int Cards_Dominion_Markt=0x7f07001d;
-        public static final int Cards_Dominion_Mijn=0x7f07001f;
-        public static final int Cards_Dominion_Militie=0x7f07001e;
-        public static final int Cards_Dominion_Raadsheer=0x7f070016;
-        public static final int Cards_Dominion_Raadzaal=0x7f070018;
-        public static final int Cards_Dominion_Slotgracht=0x7f070020;
-        public static final int Cards_Dominion_Smidse=0x7f070023;
-        public static final int Cards_Dominion_Spion=0x7f070024;
-        public static final int Cards_Dominion_Troonzaal=0x7f070026;
-        public static final int Cards_Dominion_Tuinen=0x7f07002b;
-        public static final int Cards_Dominion_Verbouwing=0x7f070022;
-        public static final int Cards_Dominion_Werkplaats=0x7f07002a;
-        public static final int Cards_Intrigue_Adel=0x7f07003a;
-        /**  Intrigue Cardbase: 
-         */
-        public static final int Cards_Intrigue_Baron=0x7f07002c;
-        public static final int Cards_Intrigue_Binneplaats=0x7f070044;
-        public static final int Cards_Intrigue_Brug=0x7f07002d;
-        public static final int Cards_Intrigue_Dienaar=0x7f07003f;
-        public static final int Cards_Intrigue_Folteraar=0x7f070036;
-        public static final int Cards_Intrigue_Geheime_Kamer=0x7f070038;
-        public static final int Cards_Intrigue_Grote_Zaal=0x7f070040;
-        public static final int Cards_Intrigue_Handelspost=0x7f070031;
-        public static final int Cards_Intrigue_Harem=0x7f070041;
-        public static final int Cards_Intrigue_Hertog=0x7f070030;
-        public static final int Cards_Intrigue_IJzergieterij=0x7f070042;
-        public static final int Cards_Intrigue_Kopersmid=0x7f070043;
-        public static final int Cards_Intrigue_Lakei=0x7f070034;
-        public static final int Cards_Intrigue_Maskerade=0x7f07003d;
-        public static final int Cards_Intrigue_Mijndorp=0x7f07003e;
-        public static final int Cards_Intrigue_Oplichter=0x7f070035;
-        public static final int Cards_Intrigue_Opwaardering=0x7f070033;
-        public static final int Cards_Intrigue_Pion=0x7f07003b;
-        public static final int Cards_Intrigue_Saboteur=0x7f07003c;
-        public static final int Cards_Intrigue_Samenzweerder=0x7f07002e;
-        public static final int Cards_Intrigue_Sloppenwijk=0x7f070039;
-        public static final int Cards_Intrigue_Tolheffing=0x7f070032;
-        public static final int Cards_Intrigue_Verkenner=0x7f070037;
-        public static final int Cards_Intrigue_Wensput=0x7f07002f;
-        /**  Cards: 
- Card Types: 
-         */
-        public static final int Cards_Types_Action=0x7f070006;
-        public static final int Cards_Types_Attack=0x7f070007;
-        public static final int Cards_Types_Curse=0x7f070009;
-        public static final int Cards_Types_Reaction=0x7f070008;
-        public static final int Cards_Types_Treasure=0x7f07000a;
-        public static final int Cards_Types_Victory=0x7f07000b;
-        public static final int DominionCardArrayItem_CardTypeDefaultText=0x7f070064;
+        public static final int Cards_Types_Action=0x7f050039;
+        public static final int Cards_Types_Attack=0x7f05003a;
+        public static final int Cards_Types_Curse=0x7f05003c;
+        public static final int Cards_Types_Reaction=0x7f05003b;
+        public static final int Cards_Types_Treasure=0x7f05003d;
+        public static final int Cards_Types_Victory=0x7f05003e;
+        public static final int DominionCardArrayItem_CardTypeDefaultText=0x7f050064;
         /**  dominion card arry item 
          */
-        public static final int DominionCardArrayItem_CostDefaultText=0x7f070062;
-        public static final int DominionCardArrayItem_NameDefaultText=0x7f070063;
-        /**  activity_preferences 
+        public static final int DominionCardArrayItem_CostDefaultText=0x7f050062;
+        public static final int DominionCardArrayItem_NameDefaultText=0x7f050063;
+        /**  Cards: 
+ activity_preferences 
          */
-        public static final int Preferences_CardSets=0x7f07004f;
+        public static final int Preferences_CardSets=0x7f05004f;
         /**  activity randomizer 
          */
-        public static final int Randomizer_ActivityTitleText=0x7f07005f;
-        public static final int Randomizer_KingdomCardsPlainText=0x7f070060;
-        public static final int Randomizer_ShuffleButtonText=0x7f070061;
+        public static final int Randomizer_ActivityTitleText=0x7f05005f;
+        public static final int Randomizer_KingdomCardsPlainText=0x7f050060;
+        public static final int Randomizer_ShuffleButtonText=0x7f050061;
         /**  activity setup & reminders 
          */
-        public static final int SetupReminders_ActivityTitleText=0x7f070050;
-        public static final int SetupReminders_AddPlayerButtonText=0x7f070053;
-        public static final int SetupReminders_CurseCardCountDefaultText=0x7f070056;
-        public static final int SetupReminders_EndConditionKingdomCardsPlainText=0x7f07005d;
-        public static final int SetupReminders_EndConditionProvincePlainText=0x7f07005c;
-        public static final int SetupReminders_EndGameHeaderText=0x7f07005a;
-        public static final int SetupReminders_EndGamePlainText=0x7f07005b;
-        public static final int SetupReminders_NumberOfCuseCardsPlainText=0x7f070055;
-        public static final int SetupReminders_NumberOfVictoryCardsPlainText=0x7f070057;
-        public static final int SetupReminders_PlayerCountDefaultText=0x7f070052;
-        public static final int SetupReminders_RemovePlayerButtonText=0x7f070051;
-        public static final int SetupReminders_SetupHeaderText=0x7f070054;
-        public static final int SetupReminders_StarterDeckPlainText=0x7f070059;
-        public static final int SetupReminders_VictoryCardCountDefaultText=0x7f070058;
-        public static final int app_name=0x7f070000;
-        public static final int card_listing_button_name=0x7f070004;
-        public static final int menu_settings=0x7f070001;
-        public static final int preferences_button_name=0x7f070005;
-        public static final int randomizer_button_name=0x7f070002;
-        public static final int setup_reminders_button_name=0x7f070003;
+        public static final int SetupReminders_ActivityTitleText=0x7f050050;
+        public static final int SetupReminders_AddPlayerButtonText=0x7f050053;
+        public static final int SetupReminders_CurseCardCountDefaultText=0x7f050056;
+        public static final int SetupReminders_EndConditionKingdomCardsPlainText=0x7f05005d;
+        public static final int SetupReminders_EndConditionProvincePlainText=0x7f05005c;
+        public static final int SetupReminders_EndGameHeaderText=0x7f05005a;
+        public static final int SetupReminders_EndGamePlainText=0x7f05005b;
+        public static final int SetupReminders_NumberOfCuseCardsPlainText=0x7f050055;
+        public static final int SetupReminders_NumberOfVictoryCardsPlainText=0x7f050057;
+        public static final int SetupReminders_PlayerCountDefaultText=0x7f050052;
+        public static final int SetupReminders_RemovePlayerButtonText=0x7f050051;
+        public static final int SetupReminders_SetupHeaderText=0x7f050054;
+        public static final int SetupReminders_StarterDeckPlainText=0x7f050059;
+        public static final int SetupReminders_VictoryCardCountDefaultText=0x7f050058;
+        public static final int app_name=0x7f050049;
+        public static final int card_listing_button_name=0x7f05004d;
+        public static final int menu_settings=0x7f05004a;
+        public static final int preferences_button_name=0x7f05004e;
+        public static final int randomizer_button_name=0x7f05004b;
+        public static final int setup_reminders_button_name=0x7f05004c;
     }
     public static final class style {
         /** 

@@ -21,21 +21,21 @@ import java.util.HashSet;
 
 import junit.framework.Assert;
 
-import com.xilconic.dominiontoolkit.Activities.RandomizerActivityClasses.DominionCardRandomizer;
+import com.xilconic.dominiontoolkit.Activities.Randomizer.Randomizer;
 import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
 import com.xilconic.dominiontoolkit.DominionCards.DominionSet;
 
 import android.test.AndroidTestCase;
 
-public class DominionCardRandomizerTest extends AndroidTestCase {
-	private DominionCardRandomizer randomizer;
+public class RandomizerTest extends AndroidTestCase {
+	private Randomizer randomizer;
 	
 	// Required for JUnit
-	public DominionCardRandomizerTest(){}
+	public RandomizerTest(){}
 	
 	protected void setUp() throws Exception{
 		ArrayList<DominionCard> cardpool = new ArrayList<DominionCard>();
-		randomizer = new DominionCardRandomizer(cardpool);
+		randomizer = new Randomizer(cardpool);
 	}
 	
 	public void testPreCondition(){

@@ -19,7 +19,7 @@ package com.xilconic.dominiontoolkit.DominionCards;
 import java.util.ArrayList;
 
 import com.xilconic.dominiontoolkit.R;
-import com.xilconic.dominiontoolkit.Utils.DominionResourcesHelper;
+import com.xilconic.dominiontoolkit.Utils.ResourcesHelper;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -66,13 +66,13 @@ public class DominionCardArrayAdapter extends ArrayAdapter<DominionCard> {
 		viewHolder.costText.setText(Integer.toString(card.get_cost()));
 		
 		// Set card name text:
-		viewHolder.nameText.setText(DominionResourcesHelper.GetDominionCardName(_context, card));
+		viewHolder.nameText.setText(ResourcesHelper.GetDominionCardName(_context, card));
 		
 		// Set cardTypeText:
 		viewHolder.cardTypesText.setText(getCardTypes(card));
 		
 		// Set icon image:
-		viewHolder.iconPlaceHolder.setBackgroundDrawable(DominionResourcesHelper.GetSetIcon(_context, card.get_dominionSet()));
+		viewHolder.iconPlaceHolder.setBackgroundDrawable(ResourcesHelper.GetSetIcon(_context, card.get_dominionSet()));
 		
 		return dominionCardView;
 	}

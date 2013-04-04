@@ -1,11 +1,11 @@
-package com.xilconic.dominiontoolkit.Activities.DominionGameSetupActivityClasses;
+package com.xilconic.dominiontoolkit.Activities.GameSetup;
 
 import java.util.ArrayList;
 
 import com.xilconic.dominiontoolkit.R;
 import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
 import com.xilconic.dominiontoolkit.DominionCards.DominionGameItem;
-import com.xilconic.dominiontoolkit.Utils.DominionResourcesHelper;
+import com.xilconic.dominiontoolkit.Utils.ResourcesHelper;
 
 import android.content.Context;
 import android.database.DataSetObserver;
@@ -16,17 +16,17 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class DominionGameSetupExpandableListAdapter extends BaseExpandableListAdapter {
+public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 	private LayoutInflater inflater;
-	private ArrayList<DominionGameSetupParentItem> parentItems;
-	private DominionGameSetupParentItem eachPlayerStartsWithGroup;
-	private DominionGameSetupParentItem globalStartsWithGroup;
-	private DominionGameSetupParentItem kingdomCardsStartsWithGroup;
-	private DominionGameSetup setup;
+	private ArrayList<GameSetupParentItem> parentItems;
+	private GameSetupParentItem eachPlayerStartsWithGroup;
+	private GameSetupParentItem globalStartsWithGroup;
+	private GameSetupParentItem kingdomCardsStartsWithGroup;
+	private GameSetup setup;
 	private Context _context;
 	private final StringBuilder stringBuilder;
 	
-	public DominionGameSetupExpandableListAdapter(Context context, DominionGameSetup setup){
+	public GameSetupExpandableListAdapter(Context context, GameSetup setup){
 		this.setup = setup;
 		this._context = context;
 		inflater = LayoutInflater.from(context);
@@ -36,19 +36,19 @@ public class DominionGameSetupExpandableListAdapter extends BaseExpandableListAd
 			setup.SetUp();
 		}
 		
-		globalStartsWithGroup = new DominionGameSetupParentItem();
+		globalStartsWithGroup = new GameSetupParentItem();
 		globalStartsWithGroup.setTitle("Game starts with:");
 		globalStartsWithGroup.setArrayChildren(setup.getGlobalStartingItems());
 		
-		eachPlayerStartsWithGroup = new DominionGameSetupParentItem();
+		eachPlayerStartsWithGroup = new GameSetupParentItem();
 		eachPlayerStartsWithGroup.setTitle("Each player starts with:");
 		eachPlayerStartsWithGroup.setArrayChildren(setup.GetPlayerStartingItems());
 		
-		kingdomCardsStartsWithGroup = new DominionGameSetupParentItem();
+		kingdomCardsStartsWithGroup = new GameSetupParentItem();
 		kingdomCardsStartsWithGroup.setTitle("Kingdom cards:");
 		kingdomCardsStartsWithGroup.setArrayChildren(setup.getKingdomCardSetup());
 		
-		parentItems = new ArrayList<DominionGameSetupParentItem>(3);
+		parentItems = new ArrayList<GameSetupParentItem>(3);
 		parentItems.add(globalStartsWithGroup);
 		parentItems.add(eachPlayerStartsWithGroup);
 		parentItems.add(kingdomCardsStartsWithGroup);
@@ -98,10 +98,10 @@ public class DominionGameSetupExpandableListAdapter extends BaseExpandableListAd
 
 		
 		// Set card name text:
-		viewHolder.nameText.setText(DominionResourcesHelper.GetDominionItemName(_context, item));
+		viewHolder.nameText.setText(ResourcesHelper.GetDominionItemName(_context, item));
 		
 		// Set icon image:
-		viewHolder.iconPlaceHolder.setBackgroundDrawable(DominionResourcesHelper.GetSetIcon(_context, item.get_dominionSet()));
+		viewHolder.iconPlaceHolder.setBackgroundDrawable(ResourcesHelper.GetSetIcon(_context, item.get_dominionSet()));
 		
 		return convertView;
 	}

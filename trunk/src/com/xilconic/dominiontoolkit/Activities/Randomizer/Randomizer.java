@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.xilconic.dominiontoolkit.Activities.RandomizerActivityClasses;
+package com.xilconic.dominiontoolkit.Activities.Randomizer;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,11 +22,11 @@ import java.util.Collections;
 import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
 import com.xilconic.dominiontoolkit.DominionCards.DominionSet;
 
-public class DominionCardRandomizer {
+public class Randomizer {
 	private ArrayList<DominionCard> _cardpool;
 	private ArrayList<DominionCard> _workset;
 
-	public DominionCardRandomizer(ArrayList<DominionCard> cardpool){
+	public Randomizer(ArrayList<DominionCard> cardpool){
 		_cardpool = cardpool;
 	}
 	

@@ -1,10 +1,10 @@
-package com.xilconic.dominiontoolkit.Activities.DominionGameSetupActivityClasses;
+package com.xilconic.dominiontoolkit.Activities.GameSetup;
 
 import java.util.ArrayList;
 
 import com.xilconic.dominiontoolkit.DominionCards.AmountOfDominionGameItem;
 
-public class DominionGameSetupParentItem {
+public class GameSetupParentItem {
 	private String title;
 	private ArrayList<AmountOfDominionGameItem> arrayChildren;
 	

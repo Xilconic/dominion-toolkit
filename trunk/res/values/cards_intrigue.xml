@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of Dominion Toolkit.
+  
+  Dominion Toolkit is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  Dominion Toolkit is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+   	<string name="Cards.Intrigue.Baron">Baron</string>
+	<string name="Cards.Intrigue.Bridge">Brug</string>
+	<string name="Cards.Intrigue.Conspirator">Samenzweerder</string>
+	<string name="Cards.Intrigue.WishingWell">Wensput</string>
+	<string name="Cards.Intrigue.Duke">Hertog</string>
+	<string name="Cards.Intrigue.Tradingpost">Handelspost</string>
+	<string name="Cards.Intrigue.Tribute">Tolheffing</string>
+	<string name="Cards.Intrigue.Upgrade">Opwaardering</string>
+	<string name="Cards.Intrigue.Steward">Lakei</string>
+	<string name="Cards.Intrigue.Swindler">Oplichter</string>
+	<string name="Cards.Intrigue.Torturer">Folteraar</string>
+	<string name="Cards.Intrigue.Scout">Verkenner</string>
+	<string name="Cards.Intrigue.SecretChamber">Geheime Kamer</string>
+	<string name="Cards.Intrigue.ShantyTown">Sloppenwijk</string>
+	<string name="Cards.Intrigue.Nobles">Adel</string>
+	<string name="Cards.Intrigue.Pawn">Pion</string>
+	<string name="Cards.Intrigue.Saboteur">Saboteur</string>
+	<string name="Cards.Intrigue.Masquerade">Maskerade</string>
+	<string name="Cards.Intrigue.MiningVillage">Mijndorp</string>
+	<string name="Cards.Intrigue.Minion">Dienaar</string>
+	<string name="Cards.Intrigue.GreatHall">Grote Zaal</string>
+	<string name="Cards.Intrigue.Harem">Harem</string>
+	<string name="Cards.Intrigue.Ironworks">IJzergieterij</string>
+	<string name="Cards.Intrigue.Coppersmith">Kopersmid</string>
+	<string name="Cards.Intrigue.Courtyard">Binnenplaats</string>
+</resources>

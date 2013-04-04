@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of Dominion Toolkit.
+  
+  Dominion Toolkit is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  Dominion Toolkit is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+    <!-- Card Types: -->
+    <string name="Cards.Types.Action">Actie</string>
+    <string name="Cards.Types.Attack">Aanval</string>
+    <string name="Cards.Types.Reaction">Reactie</string>
+    <string name="Cards.Types.Curse">Vloek</string>
+    <string name="Cards.Types.Treasure">Geld</string>
+    <string name="Cards.Types.Victory">Overwinning</string>
+    
+	<!-- Dominion Cardsets: -->
+	<string name="CardSet.Base">Basis</string>
+	<string name="CardSet.Dominion">Dominion</string>
+	<string name="CardSet.Intrigue">Intrige</string>
+	<string name="CardSet.Seaside">Hijs de Zeilen</string>
+	<string name="CardSet.Alchemy">De Alchemisten</string>
+	<string name="CardSet.Prosperity">Welvaart</string>
+	<string name="CardSet.Cornucopia">Overvloed</string>
+	<string name="CardSet.Hinterlands">Het Achterland</string>
+	<string name="CardSet.DarkAges">De Donkere Middeleeuwen</string>
+	<string name="CardSet.PromoCards">Promotie kaarten</string>
+</resources>
