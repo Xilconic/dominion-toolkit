@@ -50,9 +50,18 @@ public enum DominionItemType {
 	GreatHall, Masquerade, ShantyTown, Steward, Swindler, WishingWell,
 	Baron, Bridge, Conspirator, Coppersmith, Ironworks, MiningVillage, Scout,
 	Duke, Minion, Saboteur, Torturer, TradingPost, Tribute, Upgrade,
-	Harem, Nobles
+	Harem, Nobles,
 	
 	// DominionSet.Prosperity:
+	TradeRouteMat, VictoryTokenMat, OneVictoryPointToken, FiveVictoryPointToken, TradeRouteCoin,
+	Colony, Platinum,
+	Loan, TradeRoute, Watchtower,
+	Bishop, Monument, Quarry, Talisman, WorkersVillage,
+	City, Contraband, CountingHouse, Mint, Mountebank, Rabble, RoyalSeal, Vault, Venture,
+	Goons, GrandMarket, Hoard, 
+	Bank, Expand, Forge, KingsCourt,
+	Peddler,
+	
 	
 	// DominionSet.Seaside:
 	

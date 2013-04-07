@@ -85,10 +85,16 @@ public class DominionToolkitPreferences {
 			cardSets.add(DominionSet.Dominion);
 		}
 		
-				boolean useIntrigueFlag = preferences.getBoolean(useIntrigue, false);
+		boolean useIntrigueFlag = preferences.getBoolean(useIntrigue, false);
 		Log.d("DominionToolkitPreferences", "useIntrigue = " + useIntrigueFlag);
 		if (useIntrigueFlag){
 			cardSets.add(DominionSet.Intrigue);
+		}
+		
+		boolean useProsperityFlag = preferences.getBoolean(useProsperity, false);
+		Log.d("DominionToolkitPreferences", "useProsperity = " + useProsperityFlag);
+		if (useProsperityFlag){
+			cardSets.add(DominionSet.Prosperity);
 		}
 		
 		return cardSets;

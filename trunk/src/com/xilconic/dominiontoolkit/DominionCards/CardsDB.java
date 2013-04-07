@@ -103,6 +103,51 @@ public class CardsDB {
 		public static final DominionCard Nobles = new DominionCardBuilder(DominionItemType.Nobles, Set, 6).action().victory().create();
 	}
 	public static ArrayList<DominionCard> intrigueCards = new ArrayList<DominionCard>(25);
+	
+	public static class Prosperity{
+		public static final DominionSet Set = DominionSet.Prosperity;
+		
+		public static final DominionGameItem TradeRouteMat = new DominionGameItem(DominionItemType.TradeRouteMat, null, Set);
+		public static final DominionGameItem TradeRouteCoin = new DominionGameItem(DominionItemType.TradeRouteCoin, null, Set);
+		public static final DominionGameItem VictoryTokenMat = new DominionGameItem(DominionItemType.VictoryTokenMat, null, Set);
+		public static final DominionGameItem OneVictoryPointToken = new DominionGameItem(DominionItemType.OneVictoryPointToken, null, Set);
+		public static final DominionGameItem FiveVicotryPointToken = new DominionGameItem(DominionItemType.FiveVictoryPointToken, null, Set);
+		
+		public static final DominionCard Colony = new DominionCardBuilder(DominionItemType.Colony, Set, 11).victory().create();
+		public static final DominionCard Platinum = new DominionCardBuilder(DominionItemType.Platinum, Set, 9).treasure().create();
+		
+		public static final DominionCard Loan = new DominionCardBuilder(DominionItemType.Loan, Set, 3).action().create();
+		public static final DominionCard TradeRoute = new DominionCardBuilder(DominionItemType.TradeRoute, Set, 3).action().create();
+		public static final DominionCard Watchtower = new DominionCardBuilder(DominionItemType.Watchtower, Set, 3).action().reaction().create();
+		
+		public static final DominionCard Bishop = new DominionCardBuilder(DominionItemType.Bishop, Set, 4).action().create();
+		public static final DominionCard Monument = new DominionCardBuilder(DominionItemType.Monument, Set, 4).action().create();
+		public static final DominionCard Quarry = new DominionCardBuilder(DominionItemType.Quarry, Set, 4).treasure().create();
+		public static final DominionCard Talisman = new DominionCardBuilder(DominionItemType.Talisman, Set, 4).treasure().create();
+		public static final DominionCard WorkersVillage = new DominionCardBuilder(DominionItemType.WorkersVillage, Set, 4).action().create();
+		
+		public static final DominionCard City = new DominionCardBuilder(DominionItemType.City, Set, 5).action().create();
+		public static final DominionCard Contraband = new DominionCardBuilder(DominionItemType.Contraband, Set, 5).treasure().create();
+		public static final DominionCard CountingHouse = new DominionCardBuilder(DominionItemType.CountingHouse, Set, 5).action().create();
+		public static final DominionCard Mint = new DominionCardBuilder(DominionItemType.Mint, Set, 5).action().create();
+		public static final DominionCard Mountebank = new DominionCardBuilder(DominionItemType.Mountebank, Set, 5).action().attack().create();
+		public static final DominionCard Rabble = new DominionCardBuilder(DominionItemType.Rabble, Set, 5).action().attack().create();
+		public static final DominionCard RoyalSeal = new DominionCardBuilder(DominionItemType.RoyalSeal, Set, 5).treasure().create();
+		public static final DominionCard Vault = new DominionCardBuilder(DominionItemType.Vault, Set, 5).action().create();
+		public static final DominionCard Venture = new DominionCardBuilder(DominionItemType.Venture, Set, 5).treasure().create();
+		
+		public static final DominionCard Goons = new DominionCardBuilder(DominionItemType.Goons, Set, 6).action().attack().create();
+		public static final DominionCard GrandMarket = new DominionCardBuilder(DominionItemType.GrandMarket, Set, 6).action().create();
+		public static final DominionCard Hoard = new DominionCardBuilder(DominionItemType.Hoard, Set, 6).treasure().create();
+		
+		public static final DominionCard Bank = new DominionCardBuilder(DominionItemType.Bank, Set, 7).treasure().create();
+		public static final DominionCard Expand = new DominionCardBuilder(DominionItemType.Expand, Set, 7).action().create();
+		public static final DominionCard Forge = new DominionCardBuilder(DominionItemType.Forge, Set, 7).action().create();
+		public static final DominionCard KingsCourt = new DominionCardBuilder(DominionItemType.KingsCourt, Set, 7).action().create();
+		
+		public static final DominionCard Peddler = new DominionCardBuilder(DominionItemType.Peddler, Set, 8).action().create();
+	}
+	public static ArrayList<DominionCard> prosperityCards = new ArrayList<DominionCard>(25);
 
 	public static ArrayList<DominionCard> getAllCardsFromSets(List<DominionSet> sets){
 		ArrayList<DominionCard> allCards = new ArrayList<DominionCard>();
@@ -114,6 +159,9 @@ public class CardsDB {
 			case Intrigue:
 				allCards.addAll(intrigueCards);
 				break;
+			case Prosperity:
+				allCards.addAll(prosperityCards);
+				break;
 			}
 		}
 		return allCards;
@@ -123,6 +171,7 @@ public class CardsDB {
 		createBasicCards();
 		createBaseDominionCards();
 		createIntrigueCards();
+		createProsperityCards();
 	}
 	
 	private static void createBasicCards(){
@@ -199,5 +248,47 @@ public class CardsDB {
 		
 		intrigueCards.add(Intrigue.Harem);
 		intrigueCards.add(Intrigue.Nobles);
+	}
+
+	private static void createProsperityCards(){
+		nonKingdomCards.add(Prosperity.Platinum);
+		nonKingdomCards.add(Prosperity.Colony);
+		
+		nonKingdomCards.add(Prosperity.TradeRouteMat);
+		nonKingdomCards.add(Prosperity.VictoryTokenMat);
+		nonKingdomCards.add(Prosperity.TradeRouteCoin);
+		nonKingdomCards.add(Prosperity.OneVictoryPointToken);
+		nonKingdomCards.add(Prosperity.FiveVicotryPointToken);
+		
+		prosperityCards.add(Prosperity.Loan);
+		prosperityCards.add(Prosperity.TradeRoute);
+		prosperityCards.add(Prosperity.Watchtower);
+		
+		prosperityCards.add(Prosperity.Bishop);
+		prosperityCards.add(Prosperity.Monument);
+		prosperityCards.add(Prosperity.Quarry);
+		prosperityCards.add(Prosperity.Talisman);
+		prosperityCards.add(Prosperity.WorkersVillage);
+		
+		prosperityCards.add(Prosperity.City);
+		prosperityCards.add(Prosperity.Contraband);
+		prosperityCards.add(Prosperity.CountingHouse);
+		prosperityCards.add(Prosperity.Mint);
+		prosperityCards.add(Prosperity.Mountebank);
+		prosperityCards.add(Prosperity.Rabble);
+		prosperityCards.add(Prosperity.RoyalSeal);
+		prosperityCards.add(Prosperity.Vault);
+		prosperityCards.add(Prosperity.Venture);
+		
+		prosperityCards.add(Prosperity.Goons);
+		prosperityCards.add(Prosperity.GrandMarket);
+		prosperityCards.add(Prosperity.Hoard);
+		
+		prosperityCards.add(Prosperity.Bank);
+		prosperityCards.add(Prosperity.Expand);
+		prosperityCards.add(Prosperity.Forge);
+		prosperityCards.add(Prosperity.KingsCourt);
+		
+		prosperityCards.add(Prosperity.Peddler);
 	}
 }

@@ -82,6 +82,8 @@ public class ResourcesHelper {
 			return getBaseDominionSetName(context, card);
 		case Intrigue:
 			return getIntrigueSetName(context, card);
+		case Prosperity:
+			return getProsperitySetName(context, card);
 		default:
 			return "<no card set matched>";
 		}
@@ -227,6 +229,16 @@ public class ResourcesHelper {
 			return context.getResources().getString(R.string.Cards_Intrigue_Nobles);
 		default:
 			return "<no intrigue name matched>";
+		}
+	}
+
+	private static String getProsperitySetName(Context context, DominionCard card){
+		switch(card.get_id()){
+		case Colony:
+			return context.getResources().getString(R.string.Cards_Prosperity_Colony);
+			
+		default:
+			return "<No Prosperity Name matched>";
 		}
 	}
 }

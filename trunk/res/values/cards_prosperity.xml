@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of Dominion Toolkit.
+  
+  Dominion Toolkit is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  Dominion Toolkit is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+    <string name="Cards.Prosperity.TradeRouteMat">Handelsroute mat</string>
+    <string name="Cards.Prosperity.TradeRouteCoinToken">Handelsroute munt token</string>
+    <string name="Cards.Prosperity.VictoryTokenMat">Overwinningspunten mat</string>
+    <string name="Cards.Prosperity.OneVictoryPointToken">1 overwinningspunt token</string>
+    <string name="Cards.Prosperity.FiveVictoryPointToken">5 overwinninspunten token</string>
+    
+    <string name="Cards.Prosperity.Platinum">Platinum</string>
+    <string name="Cards.Prosperity.Colony">Kolonie</string>
+    
+    <string name="Cards.Prosperity.Loan">Lening</string>
+    <string name="Cards.Prosperity.TradeRoute">Handelsroute</string>
+    <string name="Cards.Prosperity.Watchtower">Uitkijktoren</string>
+    
+    <string name="Cards.Prosperity.Bishop">Bisschop</string>
+    <string name="Cards.Prosperity.Monument">Monument</string>
+    <string name="Cards.Prosperity.Quarry">Steengroeve</string>
+    <string name="Cards.Prosperity.Talisman">Talisman</string>
+    <string name="Cards.Prosperity.WorkersVillage">Arbeidersdrop</string>
+    
+    <string name="Cards.Prosperity.City">Stad</string>
+    <string name="Cards.Prosperity.Contraband">Smokkelwaar</string>
+    <string name="Cards.Prosperity.CountingHouse">Boukhouding</string>
+    <string name="Cards.Prosperity.Mint">Aanmunten</string>
+    <string name="Cards.Prosperity.Mountebank">Charlatan</string>
+    <string name="Cards.Prosperity.Rabble">Gespuis</string>
+    <string name="Cards.Prosperity.RoyalSeal">Koningklijk Zegel</string>
+    <string name="Cards.Prosperity.Vault">Schatkelder</string>
+    <string name="Cards.Prosperity.Venture">Waagstuk</string>
+    
+    <string name="Cards.Prosperity.Goons">Domkoppen</string>
+    <string name="Cards.Prosperity.GrandMarket">Grote Markt</string>
+    <string name="Cards.Prosperity.Hoard">Spaargeld</string>
+    
+    <string name="Cards.Prosperity.Bank">Bank</string>
+    <string name="Cards.Prosperity.Expand">Uitbreiden</string>
+    <string name="Cards.Prosperity.Forge">Vervalsen</string>
+    <string name="Cards.Prosperity.KingsCourt">Koningshof</string>
+    
+    <string name="Cards.Prosperity.Peddler">Venter</string>
+</resources>
