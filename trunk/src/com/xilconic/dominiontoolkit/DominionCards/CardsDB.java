@@ -111,7 +111,7 @@ public class CardsDB {
 		public static final DominionGameItem TradeRouteCoin = new DominionGameItem(DominionItemType.TradeRouteCoin, null, Set);
 		public static final DominionGameItem VictoryTokenMat = new DominionGameItem(DominionItemType.VictoryTokenMat, null, Set);
 		public static final DominionGameItem OneVictoryPointToken = new DominionGameItem(DominionItemType.OneVictoryPointToken, null, Set);
-		public static final DominionGameItem FiveVicotryPointToken = new DominionGameItem(DominionItemType.FiveVictoryPointToken, null, Set);
+		public static final DominionGameItem FiveVictoryPointToken = new DominionGameItem(DominionItemType.FiveVictoryPointToken, null, Set);
 		
 		public static final DominionCard Colony = new DominionCardBuilder(DominionItemType.Colony, Set, 11).victory().create();
 		public static final DominionCard Platinum = new DominionCardBuilder(DominionItemType.Platinum, Set, 9).treasure().create();
@@ -148,6 +148,41 @@ public class CardsDB {
 		public static final DominionCard Peddler = new DominionCardBuilder(DominionItemType.Peddler, Set, 8).action().create();
 	}
 	public static ArrayList<DominionCard> prosperityCards = new ArrayList<DominionCard>(25);
+	
+	public static class Hinterlands{
+		public static final DominionSet Set = DominionSet.Hinterlands;
+		
+		public static final DominionCard Crossroads = new DominionCardBuilder(DominionItemType.Crossroads, Set, 2).action().create();
+		public static final DominionCard Duchess = new DominionCardBuilder(DominionItemType.Duchess, Set, 2).action().create();
+		public static final DominionCard FoolsGold = new DominionCardBuilder(DominionItemType.FoolsGold, Set, 2).treasure().reaction().create();
+		
+		public static final DominionCard Develop = new DominionCardBuilder(DominionItemType.Develop, Set, 3).action().create();
+		public static final DominionCard Oasis = new DominionCardBuilder(DominionItemType.Oasis, Set, 3).action().create();
+		public static final DominionCard Oracle = new DominionCardBuilder(DominionItemType.Oracle, Set, 3).action().attack().create();
+		public static final DominionCard Scheme = new DominionCardBuilder(DominionItemType.Scheme, Set, 3).action().create();
+		public static final DominionCard Tunnel = new DominionCardBuilder(DominionItemType.Tunnel, Set, 3).victory().reaction().create();
+		
+		public static final DominionCard JackOfAllTrades = new DominionCardBuilder(DominionItemType.JackOfAllTrades, Set, 4).action().create();
+		public static final DominionCard NobleBrigand = new DominionCardBuilder(DominionItemType.NobleBrigand, Set, 4).action().attack().create();
+		public static final DominionCard NomadCamp = new DominionCardBuilder(DominionItemType.NomadCamp, Set, 4).action().create();
+		public static final DominionCard SilkRoad = new DominionCardBuilder(DominionItemType.SilkRoad, Set, 4).victory().create();
+		public static final DominionCard SpiceMerchant = new DominionCardBuilder(DominionItemType.SpiceMerchant, Set, 4).action().create();
+		public static final DominionCard Trader = new DominionCardBuilder(DominionItemType.Trader, Set, 4).action().reaction().create();
+		
+		public static final DominionCard Cache = new DominionCardBuilder(DominionItemType.Cache, Set, 5).treasure().create();
+		public static final DominionCard Cartographer = new DominionCardBuilder(DominionItemType.Cartographer, Set, 5).action().create();
+		public static final DominionCard Embassy = new DominionCardBuilder(DominionItemType.Embassy, Set, 5).action().create();
+		public static final DominionCard Haggler = new DominionCardBuilder(DominionItemType.Haggler, Set, 5).action().create();
+		public static final DominionCard Highway = new DominionCardBuilder(DominionItemType.Highway, Set, 5).action().create();
+		public static final DominionCard IllGottenGains = new DominionCardBuilder(DominionItemType.IllGottenGains, Set, 5).treasure().create();
+		public static final DominionCard Inn = new DominionCardBuilder(DominionItemType.Inn, Set, 5).action().create();
+		public static final DominionCard Mandarin = new DominionCardBuilder(DominionItemType.Mandarin, Set, 5).action().create();
+		public static final DominionCard Margrave = new DominionCardBuilder(DominionItemType.Margrave, Set, 5).action().attack().create();
+		public static final DominionCard Stables = new DominionCardBuilder(DominionItemType.Stables, Set, 5).action().create();
+		
+		public static final DominionCard BorderVillage = new DominionCardBuilder(DominionItemType.BorderVillage, Set, 6).action().create();
+		public static final DominionCard Farmland = new DominionCardBuilder(DominionItemType.Farmland, Set, 6).victory().create();
+	}
 
 	public static ArrayList<DominionCard> getAllCardsFromSets(List<DominionSet> sets){
 		ArrayList<DominionCard> allCards = new ArrayList<DominionCard>();
@@ -258,7 +293,7 @@ public class CardsDB {
 		nonKingdomCards.add(Prosperity.VictoryTokenMat);
 		nonKingdomCards.add(Prosperity.TradeRouteCoin);
 		nonKingdomCards.add(Prosperity.OneVictoryPointToken);
-		nonKingdomCards.add(Prosperity.FiveVicotryPointToken);
+		nonKingdomCards.add(Prosperity.FiveVictoryPointToken);
 		
 		prosperityCards.add(Prosperity.Loan);
 		prosperityCards.add(Prosperity.TradeRoute);

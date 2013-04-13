@@ -71,7 +71,30 @@ public class ResourcesHelper {
 		if (item instanceof DominionCard){
 			return GetDominionCardName(context, (DominionCard)item);
 		}
-		return "<no item matched>";
+		switch (item.get_dominionSet()) {
+		case Prosperity:
+			return getProsperitySetItemName(context, item);
+		default:
+			return "<no item matched>";
+		}
+	}
+	
+	public static String getProsperitySetItemName(Context context, DominionGameItem item){
+		switch (item.get_id()) {
+		case TradeRouteMat:
+			return context.getResources().getString(R.string.Cards_Prosperity_TradeRouteMat);
+		case TradeRouteCoin:
+			return context.getResources().getString(R.string.Cards_Prosperity_TradeRouteCoinToken);
+			
+		case VictoryTokenMat:
+			return context.getResources().getString(R.string.Cards_Prosperity_VictoryTokenMat);
+		case OneVictoryPointToken:
+			return context.getResources().getString(R.string.Cards_Prosperity_OneVictoryPointToken);
+		case FiveVictoryPointToken:
+			return context.getResources().getString(R.string.Cards_Prosperity_FiveVictoryPointToken);
+		default:
+			return "<No prosperity set Item Name matched";
+		}
 	}
 	
 	public static String GetDominionCardName(Context context, DominionCard card){
@@ -84,6 +107,8 @@ public class ResourcesHelper {
 			return getIntrigueSetName(context, card);
 		case Prosperity:
 			return getProsperitySetName(context, card);
+		case Hinterlands:
+			return getHinterlandsSetName(context, card);
 		default:
 			return "<no card set matched>";
 		}
@@ -236,9 +261,130 @@ public class ResourcesHelper {
 		switch(card.get_id()){
 		case Colony:
 			return context.getResources().getString(R.string.Cards_Prosperity_Colony);
+		case Platinum:
+			return context.getResources().getString(R.string.Cards_Prosperity_Platinum);
+			
+		case Loan:
+			return context.getResources().getString(R.string.Cards_Prosperity_Loan);
+		case TradeRoute:
+			return context.getResources().getString(R.string.Cards_Prosperity_TradeRoute);
+		case Watchtower:
+			return context.getResources().getString(R.string.Cards_Prosperity_Watchtower);
+			
+		case Bishop:
+			return context.getResources().getString(R.string.Cards_Prosperity_Bishop);
+		case Monument:
+			return context.getResources().getString(R.string.Cards_Prosperity_Monument);
+		case Quarry:
+			return context.getResources().getString(R.string.Cards_Prosperity_Quarry);
+		case Talisman:
+			return context.getResources().getString(R.string.Cards_Prosperity_Talisman);
+		case WorkersVillage:
+			return context.getResources().getString(R.string.Cards_Prosperity_WorkersVillage);
+			
+		case City:
+			return context.getResources().getString(R.string.Cards_Prosperity_City);
+		case Contraband:
+			return context.getResources().getString(R.string.Cards_Prosperity_Contraband);
+		case CountingHouse:
+			return context.getResources().getString(R.string.Cards_Prosperity_CountingHouse);
+		case Mint:
+			return context.getResources().getString(R.string.Cards_Prosperity_Mint);
+		case Mountebank:
+			return context.getResources().getString(R.string.Cards_Prosperity_Mountebank);
+		case Rabble:
+			return context.getResources().getString(R.string.Cards_Prosperity_Rabble);
+		case RoyalSeal:
+			return context.getResources().getString(R.string.Cards_Prosperity_RoyalSeal);
+		case Vault:
+			return context.getResources().getString(R.string.Cards_Prosperity_Vault);
+		case Venture:
+			return context.getResources().getString(R.string.Cards_Prosperity_Venture);
+			
+		case Goons:
+			return context.getResources().getString(R.string.Cards_Prosperity_Goons);
+		case GrandMarket:
+			return context.getResources().getString(R.string.Cards_Prosperity_GrandMarket);
+		case Hoard:
+			return context.getResources().getString(R.string.Cards_Prosperity_Hoard);
+			
+		case Bank:
+			return context.getResources().getString(R.string.Cards_Prosperity_Bank);
+		case Expand:
+			return context.getResources().getString(R.string.Cards_Prosperity_Expand);
+		case Forge:
+			return context.getResources().getString(R.string.Cards_Prosperity_Forge);
+		case KingsCourt:
+			return context.getResources().getString(R.string.Cards_Prosperity_KingsCourt);
+			
+		case Peddler:
+			return context.getResources().getString(R.string.Cards_Prosperity_Peddler);
 			
 		default:
 			return "<No Prosperity Name matched>";
+		}
+	}
+	
+	private static String getHinterlandsSetName(Context context, DominionCard card){
+		switch (card.get_id()) {
+		case Crossroads:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Crossroads);
+		case Duchess:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Duchess);
+		case FoolsGold:
+			return context.getResources().getString(R.string.Cards_Hinterlands_FoolsGold);
+			
+		case Develop:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Develop);
+		case Oasis:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Oasis);
+		case Oracle:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Oracle);
+		case Scheme:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Scheme);
+		case Tunnel:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Tunnel);
+			
+		case JackOfAllTrades:
+			return context.getResources().getString(R.string.Cards_Hinterlands_JackOfAllTrades);
+		case NobleBrigand:
+			return context.getResources().getString(R.string.Cards_Hinterlands_NobleBrigand);
+		case NomadCamp:
+			return context.getResources().getString(R.string.Cards_Hinterlands_NomadCamp);
+		case SilkRoad:
+			return context.getResources().getString(R.string.Cards_Hinterlands_SilkRoad);
+		case SpiceMerchant:
+			return context.getResources().getString(R.string.Cards_Hinterlands_SpiceMerchant);
+		case Trader:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Trader);
+			
+		case Cache:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Cache);
+		case Cartographer:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Cartographer);
+		case Embassy:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Embassy);
+		case Haggler:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Haggler);
+		case Highway:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Highway);
+		case IllGottenGains:
+			return context.getResources().getString(R.string.Cards_Hinterlands_IllGottenGains);
+		case Inn:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Inn);
+		case Mandarin:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Mandarin);
+		case Margrave:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Margrave);
+		case Stables:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Stables);
+			
+		case BorderVillage:
+			return context.getResources().getString(R.string.Cards_Hinterlands_BorderVillage);
+		case Farmland:
+			return context.getResources().getString(R.string.Cards_Hinterlands_Farmland);
+		default:
+			return "<No Hinterlands Name matched>";
 		}
 	}
 }

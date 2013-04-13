@@ -44,6 +44,11 @@ public enum DominionItemType {
 	// DominionSet.GovernorPromo:
 	
 	// DominionSet.Hinterlands:
+	Crossroads, Duchess, FoolsGold,
+	Develop, Oasis, Oracle, Scheme, Tunnel,
+	JackOfAllTrades, NobleBrigand, NomadCamp, SilkRoad, SpiceMerchant, Trader,
+	Cache, Cartographer, Embassy, Haggler, Highway, IllGottenGains, Inn, Mandarin, Margrave, Stables,
+	BorderVillage, Farmland,
 	
 	// DominionSet.Intrigue:
 	Courtyard, Pawn, SecretChamber,
