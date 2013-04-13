@@ -97,6 +97,12 @@ public class DominionToolkitPreferences {
 			cardSets.add(DominionSet.Prosperity);
 		}
 		
+		boolean useHinterlandsFlag = preferences.getBoolean(useHinterlands, false);
+		Log.d("DominionToolkitPreferences", "useHinterlands = " + useHinterlands);
+		if (useHinterlandsFlag){
+			cardSets.add(DominionSet.Hinterlands);
+		}
+		
 		return cardSets;
 	}
 }

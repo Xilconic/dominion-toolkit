@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of Dominion Toolkit.
+  
+  Dominion Toolkit is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  Dominion Toolkit is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+    <string name="Cards.Hinterlands.Crossroads">Splitsing</string>
+    <string name="Cards.Hinterlands.Duchess">Hertogin</string>
+    <string name="Cards.Hinterlands.FoolsGold">Klatergoud</string>
+    <string name="Cards.Hinterlands.Develop">Ontwikkelen</string>
+    <string name="Cards.Hinterlands.Oasis">Oase</string>
+    <string name="Cards.Hinterlands.Oracle">Orakel</string>
+    <string name="Cards.Hinterlands.Scheme">Gekonkel</string>
+    <string name="Cards.Hinterlands.Tunnel">Tunnel</string>
+    <string name="Cards.Hinterlands.JackOfAllTrades">Manusje-van-Alles</string>
+    <string name="Cards.Hinterlands.NobleBrigand">Nobele Bandiet</string>
+    <string name="Cards.Hinterlands.NomadCamp">Nomadenkamp</string>
+    <string name="Cards.Hinterlands.SilkRoad">Zijderoute</string>
+    <string name="Cards.Hinterlands.SpiceMerchant">Specerijenkoopman</string>
+    <string name="Cards.Hinterlands.Trader">Handelaar</string>
+    <string name="Cards.Hinterlands.Cache">Bewaarplaats</string>
+    <string name="Cards.Hinterlands.Cartographer">Cartograaf</string>
+    <string name="Cards.Hinterlands.Embassy">Ambassade</string>
+    <string name="Cards.Hinterlands.Haggler">Sjacheraar</string>
+    <string name="Cards.Hinterlands.Highway">Hoofdweg</string>
+    <string name="Cards.Hinterlands.IllGottenGains">Gestolen Goed</string>
+    <string name="Cards.Hinterlands.Inn">Herberg</string>
+    <string name="Cards.Hinterlands.Mandarin">Mandarijn</string>
+    <string name="Cards.Hinterlands.Margrave">Markgraaf</string>
+    <string name="Cards.Hinterlands.Stables">Stallen</string>
+    <string name="Cards.Hinterlands.BorderVillage">Grensdorp</string>
+    <string name="Cards.Hinterlands.Farmland">Landbouwgrond</string>
+</resources>
