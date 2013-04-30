@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Title"
+        android:text="@string/GameSetupFragment.DefaultTitle"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -18,8 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/dominionGameSetupViewTitle"
-        android:layout_marginTop="18dp"
-        android:text="Number of players:"
+        android:text="@string/GameSetupFragment.NumberOfPlayers"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Spinner
@@ -37,7 +36,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/dominoinGameSetupPlayerSpinner"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="20dp"
         android:transcriptMode="disabled"
         android:listSelector="@android:color/transparent" />
     

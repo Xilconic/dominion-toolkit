@@ -34,69 +34,63 @@ public final class R {
         public static final int walledvillage_icon=0x7f02000e;
     }
     public static final class id {
-        public static final int addPlayerButton=0x7f0a001e;
+        public static final int addPlayerButton=0x7f0a0019;
         public static final int cardListingListView=0x7f0a0001;
         public static final int cardListingTitle=0x7f0a0000;
-        public static final int cardNameText=0x7f0a002b;
-        public static final int cardTypeText=0x7f0a002d;
+        public static final int cardNameText=0x7f0a0026;
+        public static final int cardTypeText=0x7f0a0028;
         public static final int card_listing_button=0x7f0a0004;
-        public static final int coin_bg=0x7f0a0029;
-        public static final int costText=0x7f0a002a;
-        public static final int curseCountTextView=0x7f0a0021;
-        public static final int dominionGameSetupExpandableListView=0x7f0a0033;
-        public static final int dominionGameSetupPlayerTextView=0x7f0a0031;
-        public static final int dominionGameSetupViewTitle=0x7f0a0030;
-        public static final int dominion_game_setup_parent_item=0x7f0a002e;
-        public static final int dominion_game_setup_parent_textview=0x7f0a002f;
-        public static final int dominoinGameSetupPlayerSpinner=0x7f0a0032;
-        public static final int endConditionKingdomCardsTextView=0x7f0a0028;
-        public static final int endConditionProvinceTextView=0x7f0a0027;
-        public static final int endConditionTextView=0x7f0a0026;
-        public static final int endGameTextView=0x7f0a0025;
-        public static final int gameSetupFragmentPlaceholder=0x7f0a000b;
-        public static final int gameSetupRandomizerActivityTitleTextView=0x7f0a0008;
-        public static final int gameSetupRandomizerKingdomCardListingTextView=0x7f0a0009;
-        public static final int numberOfCurseCardsPlainTextTextView=0x7f0a0020;
-        public static final int numberOfVictoryPointCardsPlainTextTextView=0x7f0a0022;
-        public static final int playerCountTextView=0x7f0a001d;
-        public static final int preferencesActivityTitleTextView=0x7f0a000c;
-        public static final int preferencesAlchemyCheckBox=0x7f0a0011;
-        public static final int preferencesCardSetsHeaderTextView=0x7f0a000d;
-        public static final int preferencesCornucopiaCheckBox=0x7f0a0013;
-        public static final int preferencesDarkAgesCheckBox=0x7f0a0015;
-        public static final int preferencesDominionBaseCheckBox=0x7f0a000e;
-        public static final int preferencesDominionIntrigueCheckBox=0x7f0a000f;
-        public static final int preferencesHinterlandsCheckBox=0x7f0a0014;
-        public static final int preferencesPromoCardsCheckBox=0x7f0a0016;
-        public static final int preferencesProsperityCheckBox=0x7f0a0012;
-        public static final int preferencesSeasideCheckBox=0x7f0a0010;
-        public static final int preferencesToDo1=0x7f0a0017;
+        public static final int coin_bg=0x7f0a0024;
+        public static final int costText=0x7f0a0025;
+        public static final int curseCountTextView=0x7f0a001c;
+        public static final int dominionGameSetupExpandableListView=0x7f0a002e;
+        public static final int dominionGameSetupPlayerTextView=0x7f0a002c;
+        public static final int dominionGameSetupViewTitle=0x7f0a002b;
+        public static final int dominion_game_setup_parent_item=0x7f0a0029;
+        public static final int dominion_game_setup_parent_textview=0x7f0a002a;
+        public static final int dominoinGameSetupPlayerSpinner=0x7f0a002d;
+        public static final int endConditionKingdomCardsTextView=0x7f0a0023;
+        public static final int endConditionProvinceTextView=0x7f0a0022;
+        public static final int endConditionTextView=0x7f0a0021;
+        public static final int endGameTextView=0x7f0a0020;
+        public static final int gameSetupFragmentPlaceholder=0x7f0a0009;
+        public static final int gameSetupRandomizerActivityTitleTextView=0x7f0a0006;
+        public static final int gameSetupRandomizerKingdomCardListingTextView=0x7f0a0007;
+        public static final int numberOfCurseCardsPlainTextTextView=0x7f0a001b;
+        public static final int numberOfVictoryPointCardsPlainTextTextView=0x7f0a001d;
+        public static final int playerCountTextView=0x7f0a0018;
+        public static final int preferencesActivityTitleTextView=0x7f0a000a;
+        public static final int preferencesAlchemyCheckBox=0x7f0a000f;
+        public static final int preferencesCardSetsHeaderTextView=0x7f0a000b;
+        public static final int preferencesCornucopiaCheckBox=0x7f0a0011;
+        public static final int preferencesDarkAgesCheckBox=0x7f0a0013;
+        public static final int preferencesDominionBaseCheckBox=0x7f0a000c;
+        public static final int preferencesDominionIntrigueCheckBox=0x7f0a000d;
+        public static final int preferencesHinterlandsCheckBox=0x7f0a0012;
+        public static final int preferencesPromoCardsCheckBox=0x7f0a0014;
+        public static final int preferencesProsperityCheckBox=0x7f0a0010;
+        public static final int preferencesSeasideCheckBox=0x7f0a000e;
+        public static final int preferencesToDo1=0x7f0a0015;
         public static final int preferences_button=0x7f0a0005;
-        public static final int randomizerActivityTitleTextView=0x7f0a0018;
-        public static final int randomizerKingdomCardListingTextView=0x7f0a0019;
-        public static final int randomizerKingdomCardsListView=0x7f0a001a;
-        public static final int randomizerShuffleButton=0x7f0a000a;
+        public static final int randomizerShuffleButton=0x7f0a0008;
         public static final int randomizer_button=0x7f0a0002;
-        public static final int removePlayerButton=0x7f0a001c;
-        public static final int set_icon=0x7f0a002c;
-        public static final int setupRemindersTitle=0x7f0a001b;
-        public static final int setupSectionTitle=0x7f0a001f;
+        public static final int removePlayerButton=0x7f0a0017;
+        public static final int set_icon=0x7f0a0027;
+        public static final int setupRemindersTitle=0x7f0a0016;
+        public static final int setupSectionTitle=0x7f0a001a;
         public static final int setup_reminders_button=0x7f0a0003;
-        public static final int starterDeckPlainTextTextView=0x7f0a0024;
-        public static final int test_gameSetupView=0x7f0a0006;
-        public static final int test_gameSetupViewWithFragment=0x7f0a0007;
-        public static final int victoryCountTextView=0x7f0a0023;
+        public static final int starterDeckPlainTextTextView=0x7f0a001f;
+        public static final int victoryCountTextView=0x7f0a001e;
     }
     public static final class layout {
         public static final int activity_card_listing=0x7f030000;
         public static final int activity_dominion_toolkit_menu=0x7f030001;
         public static final int activity_game_setup_randomizer=0x7f030002;
         public static final int activity_preferences=0x7f030003;
-        public static final int activity_randomizer=0x7f030004;
-        public static final int activity_setup_reminders=0x7f030005;
-        public static final int dominion_card_array_item=0x7f030006;
-        public static final int dominion_game_setup_parent_list_item=0x7f030007;
-        public static final int dominiongamesetupview=0x7f030008;
+        public static final int activity_setup_reminders=0x7f030004;
+        public static final int dominion_card_array_item=0x7f030005;
+        public static final int dominion_game_setup_parent_list_item=0x7f030006;
+        public static final int fragment_game_setup_view=0x7f030007;
     }
     public static final class menu {
         public static final int activity_card_listing_menu=0x7f090000;
@@ -252,6 +246,10 @@ public final class R {
          */
         public static final int DominionCardArrayItem_CostDefaultText=0x7f05009c;
         public static final int DominionCardArrayItem_NameDefaultText=0x7f05009d;
+        /**  fragment_game_setup_view 
+         */
+        public static final int GameSetupFragment_DefaultTitle=0x7f05009f;
+        public static final int GameSetupFragment_NumberOfPlayers=0x7f0500a0;
         /**  activity_preferences 
          */
         public static final int Preferences_CardSets=0x7f050089;

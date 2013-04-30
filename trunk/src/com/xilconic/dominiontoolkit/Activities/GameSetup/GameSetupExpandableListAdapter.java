@@ -26,8 +26,8 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 	private Context _context;
 	private final StringBuilder stringBuilder;
 	
-	public GameSetupExpandableListAdapter(Context context, GameSetup setup){
-		this.setup = setup;
+	public GameSetupExpandableListAdapter(Context context, GameSetup gameSetup){
+		this.setup = gameSetup;
 		this._context = context;
 		inflater = LayoutInflater.from(context);
 		stringBuilder = new StringBuilder(" ");
@@ -49,9 +49,9 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 		kingdomCardsStartsWithGroup.setArrayChildren(setup.getKingdomCardSetup());
 		
 		parentItems = new ArrayList<GameSetupParentItem>(3);
+		parentItems.add(kingdomCardsStartsWithGroup);
 		parentItems.add(globalStartsWithGroup);
 		parentItems.add(eachPlayerStartsWithGroup);
-		parentItems.add(kingdomCardsStartsWithGroup);
 	}
 	
 	@Override
