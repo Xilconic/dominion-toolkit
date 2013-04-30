@@ -23,10 +23,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ExpandableListView;
 import android.widget.Spinner;
 
-// TODO: add syncing player selection:
 /**
  * This activity visualizes everything required to play a game of Dominion.
  * It features a list of Kingdom cards, setting up information based on the
@@ -62,11 +63,28 @@ public class GameSetupFragment extends Fragment {
 			Bundle savedInstanceState){
 		if (container == null) return null;
 		
-		View fragmentView = inflater.inflate(R.layout.dominiongamesetupview, container, false);
+		View fragmentView = inflater.inflate(R.layout.fragment_game_setup_view, container, false);
 		
 		gameSetup = getArguments().getParcelable(GameSetupBundleKey);
 		if (!gameSetup.isFullySetup()) gameSetup.SetUp();
 		
+		setViews(fragmentView);
+		
+		Spinner playerSpinner = (Spinner) fragmentView.findViewById(R.id.dominoinGameSetupPlayerSpinner);
+		playerSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+		    @Override
+		    public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+		    	if (gameSetup.getPlayerCount() != position+2) gameSetup.setPlayerCount(position+2);
+		    }
+
+		    @Override
+		    public void onNothingSelected(AdapterView<?> parentView) { /* do nothing */ }
+		});
+		
+		return fragmentView;
+	}
+
+	private void setViews(View fragmentView) {
 		// Setup player count selection Spinner:
 		Spinner playerSpinner = (Spinner) fragmentView.findViewById(R.id.dominoinGameSetupPlayerSpinner);
 		playerSpinner.setSelection(gameSetup.getPlayerCount()-2);
@@ -79,7 +97,12 @@ public class GameSetupFragment extends Fragment {
 		// Expand the Kingdom Cards group:
 		int kingdomCardsGroupId = adapter.getKingdomCardsGroupId();
 		expandableList.expandGroup(kingdomCardsGroupId);
+	}
+	
+	public void setGameSetup(GameSetup gameSetup){
+		this.gameSetup = gameSetup;
+		if (!gameSetup.isFullySetup()) gameSetup.SetUp();
 		
-		return fragmentView;
+		setViews(getView());
 	}
 }

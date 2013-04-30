@@ -29,12 +29,18 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 
+/**
+ * This activity allows the user to randomly generate a game of dominion
+ * to be played.
+ * @author Bas des Bouvrie
+ *
+ */
 public class GameSetupRandomizerActivity extends FragmentActivity {
-	private static final String STATE_CURRENT_CARD_LIST = "currentCardList";
 	public static final String EXTRA_CARD_LIST_KEY = "cardList";
+	private static final String GAME_SETUP_FRAGMENT_TAG = "gameSetupFragment";
+	private static final String STATE_CURRENT_GAME_SETUP = "currentGameSetup";
 	
 	private Randomizer randomizer;
-	private ArrayList<DominionCard> currentCardList;
 	private GameSetup gameSetup;
 
 	@Override
@@ -50,29 +56,35 @@ public class GameSetupRandomizerActivity extends FragmentActivity {
 		randomizer = new Randomizer(cardList);
 		// ... generate a random kingdom deck:
 		if (savedInstanceState != null) {
-			currentCardList = savedInstanceState.getParcelableArrayList(STATE_CURRENT_CARD_LIST);
+			gameSetup = savedInstanceState.getParcelable(STATE_CURRENT_GAME_SETUP);
 		} else {
-			currentCardList = randomizer.GetRandomKingdomDeck();
+			gameSetup = new GameSetup(randomizer.GetRandomKingdomDeck());
 		}
-		gameSetup = new GameSetup(currentCardList);
 		gameSetup.SetUp();
 		
 		// Set GameSetupFragment:
 		FragmentManager fragmentManager = getSupportFragmentManager();
-		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-		GameSetupFragment fragment = GameSetupFragment.newInstance(gameSetup);
-		fragmentTransaction.add(R.id.gameSetupFragmentPlaceholder, fragment);
-		fragmentTransaction.commit();
+		GameSetupFragment fragment = (GameSetupFragment)fragmentManager.findFragmentByTag(GAME_SETUP_FRAGMENT_TAG);
+		if (fragment == null){
+			FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+			fragment = GameSetupFragment.newInstance(gameSetup);
+			fragmentTransaction.add(R.id.gameSetupFragmentPlaceholder, fragment, GAME_SETUP_FRAGMENT_TAG);
+			fragmentTransaction.commit();
+		}
 	}
 	
-	public void shuffleKingdomDeck(View v){		
+	@Override
+	protected void onSaveInstanceState(Bundle savedInstanceState){
+		savedInstanceState.putParcelable(STATE_CURRENT_GAME_SETUP, gameSetup);
+		super.onSaveInstanceState(savedInstanceState);
+	}
+	
+	public void shuffleKingdomDeck(View v){
 		gameSetup.setKingdomCardSet(randomizer.GetRandomKingdomDeck());
 		gameSetup.SetUp();
 		
 		FragmentManager fragmentManager = getSupportFragmentManager();
-		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-		GameSetupFragment fragment = GameSetupFragment.newInstance(gameSetup);
-		fragmentTransaction.replace(R.id.gameSetupFragmentPlaceholder, fragment);
-		fragmentTransaction.commit();
+		GameSetupFragment fragment = (GameSetupFragment)fragmentManager.findFragmentByTag(GAME_SETUP_FRAGMENT_TAG);
+		fragment.setGameSetup(gameSetup);
 	}
 }
