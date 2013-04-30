@@ -18,6 +18,9 @@ package com.xilconic.dominiontoolkit.Activities.GameSetup;
 
 import java.util.ArrayList;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.xilconic.dominiontoolkit.DominionCards.AmountOfDominionGameItem;
 import com.xilconic.dominiontoolkit.DominionCards.CardsDB;
 import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
@@ -28,7 +31,7 @@ import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
  * @author Bas des Bouvrie
  *
  */
-public class GameSetup {
+public class GameSetup implements Parcelable{
 	private ArrayList<AmountOfDominionGameItem> kingdomCardsAndCount;
 	private ArrayList<AmountOfDominionGameItem> eachPlayerReceives;
 	private ArrayList<AmountOfDominionGameItem> gameStartsWith;
@@ -57,7 +60,7 @@ public class GameSetup {
 	
 	/**
 	 * Checks if {@link GameSetup} has been fully configured for
-	 * the given set of 
+	 * the given set of kingdom cards.
 	 * @return
 	 */
 	public boolean isFullySetup(){
@@ -162,4 +165,50 @@ public class GameSetup {
 	public ArrayList<AmountOfDominionGameItem> getGlobalStartingItems() {
 		return gameStartsWith;
 	}
+	
+	// ==== Interface: Parcelable =======================
+		@Override
+		public int describeContents() {
+			return 0;
+		}
+
+		@Override
+		public void writeToParcel(Parcel parcel, int flags) {
+			parcel.writeInt(playerCount);
+			parcel.writeBooleanArray(new boolean[]{isFullySetUp});
+			parcel.writeTypedList(kingdomCardsAndCount);
+			if (isFullySetUp){
+				parcel.writeTypedList(eachPlayerReceives);
+				parcel.writeTypedList(gameStartsWith);
+			}
+		}
+		
+		protected GameSetup(Parcel parcel){
+			kingdomCardsAndCount = new ArrayList<AmountOfDominionGameItem>(10);
+			eachPlayerReceives = new ArrayList<AmountOfDominionGameItem>(2);
+			gameStartsWith = new ArrayList<AmountOfDominionGameItem>(6);
+			
+			playerCount = parcel.readInt();
+			boolean[] flags = new boolean[1];
+			parcel.readBooleanArray(flags);
+			isFullySetUp = flags[0];
+			parcel.readTypedList(kingdomCardsAndCount, AmountOfDominionGameItem.CREATOR);
+			
+			if (isFullySetUp){
+				parcel.readTypedList(eachPlayerReceives, AmountOfDominionGameItem.CREATOR);
+				parcel.readTypedList(gameStartsWith, AmountOfDominionGameItem.CREATOR);
+			}
+		}
+
+		public static final Parcelable.Creator<GameSetup> CREATOR = new Parcelable.Creator<GameSetup>()
+		{
+			public GameSetup createFromParcel(Parcel parcel) {
+				return new GameSetup(parcel);
+			}
+			
+			public GameSetup[] newArray(int size) {
+				return new GameSetup[size];
+			}
+		};
+		// = END Interface: Parcelable ======================
 }

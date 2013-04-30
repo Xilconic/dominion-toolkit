@@ -183,7 +183,8 @@ public class CardsDB {
 		public static final DominionCard BorderVillage = new DominionCardBuilder(DominionItemType.BorderVillage, Set, 6).action().create();
 		public static final DominionCard Farmland = new DominionCardBuilder(DominionItemType.Farmland, Set, 6).victory().create();
 	}
-
+	public static ArrayList<DominionCard> hinterlandsCards = new ArrayList<DominionCard>(26);
+	
 	public static ArrayList<DominionCard> getAllCardsFromSets(List<DominionSet> sets){
 		ArrayList<DominionCard> allCards = new ArrayList<DominionCard>();
 		for (DominionSet set : sets) {
@@ -197,6 +198,9 @@ public class CardsDB {
 			case Prosperity:
 				allCards.addAll(prosperityCards);
 				break;
+			case Hinterlands:
+				allCards.addAll(hinterlandsCards);
+				break;
 			}
 		}
 		return allCards;
@@ -207,6 +211,7 @@ public class CardsDB {
 		createBaseDominionCards();
 		createIntrigueCards();
 		createProsperityCards();
+		createHinterlandsCards();
 	}
 	
 	private static void createBasicCards(){
@@ -325,5 +330,38 @@ public class CardsDB {
 		prosperityCards.add(Prosperity.KingsCourt);
 		
 		prosperityCards.add(Prosperity.Peddler);
+	}
+	
+	private static void createHinterlandsCards(){
+		hinterlandsCards.add(Hinterlands.Crossroads);
+		hinterlandsCards.add(Hinterlands.Duchess);
+		hinterlandsCards.add(Hinterlands.FoolsGold);
+		
+		hinterlandsCards.add(Hinterlands.Develop);
+		hinterlandsCards.add(Hinterlands.Oasis);
+		hinterlandsCards.add(Hinterlands.Oracle);
+		hinterlandsCards.add(Hinterlands.Scheme);
+		hinterlandsCards.add(Hinterlands.Tunnel);
+		
+		hinterlandsCards.add(Hinterlands.JackOfAllTrades);
+		hinterlandsCards.add(Hinterlands.NobleBrigand);
+		hinterlandsCards.add(Hinterlands.NomadCamp);
+		hinterlandsCards.add(Hinterlands.SilkRoad);
+		hinterlandsCards.add(Hinterlands.SpiceMerchant);
+		hinterlandsCards.add(Hinterlands.Trader);
+		
+		hinterlandsCards.add(Hinterlands.Cache);
+		hinterlandsCards.add(Hinterlands.Cartographer);
+		hinterlandsCards.add(Hinterlands.Embassy);
+		hinterlandsCards.add(Hinterlands.Haggler);
+		hinterlandsCards.add(Hinterlands.Highway);
+		hinterlandsCards.add(Hinterlands.IllGottenGains);
+		hinterlandsCards.add(Hinterlands.Inn);
+		hinterlandsCards.add(Hinterlands.Mandarin);
+		hinterlandsCards.add(Hinterlands.Margrave);
+		hinterlandsCards.add(Hinterlands.Stables);
+		
+		hinterlandsCards.add(Hinterlands.BorderVillage);
+		hinterlandsCards.add(Hinterlands.Farmland);
 	}
 }

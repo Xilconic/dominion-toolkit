@@ -18,6 +18,7 @@ package com.xilconic.dominiontoolkit.test.Activities.DominionGameSetup;
 
 import java.util.ArrayList;
 
+import android.os.Parcel;
 import android.test.AndroidTestCase;
 
 import com.xilconic.dominiontoolkit.Activities.GameSetup.GameSetup;
@@ -180,6 +181,54 @@ public class GameSetupTest extends AndroidTestCase {
 				break;
 			}
 		}
+	}
+	
+	public void testParcelableCreator(){
+		ArrayList<DominionCard> simpleKingdomCardList = createSimpleKingdomCardList();
+		Parcel parcel = Parcel.obtain();
+		
+		gameSetup.setKingdomCardSet(simpleKingdomCardList);
+		gameSetup.setPlayerCount(2); // Non-default
+		
+		// Write to parcel while not fully set up:
+		gameSetup.writeToParcel(parcel, 0);
+		parcel.setDataPosition(0);
+		
+		// Retrieve:
+		GameSetup createdFromParcel = GameSetup.CREATOR.createFromParcel(parcel);
+		assertEquals(false, createdFromParcel.isFullySetup());
+		assertEquals(2, createdFromParcel.getPlayerCount());
+		ArrayList<AmountOfDominionGameItem> kingdomCards = createdFromParcel.getKingdomCardSetup();
+		assertEquals(10, kingdomCards.size());
+		
+		for (int i = 0; i < simpleKingdomCardList.size(); i++) {
+			assertEquals(simpleKingdomCardList.get(i), kingdomCards.get(i).getItem());
+			int cardCount = simpleKingdomCardList.get(i).isVictory() ? 8 : 10;
+			assertEquals(cardCount, kingdomCards.get(i).getCount());
+		}
+		assertEquals(0, createdFromParcel.getGlobalStartingItems().size());
+		assertEquals(0, createdFromParcel.GetPlayerStartingItems().size());
+		
+		// Write to parcel while fully set up:
+		parcel = Parcel.obtain();
+		gameSetup.SetUp();
+		gameSetup.writeToParcel(parcel, 0);
+		parcel.setDataPosition(0);
+		
+		// Retrieve:
+		createdFromParcel = GameSetup.CREATOR.createFromParcel(parcel);
+		assertEquals(true, createdFromParcel.isFullySetup());
+		assertEquals(2, createdFromParcel.getPlayerCount());
+		kingdomCards = createdFromParcel.getKingdomCardSetup();
+		assertEquals(10, kingdomCards.size());
+		
+		for (int i = 0; i < simpleKingdomCardList.size(); i++) {
+			assertEquals(simpleKingdomCardList.get(i), kingdomCards.get(i).getItem());
+			int cardCount = simpleKingdomCardList.get(i).isVictory() ? 8 : 10;
+			assertEquals(cardCount, kingdomCards.get(i).getCount());
+		}
+		assertEquals(gameSetup.getGlobalStartingItems().size(), createdFromParcel.getGlobalStartingItems().size());
+		assertEquals(gameSetup.GetPlayerStartingItems().size(), createdFromParcel.GetPlayerStartingItems().size());
 	}
 	
 	/**

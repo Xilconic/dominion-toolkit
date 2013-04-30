@@ -22,6 +22,7 @@ import com.xilconic.dominiontoolkit.DominionCards.DominionItemType;
 import com.xilconic.dominiontoolkit.DominionCards.DominionGameItem;
 import com.xilconic.dominiontoolkit.DominionCards.DominionSet;
 
+import android.os.Parcel;
 import android.test.AndroidTestCase;
 
 public class AmountOfDominionGameItemTest extends AndroidTestCase {
@@ -44,5 +45,34 @@ public class AmountOfDominionGameItemTest extends AndroidTestCase {
 		assertEquals(3, itemToTest.getCount());
 		assertEquals(item, itemToTest.getItem());
 		assertEquals(true, itemToTest.isCard());
+	}
+	
+	public void testParcelableCreator(){
+		Parcel parcel = Parcel.obtain();
+		
+		// Write with item:
+		DominionGameItem item = new DominionGameItem(DominionItemType.Copper, "test", DominionSet.Basic);
+		AmountOfDominionGameItem itemToTest = new AmountOfDominionGameItem(item, 3);
+		itemToTest.writeToParcel(parcel, 0);
+		
+		parcel.setDataPosition(0);
+		
+		AmountOfDominionGameItem createdFromParcel = AmountOfDominionGameItem.CREATOR.createFromParcel(parcel);
+		assertEquals(3, createdFromParcel.getCount());
+		assertEquals(false, createdFromParcel.isCard());
+		assertEquals(item, createdFromParcel.getItem());
+		
+		// Write with card:
+		parcel = Parcel.obtain();
+		item = new DominionCard(1, "test", 2, true, false, false, false, false, false, DominionSet.Basic);
+		itemToTest = new AmountOfDominionGameItem(item, 5);
+		itemToTest.writeToParcel(parcel, 0);
+		
+		parcel.setDataPosition(0);
+		
+		createdFromParcel = AmountOfDominionGameItem.CREATOR.createFromParcel(parcel);
+		assertEquals(5, createdFromParcel.getCount());
+		assertEquals(true, createdFromParcel.isCard());
+		assertEquals(item, createdFromParcel.getItem());
 	}
 }
