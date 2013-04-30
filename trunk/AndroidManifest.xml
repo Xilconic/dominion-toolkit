@@ -30,7 +30,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".Activities.DominionToolkitMenuActivity"
+            android:name="com.xilconic.dominiontoolkit.Activities.DominionToolkitMenuActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,11 +38,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.CardListingActivityClasses.CardListingActivity"></activity>
-        <activity android:name=".Activities.PreferencesActivity"></activity>
-        <activity android:name=".Activities.RandomizerActivityClasses.RandomizerActivity"></activity>
+        <activity android:name="com.xilconic.dominiontoolkit.Activities.CardListing.CardListingActivity"></activity>
+        <activity android:name="com.xilconic.dominiontoolkit.Activities.PreferencesActivity"></activity>
+        <activity android:name="com.xilconic.dominiontoolkit.Activities.Randomizer.RandomizerActivity"></activity>
         <activity android:name="com.xilconic.dominiontoolkit.Activities.SetupRemindersActivity"></activity>
         <activity android:name="com.xilconic.dominiontoolkit.Activities.GameSetup.GameSetupActivity"></activity>
+        <activity android:name="com.xilconic.dominiontoolkit.Activities.Randomizer.GameSetupRandomizerActivity"></activity>
     </application>
 
 </manifest>

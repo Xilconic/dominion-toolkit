@@ -23,6 +23,7 @@ import com.xilconic.dominiontoolkit.R;
 import com.xilconic.dominiontoolkit.Activities.CardListing.CardListingActivity;
 import com.xilconic.dominiontoolkit.Activities.GameSetup.GameSetup;
 import com.xilconic.dominiontoolkit.Activities.GameSetup.GameSetupActivity;
+import com.xilconic.dominiontoolkit.Activities.Randomizer.GameSetupRandomizerActivity;
 import com.xilconic.dominiontoolkit.Activities.Randomizer.RandomizerActivity;
 import com.xilconic.dominiontoolkit.DominionCards.CardsDB;
 import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
@@ -96,6 +97,20 @@ public class DominionToolkitMenuActivity extends Activity {
 		}
 		
 		intent.putParcelableArrayListExtra(GameSetupActivity.ExpectedCardListExtraKey, intentExtras);
+		
+		startActivity(intent);
+	}
+	
+	public void startGameSetupWithFragmentActivity(View v){
+		Intent intent = new Intent(DominionToolkitMenuActivity.this, GameSetupRandomizerActivity.class);
+		List<DominionSet> cardSets = DominionToolkitPreferences.getActiveDominionSets(this);
+		ArrayList<DominionCard> allCards = CardsDB.getAllCardsFromSets(cardSets);
+		ArrayList<DominionCard> intentExtras = new ArrayList<DominionCard>(10);
+		for (int i = 0; i < 10; i++) {
+			intentExtras.add(allCards.get(i));
+		}
+		
+		intent.putParcelableArrayListExtra(GameSetupRandomizerActivity.EXTRA_CARD_LIST_KEY, intentExtras);
 		
 		startActivity(intent);
 	}

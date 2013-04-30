@@ -16,11 +16,16 @@
  */
 package com.xilconic.dominiontoolkit.DominionCards;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import com.xilconic.dominiontoolkit.Activities.GameSetup.GameSetup;
+
 /**
  * A tuple of a {@link DominionGameItem} and the number of times it occurs.
  * @author Bas des Bouvrie
  */
-public class AmountOfDominionGameItem {
+public class AmountOfDominionGameItem implements Parcelable{
 	private DominionGameItem item;
 	private int count;
 	private boolean isCard;
@@ -79,4 +84,42 @@ public class AmountOfDominionGameItem {
 		}
 		count = cardCount;
 	}
+	
+	// ==== Interface: Parcelable =======================
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel parcel, int flags) {
+		parcel.writeInt(count);
+		parcel.writeBooleanArray(new boolean[]{isCard});
+		parcel.writeParcelable(item, flags);
+	}
+	
+	protected AmountOfDominionGameItem(Parcel parcel){
+		count = parcel.readInt();
+		boolean[] flags = new boolean[1];
+		parcel.readBooleanArray(flags);
+		isCard = flags[0];
+
+		if (isCard){
+			item = parcel.readParcelable(DominionCard.class.getClassLoader());
+		} else {
+			item = parcel.readParcelable(DominionGameItem.class.getClassLoader());
+		}
+	}
+
+	public static final Parcelable.Creator<AmountOfDominionGameItem> CREATOR = new Parcelable.Creator<AmountOfDominionGameItem>()
+	{
+		public AmountOfDominionGameItem createFromParcel(Parcel parcel) {
+			return new AmountOfDominionGameItem(parcel);
+		}
+		
+		public AmountOfDominionGameItem[] newArray(int size) {
+			return new AmountOfDominionGameItem[size];
+		}
+	};
+	// = END Interface: Parcelable ======================
 }

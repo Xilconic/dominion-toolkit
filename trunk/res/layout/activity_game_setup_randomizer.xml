@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <TextView 
+        android:id="@+id/gameSetupRandomizerActivityTitleTextView"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="@string/Randomizer.ActivityTitleText"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+    
+    <TextView
+        android:id="@+id/gameSetupRandomizerKingdomCardListingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/gameSetupRandomizerActivityTitleTextView"
+        android:text="@string/Randomizer.KingdomCardsPlainText"
+    	android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <Button
+        android:id="@+id/randomizerShuffleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/gameSetupRandomizerKingdomCardListingTextView"
+        android:layout_alignParentRight="true"
+        android:onClick="shuffleKingdomDeck"
+        android:text="@string/Randomizer.ShuffleButtonText" />
+    
+    <FrameLayout 
+        android:id="@+id/gameSetupFragmentPlaceholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/randomizerShuffleButton"
+        android:layout_marginTop="20dp"
+        />
+    <!-- 
+    <fragment
+        android:id="@+id/gameSetupFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/randomizerShuffleButton"
+        android:layout_marginTop="20dp"
+        class="com.xilconic.dominiontoolkit.Activities.GameSetup.GameSetupFragment" />
+        
+         -->
+
+</RelativeLayout>
