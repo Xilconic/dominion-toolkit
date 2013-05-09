@@ -109,6 +109,8 @@ public class ResourcesHelper {
 			return getProsperitySetName(context, card);
 		case Hinterlands:
 			return getHinterlandsSetName(context, card);
+		case Cornucopia:
+		    return getCornucopiaSetName(context, card);
 		default:
 			return "<no card set matched>";
 		}
@@ -386,5 +388,48 @@ public class ResourcesHelper {
 		default:
 			return "<No Hinterlands Name matched>";
 		}
+	}
+	
+	private static String getCornucopiaSetName(Context context, DominionCard card){
+	    switch (card.get_id()) {
+        case Hamlet:
+            return context.getResources().getString(R.string.Cards_Cornucopia_Hamlet);
+        case FortuneTeller:
+            return context.getResources().getString(R.string.Cards_Cornucopia_FortuneTeller);
+        case Menagerie:
+            return context.getResources().getString(R.string.Cards_Cornucopia_Menagerie);
+        case FarmingVillage:
+            return context.getResources().getString(R.string.Cards_Cornucopia_FarmingVillage);
+        case HorseTraders:
+            return context.getResources().getString(R.string.Cards_Cornucopia_HorseTraders);
+        case Remake:
+            return context.getResources().getString(R.string.Cards_Cornucopia_Remake);
+        case Tournament:
+            return context.getResources().getString(R.string.Cards_Cornucopia_Tournament);
+        case YoungWitch:
+            return context.getResources().getString(R.string.Cards_Cornucopia_YoungWitch);
+        case Harvest:
+            return context.getResources().getString(R.string.Cards_Cornucopia_Harvest);
+        case HornOfPlenty:
+            return context.getResources().getString(R.string.Cards_Cornucopia_HornOfPlenty);
+        case HuntingParty:
+            return context.getResources().getString(R.string.Cards_Cornucopia_HuntingParty);
+        case Jester:
+            return context.getResources().getString(R.string.Cards_Cornucopia_Jester);
+        case Fairgrounds:
+            return context.getResources().getString(R.string.Cards_Cornucopia_Fairgrounds);
+        case BagOfGold:
+            return context.getResources().getString(R.string.Cards_Cornucopia_BagOfGold);
+        case Diadem:
+            return context.getResources().getString(R.string.Cards_Cornucopia_Diadem);
+        case Followers:
+            return context.getResources().getString(R.string.Cards_Cornucopia_Princess);
+        case Princess:
+            return context.getResources().getString(R.string.Cards_Cornucopia_Princess);
+        case TrustySteed:
+            return context.getResources().getString(R.string.Cards_Cornucopia_TrustedSteed);
+        default:
+            return "<No Cornucopia Name matched>";
+        }
 	}
 }

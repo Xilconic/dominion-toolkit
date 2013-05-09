@@ -34,6 +34,49 @@ public class CardsDB {
 	}
 	public static ArrayList<DominionGameItem> nonKingdomCards = new ArrayList<DominionGameItem>();
 	
+	public static class Cornucopia{
+	    public static final DominionSet Set = DominionSet.Cornucopia;
+	    
+	    public static final DominionCard Hamlet = new DominionCardBuilder(DominionItemType.Hamlet, Set, 2).action().create();
+	    
+	    public static final DominionCard FortuneTeller = new DominionCardBuilder(DominionItemType.FortuneTeller, Set, 3).action().attack().create();
+	    public static final DominionCard Menagerie = new DominionCardBuilder(DominionItemType.Menagerie, Set, 3).action().create();
+	    
+	    public static final DominionCard FarmingVillage = new DominionCardBuilder(DominionItemType.FarmingVillage, Set, 4).action().create();
+	    public static final DominionCard HorseTraders = new DominionCardBuilder(DominionItemType.HorseTraders, Set, 4).action().reaction().create();
+	    public static final DominionCard Remake = new DominionCardBuilder(DominionItemType.Remake, Set, 4).action().create();
+	    public static final DominionCard Tournament = new DominionCardBuilder(DominionItemType.Tournament, Set, 4).action().create();
+	    public static final DominionCard YoungWitch = new DominionCardBuilder(DominionItemType.YoungWitch, Set, 4).action().attack().create();
+	    
+	    public static final DominionCard Harvest = new DominionCardBuilder(DominionItemType.Harvest, Set, 5).action().create();
+	    public static final DominionCard HornOfPlenty = new DominionCardBuilder(DominionItemType.HornOfPlenty, Set, 5).treasure().create();
+	    public static final DominionCard HuntingParty = new DominionCardBuilder(DominionItemType.HuntingParty, Set, 5).action().create();
+	    public static final DominionCard Jester = new DominionCardBuilder(DominionItemType.Jester, Set, 5).action().attack().create();
+	    
+	    public static final DominionCard Fairgrounds = new DominionCardBuilder(DominionItemType.Fairgrounds, Set, 6).victory().create();
+	    
+	    // Prizes:
+	    /**
+	     * Retrieves all prize cards to be used with {@link Tournament}.
+	     * @return A new list with all prizecards.
+	     */
+	    public static ArrayList<DominionCard> GetPrizeCards(){
+	        ArrayList<DominionCard> prizes = new ArrayList<DominionCard>();
+	        prizes.add(BagOfGold);
+	        prizes.add(Diadem);
+	        prizes.add(Followers);
+	        prizes.add(Princess);
+	        prizes.add(TrustySteed);
+	        return prizes;
+	    }
+	    public static final DominionCard BagOfGold = new DominionCardBuilder(DominionItemType.BagOfGold, Set, 0).action().create();
+	    public static final DominionCard Diadem = new DominionCardBuilder(DominionItemType.Diadem, Set, 0).treasure().create();
+	    public static final DominionCard Followers = new DominionCardBuilder(DominionItemType.Followers, Set, 0).action().attack().create();
+	    public static final DominionCard Princess = new DominionCardBuilder(DominionItemType.Princess, Set, 0).action().create();
+	    public static final DominionCard TrustySteed = new DominionCardBuilder(DominionItemType.TrustySteed, Set, 0).action().create();
+	}
+	public static ArrayList<DominionCard> cornucopiaCards = new ArrayList<DominionCard>(13);
+	
 	public static class Dominion {
 		public static final DominionSet Set = DominionSet.Dominion;
 		
@@ -189,6 +232,9 @@ public class CardsDB {
 		ArrayList<DominionCard> allCards = new ArrayList<DominionCard>();
 		for (DominionSet set : sets) {
 			switch(set){
+			case Cornucopia:
+			    allCards.addAll(cornucopiaCards);
+			    break;
 			case Dominion:
 				allCards.addAll(dominionCards);
 				break;
@@ -209,6 +255,7 @@ public class CardsDB {
 	static {
 		createBasicCards();
 		createBaseDominionCards();
+		createCornucopiaCards();
 		createIntrigueCards();
 		createProsperityCards();
 		createHinterlandsCards();
@@ -256,6 +303,26 @@ public class CardsDB {
 		dominionCards.add(Dominion.Witch);
 		
 		dominionCards.add(Dominion.Adventurer);
+	}
+	
+	private static void createCornucopiaCards(){
+	    cornucopiaCards.add(Cornucopia.Hamlet);
+	    
+	    cornucopiaCards.add(Cornucopia.FortuneTeller);
+	    cornucopiaCards.add(Cornucopia.Menagerie);
+	    
+	    cornucopiaCards.add(Cornucopia.FarmingVillage);
+	    cornucopiaCards.add(Cornucopia.HorseTraders);
+	    cornucopiaCards.add(Cornucopia.Remake);
+	    cornucopiaCards.add(Cornucopia.Tournament);
+	    cornucopiaCards.add(Cornucopia.YoungWitch);
+	    
+	    cornucopiaCards.add(Cornucopia.Harvest);
+	    cornucopiaCards.add(Cornucopia.HornOfPlenty);
+	    cornucopiaCards.add(Cornucopia.HuntingParty);
+	    cornucopiaCards.add(Cornucopia.Jester);
+	    
+	    cornucopiaCards.add(Cornucopia.Fairgrounds);
 	}
 	
 	private static void createIntrigueCards(){

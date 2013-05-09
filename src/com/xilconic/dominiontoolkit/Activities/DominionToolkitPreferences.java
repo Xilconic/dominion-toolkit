@@ -79,6 +79,12 @@ public class DominionToolkitPreferences {
 		
 		List<DominionSet> cardSets = new ArrayList<DominionSet>();
 		
+		boolean useCornucopiaFlag = preferences.getBoolean(useCornucopia, false);
+        Log.d("DominionToolkitPreferences", "useCornucopia = " + useCornucopiaFlag);
+        if (useCornucopiaFlag){
+            cardSets.add(DominionSet.Cornucopia);
+        }
+		
 		boolean useDominionFlag = preferences.getBoolean(useDominion, false);
 		Log.d("DominionToolkitPreferences", "useDominion = " + useDominionFlag);
 		if (useDominionFlag){

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of Dominion Toolkit.
+  
+  Dominion Toolkit is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  Dominion Toolkit is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+    <string name="Cards.Cornucopia.Hamlet">Gehucht</string>
+    <string name="Cards.Cornucopia.FortuneTeller">Waarzegster</string>
+    <string name="Cards.Cornucopia.Menagerie">Menagerie</string>
+    <string name="Cards.Cornucopia.FarmingVillage">Boerendorp</string>
+    <string name="Cards.Cornucopia.HorseTraders">Paardenhandelaars</string>
+    <string name="Cards.Cornucopia.Remake">Nieuwe versie</string>
+    <string name="Cards.Cornucopia.Tournament">Toernooi</string>
+    <string name="Cards.Cornucopia.YoungWitch">Jonge Heks</string>
+    <string name="Cards.Cornucopia.Harvest">Oogst</string>
+    <string name="Cards.Cornucopia.HornOfPlenty">Hoorn des overvloeds</string>
+    <string name="Cards.Cornucopia.HuntingParty">Jachtgezelschap</string>
+    <string name="Cards.Cornucopia.Jester">Nar</string>
+    <string name="Cards.Cornucopia.Fairgrounds">Kermisterrein</string>
+    <string name="Cards.Cornucopia.BagOfGold">Zak met goud</string>
+    <string name="Cards.Cornucopia.Diadem">Diadeem</string>
+    <string name="Cards.Cornucopia.Followers">Volgelingen</string>
+    <string name="Cards.Cornucopia.Princess">Princes</string>
+    <string name="Cards.Cornucopia.TrustedSteed">Trouwe ros</string>
+</resources>
