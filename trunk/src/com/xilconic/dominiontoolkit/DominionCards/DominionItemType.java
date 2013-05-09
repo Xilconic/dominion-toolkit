@@ -29,6 +29,12 @@ public enum DominionItemType {
 	// DominionSet.BlackMarkerPromo:
 	
 	// DominionSet.Cornucopia:
+	Hamlet,
+	FortuneTeller, Menagerie,
+	FarmingVillage, HorseTraders, Remake, Tournament, YoungWitch,
+	Harvest, HornOfPlenty, HuntingParty, Jester,
+	Fairgrounds,
+	BagOfGold, Diadem, Followers, Princess, TrustySteed,
 	
 	// DominionSet.DarkAges:
 	
