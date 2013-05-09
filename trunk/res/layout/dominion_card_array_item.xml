@@ -19,12 +19,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal" >
+    
+    <TextView
+            android:id="@+id/countText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/DominionCardArrayItem.CountDefaultText"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <RelativeLayout
         android:id="@+id/coin_bg"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:layout_alignParentLeft="true"
+        android:layout_toRightOf="@id/countText"
         android:layout_alignParentTop="true"
         android:background="@drawable/coin_bg" >
 
@@ -35,6 +46,7 @@
             android:layout_centerInParent="true"
 			android:text="@string/DominionCardArrayItem.CostDefaultText"
             android:textAppearance="?android:attr/textAppearanceLarge" />
+
     </RelativeLayout>
 
     <TextView
