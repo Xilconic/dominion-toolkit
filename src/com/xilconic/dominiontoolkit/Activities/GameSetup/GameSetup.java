@@ -84,7 +84,7 @@ public class GameSetup implements Parcelable{
 		kingdomCardsAndCount.clear();
 		
 		for(DominionCard card : kingdomCards){
-			kingdomCardsAndCount.add(new AmountOfDominionGameItem(card, getNumberOfOccurences(card)));
+			kingdomCardsAndCount.add(new AmountOfDominionGameItem(card, getNumberOfOccurences(card, CardPile.Kingdom)));
 		}
 	}
 
@@ -96,11 +96,30 @@ public class GameSetup implements Parcelable{
 		return kingdomCardsAndCount;
 	}
 	
-	private int getNumberOfOccurences(DominionCard card){
-		if (card.isVictory()){
-			return 8 + (playerCount-2)*2;
-		}
-		return 10;
+	private int getNumberOfOccurences(DominionCard card, CardPile pile){
+	    switch (pile) {
+        case Kingdom:
+            if (card.isVictory()){
+                return 8 + (playerCount-2)*2;
+            }
+            return 10;
+        case GameStart:
+            if (card.isVictory()){
+                return 8 + (playerCount-2)*2;
+            }
+            if (card.equals(CardsDB.Basic.Copper)){
+                return 60 - playerCount * 7;
+            }
+            if (card.equals(CardsDB.Basic.Silver)){
+                return 40;
+            }
+            if (card.equals(CardsDB.Basic.Gold)){
+                return 30;
+            }
+        default:
+            break;
+        }
+		return 0;
 	}
 
 	/**
@@ -125,7 +144,12 @@ public class GameSetup implements Parcelable{
 		// Correct card counts:
 		for (AmountOfDominionGameItem cardAndCount : kingdomCardsAndCount) {
 			// Assumption: kingdamCardsAndCount only has DominionCard classes as item.
-			cardAndCount.setCount(getNumberOfOccurences((DominionCard)cardAndCount.getItem()));
+			cardAndCount.setCount(getNumberOfOccurences((DominionCard)cardAndCount.getItem(), CardPile.Kingdom));
+		}
+		
+		for(AmountOfDominionGameItem cardAndCount : gameStartsWith){
+		    // Assumption: gameStartsWith only has DominionCard classes as item.
+            cardAndCount.setCount(getNumberOfOccurences((DominionCard)cardAndCount.getItem(), CardPile.GameStart));
 		}
 	}
 
@@ -149,13 +173,13 @@ public class GameSetup implements Parcelable{
 	private void setUpGameStartingItems(){
 		gameStartsWith.clear();
 		
-		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Copper, 60 - 4*7));
-		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Silver, 40));
-		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Gold, 30));
+		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Copper, getNumberOfOccurences(CardsDB.Basic.Copper, CardPile.GameStart)));
+		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Silver, getNumberOfOccurences(CardsDB.Basic.Silver, CardPile.GameStart)));
+		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Gold, getNumberOfOccurences(CardsDB.Basic.Gold, CardPile.GameStart)));
 		
-		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Estate, getNumberOfOccurences(CardsDB.Basic.Estate)));
-		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Duchy, getNumberOfOccurences(CardsDB.Basic.Duchy)));
-		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Province, getNumberOfOccurences(CardsDB.Basic.Province)));
+		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Estate, getNumberOfOccurences(CardsDB.Basic.Estate, CardPile.GameStart)));
+		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Duchy, getNumberOfOccurences(CardsDB.Basic.Duchy, CardPile.GameStart)));
+		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Province, getNumberOfOccurences(CardsDB.Basic.Province, CardPile.GameStart)));
 	}
 
 	public ArrayList<AmountOfDominionGameItem> GetPlayerStartingItems() {
@@ -167,48 +191,50 @@ public class GameSetup implements Parcelable{
 	}
 	
 	// ==== Interface: Parcelable =======================
-		@Override
-		public int describeContents() {
-			return 0;
-		}
+	@Override
+	public int describeContents() {
+		return 0;
+	}
 
-		@Override
-		public void writeToParcel(Parcel parcel, int flags) {
-			parcel.writeInt(playerCount);
-			parcel.writeBooleanArray(new boolean[]{isFullySetUp});
-			parcel.writeTypedList(kingdomCardsAndCount);
-			if (isFullySetUp){
-				parcel.writeTypedList(eachPlayerReceives);
-				parcel.writeTypedList(gameStartsWith);
-			}
+	@Override
+	public void writeToParcel(Parcel parcel, int flags) {
+		parcel.writeInt(playerCount);
+		parcel.writeBooleanArray(new boolean[]{isFullySetUp});
+		parcel.writeTypedList(kingdomCardsAndCount);
+		if (isFullySetUp){
+			parcel.writeTypedList(eachPlayerReceives);
+			parcel.writeTypedList(gameStartsWith);
+		}
+	}
+	
+	protected GameSetup(Parcel parcel){
+		kingdomCardsAndCount = new ArrayList<AmountOfDominionGameItem>(10);
+		eachPlayerReceives = new ArrayList<AmountOfDominionGameItem>(2);
+		gameStartsWith = new ArrayList<AmountOfDominionGameItem>(6);
+		
+		playerCount = parcel.readInt();
+		boolean[] flags = new boolean[1];
+		parcel.readBooleanArray(flags);
+		isFullySetUp = flags[0];
+		parcel.readTypedList(kingdomCardsAndCount, AmountOfDominionGameItem.CREATOR);
+		
+		if (isFullySetUp){
+			parcel.readTypedList(eachPlayerReceives, AmountOfDominionGameItem.CREATOR);
+			parcel.readTypedList(gameStartsWith, AmountOfDominionGameItem.CREATOR);
+		}
+	}
+
+	public static final Parcelable.Creator<GameSetup> CREATOR = new Parcelable.Creator<GameSetup>()
+	{
+		public GameSetup createFromParcel(Parcel parcel) {
+			return new GameSetup(parcel);
 		}
 		
-		protected GameSetup(Parcel parcel){
-			kingdomCardsAndCount = new ArrayList<AmountOfDominionGameItem>(10);
-			eachPlayerReceives = new ArrayList<AmountOfDominionGameItem>(2);
-			gameStartsWith = new ArrayList<AmountOfDominionGameItem>(6);
-			
-			playerCount = parcel.readInt();
-			boolean[] flags = new boolean[1];
-			parcel.readBooleanArray(flags);
-			isFullySetUp = flags[0];
-			parcel.readTypedList(kingdomCardsAndCount, AmountOfDominionGameItem.CREATOR);
-			
-			if (isFullySetUp){
-				parcel.readTypedList(eachPlayerReceives, AmountOfDominionGameItem.CREATOR);
-				parcel.readTypedList(gameStartsWith, AmountOfDominionGameItem.CREATOR);
-			}
+		public GameSetup[] newArray(int size) {
+			return new GameSetup[size];
 		}
-
-		public static final Parcelable.Creator<GameSetup> CREATOR = new Parcelable.Creator<GameSetup>()
-		{
-			public GameSetup createFromParcel(Parcel parcel) {
-				return new GameSetup(parcel);
-			}
-			
-			public GameSetup[] newArray(int size) {
-				return new GameSetup[size];
-			}
-		};
-		// = END Interface: Parcelable ======================
+	};
+	// = END Interface: Parcelable ======================
+	
+	private enum CardPile { Kingdom, GameStart, PlayerReceive }
 }

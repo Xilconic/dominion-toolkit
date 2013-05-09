@@ -56,6 +56,10 @@ public class DominionCardArrayAdapter extends ArrayAdapter<DominionCard> {
 			viewHolder.cardTypesText = (TextView) dominionCardView.findViewById(R.id.cardTypeText);
 			viewHolder.iconPlaceHolder = (RelativeLayout) dominionCardView.findViewById(R.id.set_icon);
 			
+			// Collapse and hide the card count:
+			TextView countTextView = (TextView) dominionCardView.findViewById(R.id.countText);
+			countTextView.setVisibility(View.GONE);
+			
 			dominionCardView.setTag(viewHolder);
 		}
 		

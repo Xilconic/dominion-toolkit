@@ -37,18 +37,19 @@ public final class R {
         public static final int addPlayerButton=0x7f0a0019;
         public static final int cardListingListView=0x7f0a0001;
         public static final int cardListingTitle=0x7f0a0000;
-        public static final int cardNameText=0x7f0a0026;
-        public static final int cardTypeText=0x7f0a0028;
+        public static final int cardNameText=0x7f0a0027;
+        public static final int cardTypeText=0x7f0a0029;
         public static final int card_listing_button=0x7f0a0004;
-        public static final int coin_bg=0x7f0a0024;
-        public static final int costText=0x7f0a0025;
+        public static final int coin_bg=0x7f0a0025;
+        public static final int costText=0x7f0a0026;
+        public static final int countText=0x7f0a0024;
         public static final int curseCountTextView=0x7f0a001c;
-        public static final int dominionGameSetupExpandableListView=0x7f0a002e;
-        public static final int dominionGameSetupPlayerTextView=0x7f0a002c;
-        public static final int dominionGameSetupViewTitle=0x7f0a002b;
-        public static final int dominion_game_setup_parent_item=0x7f0a0029;
-        public static final int dominion_game_setup_parent_textview=0x7f0a002a;
-        public static final int dominoinGameSetupPlayerSpinner=0x7f0a002d;
+        public static final int dominionGameSetupExpandableListView=0x7f0a002f;
+        public static final int dominionGameSetupPlayerTextView=0x7f0a002d;
+        public static final int dominionGameSetupViewTitle=0x7f0a002c;
+        public static final int dominion_game_setup_parent_item=0x7f0a002a;
+        public static final int dominion_game_setup_parent_textview=0x7f0a002b;
+        public static final int dominoinGameSetupPlayerSpinner=0x7f0a002e;
         public static final int endConditionKingdomCardsTextView=0x7f0a0023;
         public static final int endConditionProvinceTextView=0x7f0a0022;
         public static final int endConditionTextView=0x7f0a0021;
@@ -75,7 +76,7 @@ public final class R {
         public static final int randomizerShuffleButton=0x7f0a0008;
         public static final int randomizer_button=0x7f0a0002;
         public static final int removePlayerButton=0x7f0a0017;
-        public static final int set_icon=0x7f0a0027;
+        public static final int set_icon=0x7f0a0028;
         public static final int setupRemindersTitle=0x7f0a0016;
         public static final int setupSectionTitle=0x7f0a001a;
         public static final int setup_reminders_button=0x7f0a0003;
@@ -241,15 +242,16 @@ public final class R {
         public static final int Cards_Types_Reaction=0x7f050075;
         public static final int Cards_Types_Treasure=0x7f050077;
         public static final int Cards_Types_Victory=0x7f050078;
-        public static final int DominionCardArrayItem_CardTypeDefaultText=0x7f05009e;
+        public static final int DominionCardArrayItem_CardTypeDefaultText=0x7f05009f;
+        public static final int DominionCardArrayItem_CostDefaultText=0x7f05009d;
         /**  dominion card arry item 
          */
-        public static final int DominionCardArrayItem_CostDefaultText=0x7f05009c;
-        public static final int DominionCardArrayItem_NameDefaultText=0x7f05009d;
+        public static final int DominionCardArrayItem_CountDefaultText=0x7f05009c;
+        public static final int DominionCardArrayItem_NameDefaultText=0x7f05009e;
         /**  fragment_game_setup_view 
          */
-        public static final int GameSetupFragment_DefaultTitle=0x7f05009f;
-        public static final int GameSetupFragment_NumberOfPlayers=0x7f0500a0;
+        public static final int GameSetupFragment_DefaultTitle=0x7f0500a0;
+        public static final int GameSetupFragment_NumberOfPlayers=0x7f0500a1;
         /**  activity_preferences 
          */
         public static final int Preferences_CardSets=0x7f050089;

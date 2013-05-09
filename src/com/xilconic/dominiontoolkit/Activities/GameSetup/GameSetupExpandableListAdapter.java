@@ -3,6 +3,7 @@ package com.xilconic.dominiontoolkit.Activities.GameSetup;
 import java.util.ArrayList;
 
 import com.xilconic.dominiontoolkit.R;
+import com.xilconic.dominiontoolkit.DominionCards.AmountOfDominionGameItem;
 import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
 import com.xilconic.dominiontoolkit.DominionCards.DominionGameItem;
 import com.xilconic.dominiontoolkit.Utils.ResourcesHelper;
@@ -77,17 +78,20 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 			viewHolder.costText = (TextView) convertView.findViewById(R.id.costText);
 			viewHolder.nameText = (TextView) convertView.findViewById(R.id.cardNameText);
 			viewHolder.cardTypesText = (TextView) convertView.findViewById(R.id.cardTypeText);
+			viewHolder.countText = (TextView) convertView.findViewById(R.id.countText);
 			viewHolder.iconPlaceHolder = (RelativeLayout) convertView.findViewById(R.id.set_icon);
 			
 			convertView.setTag(viewHolder);
 		}
 		
-		DominionGameItem item = parentItems.get(groupPosition).getArrayChildren().get(childPosition).getItem();
+		AmountOfDominionGameItem AmountOfItem = parentItems.get(groupPosition).getArrayChildren().get(childPosition);
 		ViewHolder viewHolder = (ViewHolder) convertView.getTag();
 		
+		viewHolder.countText.setText(Integer.toString(AmountOfItem.getCount()));
+		
 		// Set card cost text and CardTypes:
-		if(item instanceof DominionCard){
-			DominionCard card = (DominionCard)item;
+		if(AmountOfItem.getItem() instanceof DominionCard){
+			DominionCard card = (DominionCard)AmountOfItem.getItem();
 			viewHolder.costText.setText(Integer.toString(card.get_cost()));
 			viewHolder.cardTypesText.setText(getCardTypes(card));
 		}
@@ -98,10 +102,10 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 
 		
 		// Set card name text:
-		viewHolder.nameText.setText(ResourcesHelper.GetDominionItemName(_context, item));
+		viewHolder.nameText.setText(ResourcesHelper.GetDominionItemName(_context, AmountOfItem.getItem()));
 		
 		// Set icon image:
-		viewHolder.iconPlaceHolder.setBackgroundDrawable(ResourcesHelper.GetSetIcon(_context, item.get_dominionSet()));
+		viewHolder.iconPlaceHolder.setBackgroundDrawable(ResourcesHelper.GetSetIcon(_context, AmountOfItem.getItem().get_dominionSet()));
 		
 		return convertView;
 	}
@@ -216,6 +220,7 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 		public TextView costText;
 		public TextView nameText;
 		public TextView cardTypesText;
+		public TextView countText;
 		public RelativeLayout iconPlaceHolder;
 	}
 }

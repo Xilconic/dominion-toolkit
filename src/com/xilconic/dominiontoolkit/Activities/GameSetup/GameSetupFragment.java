@@ -40,6 +40,7 @@ public class GameSetupFragment extends Fragment {
 	public static final String GameSetupBundleKey = "game_setup";
 	private GameSetup gameSetup;
 	private ExpandableListView expandableList;
+	private GameSetupExpandableListAdapter adapter;
 	
 	public static GameSetupFragment newInstance(GameSetup gameSetup){
 		GameSetupFragment gsFragment = new GameSetupFragment();
@@ -74,7 +75,11 @@ public class GameSetupFragment extends Fragment {
 		playerSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 		    @Override
 		    public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-		    	if (gameSetup.getPlayerCount() != position+2) gameSetup.setPlayerCount(position+2);
+		    	if (gameSetup.getPlayerCount() != position+2) 
+		    	{
+		    	    gameSetup.setPlayerCount(position+2);
+		    	    adapter.notifyDataSetChanged();
+		    	}
 		    }
 
 		    @Override
@@ -91,7 +96,7 @@ public class GameSetupFragment extends Fragment {
 		
 		// Setup ExpandableList:
 		expandableList = (ExpandableListView)fragmentView.findViewById(R.id.dominionGameSetupExpandableListView);
-		GameSetupExpandableListAdapter adapter = new GameSetupExpandableListAdapter(getActivity(), gameSetup);
+		adapter = new GameSetupExpandableListAdapter(getActivity(), gameSetup);
 		expandableList.setAdapter(adapter);
 		
 		// Expand the Kingdom Cards group:
