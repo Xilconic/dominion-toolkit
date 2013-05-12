@@ -37,6 +37,7 @@ public class GameSetup implements Parcelable{
 	private ArrayList<AmountOfDominionGameItem> gameStartsWith;
 	private int playerCount;
 	private boolean isFullySetUp;
+    private AmountOfDominionGameItem baneCard;
 	
 	/**
 	 * Constructor without a set of cards to play with, assuming 4 players.
@@ -151,6 +152,10 @@ public class GameSetup implements Parcelable{
 		    // Assumption: gameStartsWith only has DominionCard classes as item.
             cardAndCount.setCount(getNumberOfOccurences((DominionCard)cardAndCount.getItem(), CardPile.GameStart));
 		}
+		
+		if (baneCard != null){
+		    baneCard.setCount(getNumberOfOccurences((DominionCard)baneCard.getItem(), CardPile.Kingdom));
+		}
 	}
 
 	/**
@@ -188,6 +193,15 @@ public class GameSetup implements Parcelable{
 
 	public ArrayList<AmountOfDominionGameItem> getGlobalStartingItems() {
 		return gameStartsWith;
+	}
+	
+	public AmountOfDominionGameItem getBaneCard(){
+	    return baneCard;
+	}
+	
+	public void setBaneCard(DominionCard card){
+	    if (card.get_cost() != 2 && card.get_cost() != 3) throw new IllegalArgumentException("Bane card must have cost of 2 or 3.");
+	    baneCard = new AmountOfDominionGameItem(card, getNumberOfOccurences(card, CardPile.Kingdom));
 	}
 	
 	// ==== Interface: Parcelable =======================

@@ -260,16 +260,16 @@ public final class R {
         public static final int Cards_Types_Reaction=0x7f050087;
         public static final int Cards_Types_Treasure=0x7f050089;
         public static final int Cards_Types_Victory=0x7f05008a;
-        public static final int DominionCardArrayItem_CardTypeDefaultText=0x7f0500b1;
-        public static final int DominionCardArrayItem_CostDefaultText=0x7f0500af;
+        public static final int DominionCardArrayItem_CardTypeDefaultText=0x7f0500b2;
+        public static final int DominionCardArrayItem_CostDefaultText=0x7f0500b0;
         /**  dominion card arry item 
          */
-        public static final int DominionCardArrayItem_CountDefaultText=0x7f0500ae;
-        public static final int DominionCardArrayItem_NameDefaultText=0x7f0500b0;
+        public static final int DominionCardArrayItem_CountDefaultText=0x7f0500af;
+        public static final int DominionCardArrayItem_NameDefaultText=0x7f0500b1;
         /**  fragment_game_setup_view 
          */
-        public static final int GameSetupFragment_DefaultTitle=0x7f0500b2;
-        public static final int GameSetupFragment_NumberOfPlayers=0x7f0500b3;
+        public static final int GameSetupFragment_DefaultTitle=0x7f0500b3;
+        public static final int GameSetupFragment_NumberOfPlayers=0x7f0500b4;
         /**  activity_preferences 
          */
         public static final int Preferences_CardSets=0x7f05009b;
@@ -278,6 +278,7 @@ public final class R {
         public static final int Randomizer_ActivityTitleText=0x7f0500ab;
         public static final int Randomizer_KingdomCardsPlainText=0x7f0500ac;
         public static final int Randomizer_ShuffleButtonText=0x7f0500ad;
+        public static final int Randomizer_UnableToCreateRandomizedSetup=0x7f0500ae;
         /**  activity setup & reminders 
          */
         public static final int SetupReminders_ActivityTitleText=0x7f05009c;

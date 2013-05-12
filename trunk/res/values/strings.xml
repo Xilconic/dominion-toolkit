@@ -50,6 +50,7 @@
 	<string name="Randomizer.ActivityTitleText">Randomizer</string>
 	<string name="Randomizer.KingdomCardsPlainText">Koningkrijk Cards:</string>
 	<string name="Randomizer.ShuffleButtonText">Schudden</string>
+	<string name="Randomizer.UnableToCreateRandomizedSetup">Kon geen willekeurig spel opzet genereren.</string>
 	
 	<!-- dominion card arry item -->
 	<string name="DominionCardArrayItem.CountDefaultText">10</string>
