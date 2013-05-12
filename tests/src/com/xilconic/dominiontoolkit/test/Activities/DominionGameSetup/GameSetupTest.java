@@ -231,6 +231,38 @@ public class GameSetupTest extends AndroidTestCase {
 		assertEquals(gameSetup.GetPlayerStartingItems().size(), createdFromParcel.GetPlayerStartingItems().size());
 	}
 	
+	public void testBaneCard(){
+	    gameSetup.setPlayerCount(4);
+	    assertEquals("Should be null when constructed", null, gameSetup.getBaneCard());
+	    
+	    try {
+	        gameSetup.setBaneCard(new DominionCard(0, "card too cheap", 1, true, false, false, false, false, false, DominionSet.Dominion));
+	        assertTrue("IllegalArgumentException expected to be thrown", false);
+        } catch (IllegalArgumentException e) {
+            assertEquals("Bane card must have cost of 2 or 3.", e.getMessage());
+        }
+	    
+	    try {
+            gameSetup.setBaneCard(new DominionCard(0, "card too expensive", 4, true, false, false, false, false, false, DominionSet.Dominion));
+            assertTrue("IllegalArgumentException expected to be thrown", false);
+        } catch (IllegalArgumentException e) {
+            assertEquals("Bane card must have cost of 2 or 3.", e.getMessage());
+        }
+	    
+	    DominionCard card = new DominionCard(0, "Card cost OK", 2, true, false, false, false, false, false, DominionSet.Dominion);
+	    gameSetup.setBaneCard(card);
+	    assertEquals(card, gameSetup.getBaneCard().getItem());
+	    assertEquals(10, gameSetup.getBaneCard().getCount());
+	    
+	    card = new DominionCard(0, "Card cost OK", 2, true, false, false, false, true, false, DominionSet.Dominion);
+        gameSetup.setBaneCard(card);
+        assertEquals(card, gameSetup.getBaneCard().getItem());
+        assertEquals(12, gameSetup.getBaneCard().getCount());
+        
+        gameSetup.setPlayerCount(2);
+        assertEquals(8, gameSetup.getBaneCard().getCount());
+	}
+	
 	/**
 	 * Creates a list of dummy cards. The first card is a regular card, the second is a regular victory card.
 	 * The rest as filler.

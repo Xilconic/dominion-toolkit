@@ -22,12 +22,14 @@ import com.xilconic.dominiontoolkit.R;
 import com.xilconic.dominiontoolkit.Activities.GameSetup.GameSetup;
 import com.xilconic.dominiontoolkit.Activities.GameSetup.GameSetupFragment;
 import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.widget.Toast;
 
 /**
  * This activity allows the user to randomly generate a game of dominion
@@ -40,8 +42,8 @@ public class GameSetupRandomizerActivity extends FragmentActivity {
 	private static final String GAME_SETUP_FRAGMENT_TAG = "gameSetupFragment";
 	private static final String STATE_CURRENT_GAME_SETUP = "currentGameSetup";
 	
-	private Randomizer randomizer;
 	private GameSetup gameSetup;
+	private GameSetupRandomizer randomizer;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -53,12 +55,12 @@ public class GameSetupRandomizerActivity extends FragmentActivity {
 		ArrayList<DominionCard> cardList = i.getParcelableArrayListExtra(EXTRA_CARD_LIST_KEY);
 		
 		// Create randomizer and...
-		randomizer = new Randomizer(cardList);
+		randomizer = new GameSetupRandomizer(cardList);
 		// ... generate a random kingdom deck:
 		if (savedInstanceState != null) {
 			gameSetup = savedInstanceState.getParcelable(STATE_CURRENT_GAME_SETUP);
 		} else {
-			gameSetup = new GameSetup(randomizer.GetRandomKingdomDeck());
+		    generateGameSetup();
 		}
 		gameSetup.SetUp();
 		
@@ -80,11 +82,31 @@ public class GameSetupRandomizerActivity extends FragmentActivity {
 	}
 	
 	public void shuffleKingdomDeck(View v){
-		gameSetup.setKingdomCardSet(randomizer.GetRandomKingdomDeck());
+	    generateGameSetup();
 		gameSetup.SetUp();
 		
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		GameSetupFragment fragment = (GameSetupFragment)fragmentManager.findFragmentByTag(GAME_SETUP_FRAGMENT_TAG);
 		fragment.setGameSetup(gameSetup);
+	}
+	
+	private void generateGameSetup(){
+	    gameSetup = null;
+	    int tryCount = 0;
+        while(tryCount < 5){
+            try {
+                gameSetup = randomizer.GetRandomGameSetup();
+            } catch (RandomizationFailedException e) {
+                tryCount++;
+            }
+            
+            // No Exceptions thrown, continue:
+            break;
+        }
+        
+        if (gameSetup == null){
+            Toast.makeText(this, R.string.Randomizer_UnableToCreateRandomizedSetup, Toast.LENGTH_SHORT).show();
+            gameSetup = new GameSetup();
+        }
 	}
 }
