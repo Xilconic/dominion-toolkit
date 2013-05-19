@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.xilconic.dominiontoolkit.R;
 import com.xilconic.dominiontoolkit.DominionCards.AmountOfDominionGameItem;
+import com.xilconic.dominiontoolkit.DominionCards.CardsDB;
 import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
 import com.xilconic.dominiontoolkit.DominionCards.DominionGameItem;
 import com.xilconic.dominiontoolkit.Utils.ResourcesHelper;
@@ -47,7 +48,18 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 		
 		kingdomCardsStartsWithGroup = new GameSetupParentItem();
 		kingdomCardsStartsWithGroup.setTitle("Kingdom cards:");
-		kingdomCardsStartsWithGroup.setArrayChildren(setup.getKingdomCardSetup());
+		ArrayList<AmountOfDominionGameItem> kingdomCards = setup.getKingdomCardSetup();
+        
+		// Insert Bane card is required:
+		AmountOfDominionGameItem baneCardAmount = setup.getBaneCard();
+        if (baneCardAmount != null){
+		    for (int i = 0; i < kingdomCards.size(); i++) {
+                if (kingdomCards.get(i).getItem().equals(CardsDB.Cornucopia.YoungWitch) && !kingdomCards.contains(baneCardAmount)){
+                    kingdomCards.add(i+1, baneCardAmount);
+                }
+            }
+		}
+		kingdomCardsStartsWithGroup.setArrayChildren(kingdomCards);
 		
 		parentItems = new ArrayList<GameSetupParentItem>(3);
 		parentItems.add(kingdomCardsStartsWithGroup);
@@ -99,6 +111,14 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 			viewHolder.costText.setText("");
 			viewHolder.cardTypesText.setText("");
 		}
+		
+		AmountOfDominionGameItem baneCardAmount = setup.getBaneCard();
+		if (baneCardAmount == null || !AmountOfItem.getItem().equals(baneCardAmount.getItem())){
+		    convertView.findViewById(R.id.arrowImage).setVisibility(View.GONE);
+		}else{
+		    convertView.findViewById(R.id.arrowImage).setVisibility(View.VISIBLE);
+		}
+		    
 
 		
 		// Set card name text:
@@ -165,7 +185,14 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 		stringBuilder.delete(0, stringBuilder.length());
 		
 		boolean firstType = true;
+		AmountOfDominionGameItem baneCardAmount = setup.getBaneCard();
+		if (baneCardAmount != null && card.equals(baneCardAmount.getItem())){
+		    stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Bane));
+            firstType = false;
+		}
+		
 		if (card.isAction()){
+		    if (!firstType) stringBuilder.append(", ");
 			stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Action));
 			firstType = false;
 		}

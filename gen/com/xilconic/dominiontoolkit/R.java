@@ -26,30 +26,32 @@ public final class R {
         public static final int envoy_icon=0x7f020006;
         public static final int governor_icon=0x7f020007;
         public static final int hinterlands_icon=0x7f020008;
-        public static final int ic_launcher=0x7f020009;
-        public static final int intrigue_icon=0x7f02000a;
-        public static final int prosperity_icon=0x7f02000b;
-        public static final int seaside_icon=0x7f02000c;
-        public static final int stash_icon=0x7f02000d;
-        public static final int walledvillage_icon=0x7f02000e;
+        public static final int hooked_arrow=0x7f020009;
+        public static final int ic_launcher=0x7f02000a;
+        public static final int intrigue_icon=0x7f02000b;
+        public static final int prosperity_icon=0x7f02000c;
+        public static final int seaside_icon=0x7f02000d;
+        public static final int stash_icon=0x7f02000e;
+        public static final int walledvillage_icon=0x7f02000f;
     }
     public static final class id {
         public static final int addPlayerButton=0x7f0a0019;
+        public static final int arrowImage=0x7f0a0024;
         public static final int cardListingListView=0x7f0a0001;
         public static final int cardListingTitle=0x7f0a0000;
-        public static final int cardNameText=0x7f0a0027;
-        public static final int cardTypeText=0x7f0a0029;
+        public static final int cardNameText=0x7f0a0028;
+        public static final int cardTypeText=0x7f0a002a;
         public static final int card_listing_button=0x7f0a0004;
-        public static final int coin_bg=0x7f0a0025;
-        public static final int costText=0x7f0a0026;
-        public static final int countText=0x7f0a0024;
+        public static final int coin_bg=0x7f0a0026;
+        public static final int costText=0x7f0a0027;
+        public static final int countText=0x7f0a0025;
         public static final int curseCountTextView=0x7f0a001c;
-        public static final int dominionGameSetupExpandableListView=0x7f0a002f;
-        public static final int dominionGameSetupPlayerTextView=0x7f0a002d;
-        public static final int dominionGameSetupViewTitle=0x7f0a002c;
-        public static final int dominion_game_setup_parent_item=0x7f0a002a;
-        public static final int dominion_game_setup_parent_textview=0x7f0a002b;
-        public static final int dominoinGameSetupPlayerSpinner=0x7f0a002e;
+        public static final int dominionGameSetupExpandableListView=0x7f0a0030;
+        public static final int dominionGameSetupPlayerTextView=0x7f0a002e;
+        public static final int dominionGameSetupViewTitle=0x7f0a002d;
+        public static final int dominion_game_setup_parent_item=0x7f0a002b;
+        public static final int dominion_game_setup_parent_textview=0x7f0a002c;
+        public static final int dominoinGameSetupPlayerSpinner=0x7f0a002f;
         public static final int endConditionKingdomCardsTextView=0x7f0a0023;
         public static final int endConditionProvinceTextView=0x7f0a0022;
         public static final int endConditionTextView=0x7f0a0021;
@@ -76,7 +78,7 @@ public final class R {
         public static final int randomizerShuffleButton=0x7f0a0008;
         public static final int randomizer_button=0x7f0a0002;
         public static final int removePlayerButton=0x7f0a0017;
-        public static final int set_icon=0x7f0a0028;
+        public static final int set_icon=0x7f0a0029;
         public static final int setupRemindersTitle=0x7f0a0016;
         public static final int setupSectionTitle=0x7f0a001a;
         public static final int setup_reminders_button=0x7f0a0003;
@@ -106,19 +108,19 @@ public final class R {
     public static final class string {
         /**  activity card Listing 
          */
-        public static final int CardListing_ActivityTitleText=0x7f0500aa;
-        public static final int CardSet_Alchemy=0x7f05008f;
+        public static final int CardListing_ActivityTitleText=0x7f0500ab;
+        public static final int CardSet_Alchemy=0x7f050090;
         /**  Dominion Cardsets: 
          */
-        public static final int CardSet_Base=0x7f05008b;
-        public static final int CardSet_Cornucopia=0x7f050091;
-        public static final int CardSet_DarkAges=0x7f050093;
-        public static final int CardSet_Dominion=0x7f05008c;
-        public static final int CardSet_Hinterlands=0x7f050092;
-        public static final int CardSet_Intrigue=0x7f05008d;
-        public static final int CardSet_PromoCards=0x7f050094;
-        public static final int CardSet_Prosperity=0x7f050090;
-        public static final int CardSet_Seaside=0x7f05008e;
+        public static final int CardSet_Base=0x7f05008c;
+        public static final int CardSet_Cornucopia=0x7f050092;
+        public static final int CardSet_DarkAges=0x7f050094;
+        public static final int CardSet_Dominion=0x7f05008d;
+        public static final int CardSet_Hinterlands=0x7f050093;
+        public static final int CardSet_Intrigue=0x7f05008e;
+        public static final int CardSet_PromoCards=0x7f050095;
+        public static final int CardSet_Prosperity=0x7f050091;
+        public static final int CardSet_Seaside=0x7f05008f;
         public static final int Cards_Base_Copper=0x7f050000;
         public static final int Cards_Base_Curse=0x7f050006;
         public static final int Cards_Base_Duchy=0x7f050004;
@@ -256,51 +258,52 @@ public final class R {
          */
         public static final int Cards_Types_Action=0x7f050085;
         public static final int Cards_Types_Attack=0x7f050086;
+        public static final int Cards_Types_Bane=0x7f05008b;
         public static final int Cards_Types_Curse=0x7f050088;
         public static final int Cards_Types_Reaction=0x7f050087;
         public static final int Cards_Types_Treasure=0x7f050089;
         public static final int Cards_Types_Victory=0x7f05008a;
-        public static final int DominionCardArrayItem_CardTypeDefaultText=0x7f0500b2;
-        public static final int DominionCardArrayItem_CostDefaultText=0x7f0500b0;
+        public static final int DominionCardArrayItem_CardTypeDefaultText=0x7f0500b3;
+        public static final int DominionCardArrayItem_CostDefaultText=0x7f0500b1;
         /**  dominion card arry item 
          */
-        public static final int DominionCardArrayItem_CountDefaultText=0x7f0500af;
-        public static final int DominionCardArrayItem_NameDefaultText=0x7f0500b1;
+        public static final int DominionCardArrayItem_CountDefaultText=0x7f0500b0;
+        public static final int DominionCardArrayItem_NameDefaultText=0x7f0500b2;
         /**  fragment_game_setup_view 
          */
-        public static final int GameSetupFragment_DefaultTitle=0x7f0500b3;
-        public static final int GameSetupFragment_NumberOfPlayers=0x7f0500b4;
+        public static final int GameSetupFragment_DefaultTitle=0x7f0500b4;
+        public static final int GameSetupFragment_NumberOfPlayers=0x7f0500b5;
         /**  activity_preferences 
          */
-        public static final int Preferences_CardSets=0x7f05009b;
+        public static final int Preferences_CardSets=0x7f05009c;
         /**  activity randomizer 
          */
-        public static final int Randomizer_ActivityTitleText=0x7f0500ab;
-        public static final int Randomizer_KingdomCardsPlainText=0x7f0500ac;
-        public static final int Randomizer_ShuffleButtonText=0x7f0500ad;
-        public static final int Randomizer_UnableToCreateRandomizedSetup=0x7f0500ae;
+        public static final int Randomizer_ActivityTitleText=0x7f0500ac;
+        public static final int Randomizer_KingdomCardsPlainText=0x7f0500ad;
+        public static final int Randomizer_ShuffleButtonText=0x7f0500ae;
+        public static final int Randomizer_UnableToCreateRandomizedSetup=0x7f0500af;
         /**  activity setup & reminders 
          */
-        public static final int SetupReminders_ActivityTitleText=0x7f05009c;
-        public static final int SetupReminders_AddPlayerButtonText=0x7f05009f;
-        public static final int SetupReminders_CurseCardCountDefaultText=0x7f0500a2;
-        public static final int SetupReminders_EndConditionKingdomCardsPlainText=0x7f0500a9;
-        public static final int SetupReminders_EndConditionProvincePlainText=0x7f0500a8;
-        public static final int SetupReminders_EndGameHeaderText=0x7f0500a6;
-        public static final int SetupReminders_EndGamePlainText=0x7f0500a7;
-        public static final int SetupReminders_NumberOfCuseCardsPlainText=0x7f0500a1;
-        public static final int SetupReminders_NumberOfVictoryCardsPlainText=0x7f0500a3;
-        public static final int SetupReminders_PlayerCountDefaultText=0x7f05009e;
-        public static final int SetupReminders_RemovePlayerButtonText=0x7f05009d;
-        public static final int SetupReminders_SetupHeaderText=0x7f0500a0;
-        public static final int SetupReminders_StarterDeckPlainText=0x7f0500a5;
-        public static final int SetupReminders_VictoryCardCountDefaultText=0x7f0500a4;
-        public static final int app_name=0x7f050095;
-        public static final int card_listing_button_name=0x7f050099;
-        public static final int menu_settings=0x7f050096;
-        public static final int preferences_button_name=0x7f05009a;
-        public static final int randomizer_button_name=0x7f050097;
-        public static final int setup_reminders_button_name=0x7f050098;
+        public static final int SetupReminders_ActivityTitleText=0x7f05009d;
+        public static final int SetupReminders_AddPlayerButtonText=0x7f0500a0;
+        public static final int SetupReminders_CurseCardCountDefaultText=0x7f0500a3;
+        public static final int SetupReminders_EndConditionKingdomCardsPlainText=0x7f0500aa;
+        public static final int SetupReminders_EndConditionProvincePlainText=0x7f0500a9;
+        public static final int SetupReminders_EndGameHeaderText=0x7f0500a7;
+        public static final int SetupReminders_EndGamePlainText=0x7f0500a8;
+        public static final int SetupReminders_NumberOfCuseCardsPlainText=0x7f0500a2;
+        public static final int SetupReminders_NumberOfVictoryCardsPlainText=0x7f0500a4;
+        public static final int SetupReminders_PlayerCountDefaultText=0x7f05009f;
+        public static final int SetupReminders_RemovePlayerButtonText=0x7f05009e;
+        public static final int SetupReminders_SetupHeaderText=0x7f0500a1;
+        public static final int SetupReminders_StarterDeckPlainText=0x7f0500a6;
+        public static final int SetupReminders_VictoryCardCountDefaultText=0x7f0500a5;
+        public static final int app_name=0x7f050096;
+        public static final int card_listing_button_name=0x7f05009a;
+        public static final int menu_settings=0x7f050097;
+        public static final int preferences_button_name=0x7f05009b;
+        public static final int randomizer_button_name=0x7f050098;
+        public static final int setup_reminders_button_name=0x7f050099;
     }
     public static final class style {
         /** 
