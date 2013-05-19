@@ -60,7 +60,7 @@ public class CardsDB {
 	     * Retrieves all prize cards to be used with {@link Tournament}.
 	     * @return A new list with all prizecards.
 	     */
-	    public static ArrayList<DominionCard> GetPrizeCards(){
+	    public static ArrayList<DominionCard> getPrizeCards(){
 	        ArrayList<DominionCard> prizes = new ArrayList<DominionCard>();
 	        prizes.add(BagOfGold);
 	        prizes.add(Diadem);
