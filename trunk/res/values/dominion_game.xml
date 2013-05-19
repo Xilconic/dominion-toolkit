@@ -24,6 +24,8 @@
     <string name="Cards.Types.Treasure">Geld</string>
     <string name="Cards.Types.Victory">Overwinning</string>
     
+    <string name="Cards.Types.Bane">Ban-kaart</string>
+    
 	<!-- Dominion Cardsets: -->
 	<string name="CardSet.Base">Basis</string>
 	<string name="CardSet.Dominion">Dominion</string>

@@ -20,16 +20,27 @@
     android:layout_height="match_parent"
     android:orientation="horizontal" >
     
+    <ImageView
+        android:id="@+id/arrowImage"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="13dp"
+        android:contentDescription="hooked arrow to illustrate relation with upper item"
+        android:src="@drawable/hooked_arrow" />
+    
     <TextView
-            android:id="@+id/countText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:text="@string/DominionCardArrayItem.CountDefaultText"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+         android:id="@+id/countText"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_toRightOf="@id/arrowImage"
+         android:layout_marginTop="20dp"
+         android:layout_marginLeft="8dp"
+         android:layout_marginRight="8dp"
+         android:text="@string/DominionCardArrayItem.CountDefaultText"
+         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <RelativeLayout
         android:id="@+id/coin_bg"

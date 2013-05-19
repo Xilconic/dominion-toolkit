@@ -26,6 +26,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -56,9 +57,9 @@ public class DominionCardArrayAdapter extends ArrayAdapter<DominionCard> {
 			viewHolder.cardTypesText = (TextView) dominionCardView.findViewById(R.id.cardTypeText);
 			viewHolder.iconPlaceHolder = (RelativeLayout) dominionCardView.findViewById(R.id.set_icon);
 			
-			// Collapse and hide the card count:
-			TextView countTextView = (TextView) dominionCardView.findViewById(R.id.countText);
-			countTextView.setVisibility(View.GONE);
+			// Collapse and hide the card count and reference arrow image:
+			dominionCardView.findViewById(R.id.countText).setVisibility(View.GONE);
+			dominionCardView.findViewById(R.id.arrowImage).setVisibility(View.GONE);
 			
 			dominionCardView.setTag(viewHolder);
 		}
