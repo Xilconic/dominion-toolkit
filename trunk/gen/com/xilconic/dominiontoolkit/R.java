@@ -15,6 +15,7 @@ public final class R {
     }
     public static final class color {
         public static final int coin_text_color=0x7f060000;
+        public static final int setup_list_view_parent_highlight=0x7f060001;
     }
     public static final class drawable {
         public static final int alchemy_icon=0x7f020000;
@@ -46,12 +47,13 @@ public final class R {
         public static final int costText=0x7f0a0027;
         public static final int countText=0x7f0a0025;
         public static final int curseCountTextView=0x7f0a001c;
-        public static final int dominionGameSetupExpandableListView=0x7f0a0030;
-        public static final int dominionGameSetupPlayerTextView=0x7f0a002e;
-        public static final int dominionGameSetupViewTitle=0x7f0a002d;
+        public static final int dominionGameSetupExpandableListView=0x7f0a0031;
+        public static final int dominionGameSetupPlayerTextView=0x7f0a002f;
+        public static final int dominionGameSetupViewTitle=0x7f0a002e;
         public static final int dominion_game_setup_parent_item=0x7f0a002b;
+        public static final int dominion_game_setup_parent_item_highlight=0x7f0a002d;
         public static final int dominion_game_setup_parent_textview=0x7f0a002c;
-        public static final int dominoinGameSetupPlayerSpinner=0x7f0a002f;
+        public static final int dominoinGameSetupPlayerSpinner=0x7f0a0030;
         public static final int endConditionKingdomCardsTextView=0x7f0a0023;
         public static final int endConditionProvinceTextView=0x7f0a0022;
         public static final int endConditionTextView=0x7f0a0021;
@@ -380,5 +382,6 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f080001;
+        public static final int AppTheme_game_setup_list_highlight=0x7f080002;
     }
 }

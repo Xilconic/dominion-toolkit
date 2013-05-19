@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.xilconic.dominiontoolkit.test.Activities.DominionGameSetup;
+package com.xilconic.dominiontoolkit.test.Activities.GameSetup;
 
 import java.util.ArrayList;
 
@@ -261,6 +261,27 @@ public class GameSetupTest extends AndroidTestCase {
         
         gameSetup.setPlayerCount(2);
         assertEquals(8, gameSetup.getBaneCard().getCount());
+	}
+	
+	public void testCornucopiaTournamentPrizesInGameStartsWith(){
+	    ArrayList<DominionCard> kingdomCardsReference = createSimpleKingdomCardList();
+	    kingdomCardsReference.set(0, CardsDB.Cornucopia.Tournament);
+
+        gameSetup.setKingdomCardSet(kingdomCardsReference);
+        gameSetup.SetUp();
+        
+        ArrayList<AmountOfDominionGameItem> gameGlobalStartingItems = gameSetup.getGlobalStartingItems();
+        assertEquals(CardsDB.Cornucopia.BagOfGold, gameGlobalStartingItems.get(6).getItem());
+        assertEquals(CardsDB.Cornucopia.Diadem, gameGlobalStartingItems.get(7).getItem());
+        assertEquals(CardsDB.Cornucopia.Followers, gameGlobalStartingItems.get(8).getItem());
+        assertEquals(CardsDB.Cornucopia.Princess, gameGlobalStartingItems.get(9).getItem());
+        assertEquals(CardsDB.Cornucopia.TrustySteed, gameGlobalStartingItems.get(10).getItem());
+        
+        assertEquals(1, gameGlobalStartingItems.get(6).getCount());
+        assertEquals(1, gameGlobalStartingItems.get(7).getCount());
+        assertEquals(1, gameGlobalStartingItems.get(8).getCount());
+        assertEquals(1, gameGlobalStartingItems.get(9).getCount());
+        assertEquals(1, gameGlobalStartingItems.get(10).getCount());
 	}
 	
 	/**

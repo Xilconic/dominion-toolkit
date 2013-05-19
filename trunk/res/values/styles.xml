@@ -31,5 +31,9 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <style name="AppTheme.game_setup_list_highlight">
+        <item name="android:background">@color/setup_list_view_parent_highlight</item>
+    </style>
 
 </resources>

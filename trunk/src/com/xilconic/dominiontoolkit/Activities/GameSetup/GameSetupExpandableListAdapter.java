@@ -118,8 +118,6 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 		}else{
 		    convertView.findViewById(R.id.arrowImage).setVisibility(View.VISIBLE);
 		}
-		    
-
 		
 		// Set card name text:
 		viewHolder.nameText.setText(ResourcesHelper.GetDominionItemName(_context, AmountOfItem.getItem()));
@@ -163,6 +161,20 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 		TextView textView = (TextView) convertView.findViewById(R.id.dominion_game_setup_parent_textview);
 		textView.setText(getGroup(groupPosition).toString());
 		
+		// Game starts with group:
+		int globarStartsWithSize = globalStartsWithGroup.getArrayChildren().size();
+		View highlightLayer = convertView.findViewById(R.id.dominion_game_setup_parent_item_highlight);
+		if (groupPosition == 1){
+            if (globarStartsWithSize == 6 || globarStartsWithSize == 0){
+                highlightLayer.setVisibility(View.INVISIBLE);
+            }
+            else {
+                highlightLayer.setVisibility(View.VISIBLE);
+            }
+		}else{
+		    highlightLayer.setVisibility(View.INVISIBLE);
+		}
+
 		return convertView;
 	}
 

@@ -24,6 +24,7 @@ import android.os.Parcelable;
 import com.xilconic.dominiontoolkit.DominionCards.AmountOfDominionGameItem;
 import com.xilconic.dominiontoolkit.DominionCards.CardsDB;
 import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
+import com.xilconic.dominiontoolkit.DominionCards.DominionGameItem;
 
 /**
  * This class will gather all the required elements to play a game of Dominion,
@@ -185,6 +186,16 @@ public class GameSetup implements Parcelable{
 		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Estate, getNumberOfOccurences(CardsDB.Basic.Estate, CardPile.GameStart)));
 		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Duchy, getNumberOfOccurences(CardsDB.Basic.Duchy, CardPile.GameStart)));
 		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Province, getNumberOfOccurences(CardsDB.Basic.Province, CardPile.GameStart)));
+		
+		for (AmountOfDominionGameItem gameItemAmount : kingdomCardsAndCount) {
+            DominionGameItem item = gameItemAmount.getItem();
+            
+            if (item.equals(CardsDB.Cornucopia.Tournament)){
+                for (DominionCard prizeCard : CardsDB.Cornucopia.getPrizeCards()) {
+                    gameStartsWith.add(new AmountOfDominionGameItem(prizeCard, 1));
+                }
+            }
+        }
 	}
 
 	public ArrayList<AmountOfDominionGameItem> GetPlayerStartingItems() {

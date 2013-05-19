@@ -17,4 +17,5 @@
 -->
 <resources>
     <color name="coin_text_color">#000000</color>
+    <color name="setup_list_view_parent_highlight">#3300c8ff</color>
 </resources>
