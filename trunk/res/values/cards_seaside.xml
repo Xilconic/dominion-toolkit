@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of Dominion Toolkit.
+  
+  Dominion Toolkit is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  Dominion Toolkit is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+    <string name="Cards.Seaside.IslandMat">Eilandtableau</string>
+    <string name="Cards.Seaside.PirateShipMat">Piratenshiptableau</string>
+    <string name="Cards.Seaside.NativeVillageMat">Inheems dorptableau</string>
+    <string name="Cards.Seaside.PirateShipCoinToken">Geldfiche</string>
+    <string name="Cards.Seaside.EmbargoToken">Embargofiche</string>
+    
+    <string name="Cards.Seaside.Embargo">Embargo</string>
+    <string name="Cards.Seaside.Haven">Haven</string>
+    <string name="Cards.Seaside.Lighthouse">Vuurtoren</string>
+    <string name="Cards.Seaside.NativeVillage">Inheems Dorp</string>
+    <string name="Cards.Seaside.PearlDiver">Parelduiker</string>
+    <string name="Cards.Seaside.Ambassador">Boodschapper</string>
+    <string name="Cards.Seaside.FishingVillage">Vissersdorp</string>
+    <string name="Cards.Seaside.Lookout">Uitkijk</string>
+    <string name="Cards.Seaside.Smugglers">Smokkelaar</string>
+    <string name="Cards.Seaside.Warehouse">Pakhuis</string>
+    <string name="Cards.Seaside.Caravan">Karavaan</string>
+    <string name="Cards.Seaside.Cutpurse">Beurzensnijder</string>
+    <string name="Cards.Seaside.Island">Eiland</string>
+    <string name="Cards.Seaside.Navigator">Navigator</string>
+    <string name="Cards.Seaside.PirateShip">Piratenschip</string>
+    <string name="Cards.Seaside.Salvager">Afvalverwerker</string>
+    <string name="Cards.Seaside.SeaHag">Zeeheks</string>
+    <string name="Cards.Seaside.TreasureMap">Schatkaart</string>
+    <string name="Cards.Seaside.Bazaar">Bazaar</string>
+    <string name="Cards.Seaside.Explorer">Ontdekkingsreiziger</string>
+    <string name="Cards.Seaside.GhostShip">De Vliegende Hollander</string>
+    <string name="Cards.Seaside.MerchantShip">Handelsschip</string>
+    <string name="Cards.Seaside.Outpost">Voorpost</string>
+    <string name="Cards.Seaside.Tactician">Strateeg</string>
+    <string name="Cards.Seaside.Treasury">Schatkamer</string>
+    <string name="Cards.Seaside.Wharf">Werf</string>
+</resources>

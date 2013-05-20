@@ -75,6 +75,11 @@ public enum DominionItemType {
 	
 	
 	// DominionSet.Seaside:
+	IslandMat, NativeVillageMat, PirateShipMat, PirateShipCoinToken, EmbargoToken,
+	Embargo, Haven, Lighthouse, NativeVillage, PearlDiver,
+	Ambassador, FishingVillage, Lookout, Smugglers, Warehouse,
+	Caravan, Cutpurse, Island, Navigator, PirateShip, Salvager, SeaHag, TreasureMap,
+	Bazaar, Explorer, GhostShip, MerchantShip, Outpost, Tactician, Treasury, Wharf,
 	
 	// DominionSet.StashPromo:
 	

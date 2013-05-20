@@ -228,6 +228,48 @@ public class CardsDB {
 	}
 	public static ArrayList<DominionCard> hinterlandsCards = new ArrayList<DominionCard>(26);
 	
+	public static class Seaside{
+	    public static final DominionSet Set = DominionSet.Seaside;
+	    
+	    public static final DominionCard Embargo = new DominionCardBuilder(DominionItemType.Embargo, Set, 2).action().create();
+	    public static final DominionCard Haven = new DominionCardBuilder(DominionItemType.Haven, Set, 2).action().duration().create();
+	    public static final DominionCard Lighthouse = new DominionCardBuilder(DominionItemType.Lighthouse, Set, 2).action().duration().create();
+	    public static final DominionCard NativeVillage = new DominionCardBuilder(DominionItemType.NativeVillage, Set, 2).action().create();
+	    public static final DominionCard PearlDiver = new DominionCardBuilder(DominionItemType.PearlDiver, Set, 2).action().create();
+	    
+	    public static final DominionCard Ambassador = new DominionCardBuilder(DominionItemType.Ambassador, Set, 3).action().attack().create();
+	    public static final DominionCard FishingVillage = new DominionCardBuilder(DominionItemType.FishingVillage, Set, 3).action().duration().create();
+	    public static final DominionCard Lookout = new DominionCardBuilder(DominionItemType.Lookout, Set, 3).action().create();
+	    public static final DominionCard Smugglers = new DominionCardBuilder(DominionItemType.Smugglers, Set, 3).action().create();
+	    public static final DominionCard Warehouse = new DominionCardBuilder(DominionItemType.Warehouse, Set, 3).action().create();
+	    
+	    public static final DominionCard Caravan = new DominionCardBuilder(DominionItemType.Caravan, Set, 4).action().duration().create();
+	    public static final DominionCard Cutpurse = new DominionCardBuilder(DominionItemType.Cutpurse, Set, 4).action().attack().create();
+	    public static final DominionCard Island = new DominionCardBuilder(DominionItemType.Island, Set, 4).action().victory().create();
+	    public static final DominionCard Navigator = new DominionCardBuilder(DominionItemType.Navigator, Set, 4).action().create();
+	    public static final DominionCard PirateShip = new DominionCardBuilder(DominionItemType.PirateShip, Set, 4).action().attack().create();
+	    public static final DominionCard Salvager = new DominionCardBuilder(DominionItemType.Salvager, Set, 4).action().create();
+	    public static final DominionCard SeaHag = new DominionCardBuilder(DominionItemType.SeaHag, Set, 4).action().attack().create();
+	    public static final DominionCard TreasureMap = new DominionCardBuilder(DominionItemType.TreasureMap, Set, 4).action().create();
+	    
+	    public static final DominionCard Bazaar = new DominionCardBuilder(DominionItemType.Bazaar, Set, 5).action().create();
+	    public static final DominionCard Explorer = new DominionCardBuilder(DominionItemType.Explorer, Set, 5).action().create();
+	    public static final DominionCard GhostShip = new DominionCardBuilder(DominionItemType.GhostShip, Set, 5).action().attack().create();
+	    public static final DominionCard MerchantShip = new DominionCardBuilder(DominionItemType.MerchantShip, Set, 5).action().duration().create();
+	    public static final DominionCard Outpost = new DominionCardBuilder(DominionItemType.Outpost, Set, 5).action().duration().create();
+	    public static final DominionCard Tactician = new DominionCardBuilder(DominionItemType.Tactician, Set, 5).action().duration().create();
+	    public static final DominionCard Treasury = new DominionCardBuilder(DominionItemType.Treasury, Set, 5).action().create();
+	    public static final DominionCard Wharf = new DominionCardBuilder(DominionItemType.Wharf, Set, 5).action().duration().create();
+	    
+	    // Mats
+	    public static final DominionGameItem IslandMat = new DominionGameItem(DominionItemType.IslandMat, "", Set);
+	    public static final DominionGameItem NativeVillageMat = new DominionGameItem(DominionItemType.NativeVillageMat, "", Set);
+	    public static final DominionGameItem PirateShipMat = new DominionGameItem(DominionItemType.PirateShipMat, "", Set);
+	    public static final DominionGameItem PirateShipCoinToken = new DominionGameItem(DominionItemType.PirateShipCoinToken, "", Set);
+	    public static final DominionGameItem EmbargoToken = new DominionGameItem(DominionItemType.EmbargoToken, "", Set);
+	}
+	public static ArrayList<DominionCard> seasideCards = new ArrayList<DominionCard>(26);
+	
 	public static ArrayList<DominionCard> getAllCardsFromSets(List<DominionSet> sets){
 		ArrayList<DominionCard> allCards = new ArrayList<DominionCard>();
 		for (DominionSet set : sets) {
@@ -247,6 +289,8 @@ public class CardsDB {
 			case Hinterlands:
 				allCards.addAll(hinterlandsCards);
 				break;
+			case Seaside:
+			    allCards.addAll(seasideCards);
 			}
 		}
 		return allCards;
@@ -259,6 +303,7 @@ public class CardsDB {
 		createIntrigueCards();
 		createProsperityCards();
 		createHinterlandsCards();
+		createSeasideCards();
 	}
 	
 	private static void createBasicCards(){
@@ -430,5 +475,37 @@ public class CardsDB {
 		
 		hinterlandsCards.add(Hinterlands.BorderVillage);
 		hinterlandsCards.add(Hinterlands.Farmland);
+	}
+	
+	private static void createSeasideCards(){
+	    seasideCards.add(Seaside.Embargo);
+	    seasideCards.add(Seaside.Haven);
+	    seasideCards.add(Seaside.Lighthouse);
+	    seasideCards.add(Seaside.NativeVillage);
+	    seasideCards.add(Seaside.PearlDiver);
+	    
+	    seasideCards.add(Seaside.Ambassador);
+	    seasideCards.add(Seaside.FishingVillage);
+	    seasideCards.add(Seaside.Lookout);
+	    seasideCards.add(Seaside.Smugglers);
+	    seasideCards.add(Seaside.Warehouse);
+	    
+	    seasideCards.add(Seaside.Caravan);
+	    seasideCards.add(Seaside.Cutpurse);
+	    seasideCards.add(Seaside.Island);
+	    seasideCards.add(Seaside.Navigator);
+	    seasideCards.add(Seaside.PirateShip);
+	    seasideCards.add(Seaside.Salvager);
+	    seasideCards.add(Seaside.SeaHag);
+	    seasideCards.add(Seaside.TreasureMap);
+	    
+	    seasideCards.add(Seaside.Bazaar);
+	    seasideCards.add(Seaside.Explorer);
+	    seasideCards.add(Seaside.GhostShip);
+	    seasideCards.add(Seaside.MerchantShip);
+	    seasideCards.add(Seaside.Outpost);
+	    seasideCards.add(Seaside.Tactician);
+	    seasideCards.add(Seaside.Treasury);
+	    seasideCards.add(Seaside.Wharf);
 	}
 }

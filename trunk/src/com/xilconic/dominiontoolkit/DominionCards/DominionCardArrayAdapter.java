@@ -120,6 +120,12 @@ public class DominionCardArrayAdapter extends ArrayAdapter<DominionCard> {
 			stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Victory));
 			firstType = false;
 		}
+		
+		if (card.isDuration()){
+		    if (!firstType) stringBuilder.append(", ");
+            stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Duration));
+            firstType = false;
+		}
 
 		return stringBuilder.toString();
 	}

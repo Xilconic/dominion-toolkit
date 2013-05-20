@@ -28,6 +28,7 @@ public class DominionCard extends DominionGameItem implements Parcelable {
 	private boolean _isVictory = false; // Is card a Victory card
 	private boolean _isTreasure = false; // Is card a Treasure card
 	private boolean _isCurse = false; // Is card a Curse card
+	private boolean _isDuration = false; // Is card a Duration card
 	
 	public DominionCard(DominionItemType id, String name, DominionSet set){
 		super(id, name, set);
@@ -43,11 +44,13 @@ public class DominionCard extends DominionGameItem implements Parcelable {
 	 * @param _isTreasure Indicates if the card is a treasure card.
 	 * @param _isVictory Indicates if the card is a victory card.
 	 * @param _isCurse Indicates if the card is a curse card.
+	 * @param _isDuration Indicates if the card is a duration card.
 	 * @param _dominionSet Indicates the set of the DominionCard.
 	 */
 	public DominionCard(int _id, String _name, int _cost, boolean _isAction,
 			boolean _isAttack, boolean _isReaction, boolean _isTreasure,
-			boolean _isVictory, boolean _isCurse, DominionSet _dominionSet) {
+			boolean _isVictory, boolean _isCurse, boolean _isDuration, 
+			DominionSet _dominionSet) {
 		super(DominionItemType.TODO, _name, _dominionSet);
 		this._cost = _cost;
 		this._isAction = _isAction;
@@ -56,6 +59,7 @@ public class DominionCard extends DominionGameItem implements Parcelable {
 		this._isVictory = _isVictory;
 		this._isTreasure = _isTreasure;
 		this._isCurse = _isCurse;
+		this.set_isDuration(_isDuration);
 	}
 	
 	public int get_cost() {
@@ -105,30 +109,17 @@ public class DominionCard extends DominionGameItem implements Parcelable {
 	}
 	public void set_isCurse(boolean _isCurse) {
 		this._isCurse = _isCurse;
-	}
-	/*
-	@Override
-	public boolean equals(Object o){
-		if (o == null){ return false;}
-		if (getClass() != o.getClass()){return false;}
-		
-		if (!super.equals(o)){
-			return false;
-		}
-		else {
-			DominionCard other = (DominionCard)o;
-			return  _cost == other.get_cost() &&
-					_isAction == other.isAction() &&
-					_isAttack == other.isAttack() &&
-					_isReaction == other.isReaction() &&
-					_isVictory == other.isVictory() &&
-					_isTreasure == other.isTreasure() &&
-					_isCurse == other.isCurse();
-		}
-	}*/
-	
+	}	
 
-	@Override
+	public boolean isDuration() {
+        return _isDuration;
+    }
+
+    public void set_isDuration(boolean _isDuration) {
+        this._isDuration = _isDuration;
+    }
+
+    @Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
