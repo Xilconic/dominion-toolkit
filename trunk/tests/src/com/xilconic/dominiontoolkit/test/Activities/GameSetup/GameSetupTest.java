@@ -284,6 +284,59 @@ public class GameSetupTest extends AndroidTestCase {
         assertEquals(1, gameGlobalStartingItems.get(10).getCount());
 	}
 	
+	public void testSeasideNativeVillageMatInEachPlayerStartsWith(){
+	    ArrayList<DominionCard> kingdomCardsReference = createSimpleKingdomCardList();
+        kingdomCardsReference.set(0, CardsDB.Seaside.NativeVillage);
+
+        gameSetup.setKingdomCardSet(kingdomCardsReference);
+        gameSetup.SetUp();
+        
+        ArrayList<AmountOfDominionGameItem> playerStartingItems = gameSetup.GetPlayerStartingItems();
+        assertEquals(CardsDB.Seaside.NativeVillageMat, playerStartingItems.get(2).getItem());
+        assertEquals(1, playerStartingItems.get(2).getCount());
+	}
+	
+	public void testSeasideIslandMatInEachPlayerStartsWith(){
+        ArrayList<DominionCard> kingdomCardsReference = createSimpleKingdomCardList();
+        kingdomCardsReference.set(0, CardsDB.Seaside.Island);
+
+        gameSetup.setKingdomCardSet(kingdomCardsReference);
+        gameSetup.SetUp();
+        
+        ArrayList<AmountOfDominionGameItem> playerStartingItems = gameSetup.GetPlayerStartingItems();
+        assertEquals(CardsDB.Seaside.IslandMat, playerStartingItems.get(2).getItem());
+        assertEquals(1, playerStartingItems.get(2).getCount());
+    }
+	
+	public void testSeasidePirateShipItemsInEachPlayerStartsWithAndGameStartsWith(){
+        ArrayList<DominionCard> kingdomCardsReference = createSimpleKingdomCardList();
+        kingdomCardsReference.set(0, CardsDB.Seaside.PirateShip);
+
+        gameSetup.setKingdomCardSet(kingdomCardsReference);
+        gameSetup.SetUp();
+        
+        ArrayList<AmountOfDominionGameItem> playerStartingItems = gameSetup.GetPlayerStartingItems();
+        
+        assertEquals(CardsDB.Seaside.PirateShipMat, playerStartingItems.get(2).getItem());
+        assertEquals(1, playerStartingItems.get(2).getCount());
+        
+        ArrayList<AmountOfDominionGameItem> gameStartingItems = gameSetup.getGlobalStartingItems();
+        assertEquals(CardsDB.Seaside.PirateShipCoinToken, gameStartingItems.get(6).getItem());
+        assertEquals(25, gameStartingItems.get(6).getCount());
+    }
+	
+	public void testSeasideEmbargoTokensInEachPlayerStartsWith(){
+        ArrayList<DominionCard> kingdomCardsReference = createSimpleKingdomCardList();
+        kingdomCardsReference.set(0, CardsDB.Seaside.Embargo);
+
+        gameSetup.setKingdomCardSet(kingdomCardsReference);
+        gameSetup.SetUp();
+        
+        ArrayList<AmountOfDominionGameItem> gameStartingItems = gameSetup.getGlobalStartingItems();
+        assertEquals(CardsDB.Seaside.EmbargoToken, gameStartingItems.get(6).getItem());
+        assertEquals(15, gameStartingItems.get(6).getCount());
+    }
+	
 	/**
 	 * Creates a list of dummy cards. The first card is a regular card, the second is a regular victory card.
 	 * The rest as filler.

@@ -106,10 +106,14 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 			DominionCard card = (DominionCard)AmountOfItem.getItem();
 			viewHolder.costText.setText(Integer.toString(card.get_cost()));
 			viewHolder.cardTypesText.setText(getCardTypes(card));
+			
+			convertView.findViewById(R.id.coin_bg).setVisibility(View.VISIBLE);
 		}
 		else{
 			viewHolder.costText.setText("");
 			viewHolder.cardTypesText.setText("");
+			
+			convertView.findViewById(R.id.coin_bg).setVisibility(View.INVISIBLE);
 		}
 		
 		AmountOfDominionGameItem baneCardAmount = setup.getBaneCard();
@@ -162,10 +166,18 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 		textView.setText(getGroup(groupPosition).toString());
 		
 		// Game starts with group:
-		int globarStartsWithSize = globalStartsWithGroup.getArrayChildren().size();
-		View highlightLayer = convertView.findViewById(R.id.dominion_game_setup_parent_item_highlight);
+				View highlightLayer = convertView.findViewById(R.id.dominion_game_setup_parent_item_highlight);
 		if (groupPosition == 1){
-            if (globarStartsWithSize == 6 || globarStartsWithSize == 0){
+		    int globalStartsWithSize = globalStartsWithGroup.getArrayChildren().size();
+            if (globalStartsWithSize == 6 || globalStartsWithSize == 0){
+                highlightLayer.setVisibility(View.INVISIBLE);
+            }
+            else {
+                highlightLayer.setVisibility(View.VISIBLE);
+            }
+		}else if (groupPosition == 2){
+		    int eachPlayerStartsWithSize = eachPlayerStartsWithGroup.getArrayChildren().size();
+		    if (eachPlayerStartsWithSize == 2 || eachPlayerStartsWithSize == 0){
                 highlightLayer.setVisibility(View.INVISIBLE);
             }
             else {
