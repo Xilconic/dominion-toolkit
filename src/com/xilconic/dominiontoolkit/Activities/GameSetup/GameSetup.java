@@ -174,6 +174,14 @@ public class GameSetup implements Parcelable{
 		
 		eachPlayerReceives.add(new AmountOfDominionGameItem(CardsDB.Basic.Copper, 7));
 		eachPlayerReceives.add(new AmountOfDominionGameItem(CardsDB.Basic.Estate, 3));
+		
+		for (AmountOfDominionGameItem gameItemAmount : kingdomCardsAndCount) {
+            DominionGameItem item = gameItemAmount.getItem();
+            
+            if (item.equals(CardsDB.Seaside.NativeVillage)) eachPlayerReceives.add(new AmountOfDominionGameItem(CardsDB.Seaside.NativeVillageMat, 1));
+            if (item.equals(CardsDB.Seaside.PirateShip)) eachPlayerReceives.add(new AmountOfDominionGameItem(CardsDB.Seaside.PirateShipMat, 1));
+            if (item.equals(CardsDB.Seaside.Island)) eachPlayerReceives.add(new AmountOfDominionGameItem(CardsDB.Seaside.IslandMat, 1));
+        }
 	}
 	
 	private void setUpGameStartingItems(){
@@ -195,6 +203,9 @@ public class GameSetup implements Parcelable{
                     gameStartsWith.add(new AmountOfDominionGameItem(prizeCard, 1));
                 }
             }
+            
+            if (item.equals(CardsDB.Seaside.PirateShip)) gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Seaside.PirateShipCoinToken, 25));
+            if (item.equals(CardsDB.Seaside.Embargo)) gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Seaside.EmbargoToken, 15));
         }
 	}
 
