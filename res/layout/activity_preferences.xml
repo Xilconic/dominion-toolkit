@@ -50,7 +50,6 @@
         android:id="@+id/preferencesSeasideCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:enabled="false"
         android:text="@string/CardSet.Seaside" />
 
     <CheckBox
@@ -64,21 +63,18 @@
         android:id="@+id/preferencesProsperityCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:enabled="true"
         android:text="@string/CardSet.Prosperity" />
 
     <CheckBox
         android:id="@+id/preferencesCornucopiaCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:enabled="true"
         android:text="@string/CardSet.Cornucopia" />
 
     <CheckBox
         android:id="@+id/preferencesHinterlandsCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:enabled="true"
         android:text="@string/CardSet.Hinterlands" />
 
     <CheckBox

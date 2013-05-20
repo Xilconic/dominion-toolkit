@@ -20,7 +20,7 @@ public class DominionCardBuilder {
 	private DominionItemType _type = null;
 	private DominionSet _set = null;
 	private int _cost = 0;
-	private boolean _isAction, _isAttack, _isReaction, _isTreasure, _isVictory, _isCurse;
+	private boolean _isAction, _isAttack, _isReaction, _isTreasure, _isVictory, _isCurse, _isDuration;
 	
 	/**
 	 * Sets up the initial must-have fields for a {@link DominionCard}.
@@ -88,6 +88,11 @@ public class DominionCardBuilder {
 		return this;
 	}
 	
+	public DominionCardBuilder duration(){
+	    _isDuration = true;
+	    return this;
+	}
+	
 	/**
 	 * Creates the card as configured.
 	 * @return The built card.
@@ -102,6 +107,7 @@ public class DominionCardBuilder {
 		card.set_isTreasure(_isTreasure);
 		card.set_isVictory(_isVictory);
 		card.set_isCurse(_isCurse);
+		card.set_isDuration(_isDuration);
 		return card;
 	}
 	

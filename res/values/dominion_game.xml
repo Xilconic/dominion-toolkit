@@ -23,6 +23,7 @@
     <string name="Cards.Types.Curse">Vloek</string>
     <string name="Cards.Types.Treasure">Geld</string>
     <string name="Cards.Types.Victory">Overwinning</string>
+    <string name="Cards.Types.Duration">Duurzaam</string>
     
     <string name="Cards.Types.Bane">Ban-kaart</string>
     

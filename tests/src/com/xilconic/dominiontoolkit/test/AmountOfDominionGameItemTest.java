@@ -39,7 +39,7 @@ public class AmountOfDominionGameItemTest extends AndroidTestCase {
 	}
 	
 	public void testAmountOfDominionGameItemAsCard(){
-		DominionCard item = new DominionCard(1, "test", 2, true, false, false, false, false, false, DominionSet.Basic);
+		DominionCard item = new DominionCard(1, "test", 2, true, false, false, false, false, false, false, DominionSet.Basic);
 		AmountOfDominionGameItem itemToTest = new AmountOfDominionGameItem(item, 3);
 		
 		assertEquals(3, itemToTest.getCount());
@@ -64,7 +64,7 @@ public class AmountOfDominionGameItemTest extends AndroidTestCase {
 		
 		// Write with card:
 		parcel = Parcel.obtain();
-		item = new DominionCard(1, "test", 2, true, false, false, false, false, false, DominionSet.Basic);
+		item = new DominionCard(1, "test", 2, true, false, false, false, false, false, false, DominionSet.Basic);
 		itemToTest = new AmountOfDominionGameItem(item, 5);
 		itemToTest.writeToParcel(parcel, 0);
 		

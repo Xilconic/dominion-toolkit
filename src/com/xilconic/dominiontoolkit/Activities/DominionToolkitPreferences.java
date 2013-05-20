@@ -109,6 +109,12 @@ public class DominionToolkitPreferences {
 			cardSets.add(DominionSet.Hinterlands);
 		}
 		
+		boolean useSeasideFlag = preferences.getBoolean(useSeaside, false);
+        Log.d("DominionToolkitPreferences", "useSeaside = " + useSeaside);
+        if (useSeasideFlag){
+            cardSets.add(DominionSet.Seaside);
+        }
+		
 		return cardSets;
 	}
 }

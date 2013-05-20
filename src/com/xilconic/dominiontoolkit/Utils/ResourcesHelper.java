@@ -74,6 +74,8 @@ public class ResourcesHelper {
 		switch (item.get_dominionSet()) {
 		case Prosperity:
 			return getProsperitySetItemName(context, item);
+		case Seaside:
+		    return getSeasideSetItemName(context, item);
 		default:
 			return "<no item matched>";
 		}
@@ -93,8 +95,26 @@ public class ResourcesHelper {
 		case FiveVictoryPointToken:
 			return context.getResources().getString(R.string.Cards_Prosperity_FiveVictoryPointToken);
 		default:
-			return "<No prosperity set Item Name matched";
+			return "<No prosperity set Item Name matched>";
 		}
+	}
+	
+	public static String getSeasideSetItemName(Context context, DominionGameItem item){
+	    switch (item.get_id()) {
+        case IslandMat:
+            return context.getResources().getString(R.string.Cards_Seaside_IslandMat);
+        case NativeVillageMat:
+            return context.getResources().getString(R.string.Cards_Seaside_NativeVillageMat);
+        case PirateShipMat:
+            return context.getResources().getString(R.string.Cards_Seaside_PirateShipMat);
+            
+        case PirateShipCoinToken:
+            return context.getResources().getString(R.string.Cards_Seaside_PirateShipCoinToken);
+        case EmbargoToken:
+            return context.getResources().getString(R.string.Cards_Seaside_EmbargoToken);
+        default:
+            return "<No seaside set Item Name matched>";
+        }
 	}
 	
 	public static String GetDominionCardName(Context context, DominionCard card){
@@ -111,6 +131,8 @@ public class ResourcesHelper {
 			return getHinterlandsSetName(context, card);
 		case Cornucopia:
 		    return getCornucopiaSetName(context, card);
+		case Seaside:
+		    return getSeasideSetName(context, card);
 		default:
 			return "<no card set matched>";
 		}
@@ -430,6 +452,65 @@ public class ResourcesHelper {
             return context.getResources().getString(R.string.Cards_Cornucopia_TrustedSteed);
         default:
             return "<No Cornucopia Name matched>";
+        }
+	}
+
+	private static String getSeasideSetName(Context context, DominionCard card){
+	    switch (card.get_id()) {
+        case Embargo:
+            return context.getResources().getString(R.string.Cards_Seaside_Embargo);
+        case Haven:
+            return context.getResources().getString(R.string.Cards_Seaside_Haven);
+        case Lighthouse:
+            return context.getResources().getString(R.string.Cards_Seaside_Lighthouse);
+        case NativeVillage:
+            return context.getResources().getString(R.string.Cards_Seaside_NativeVillage);
+        case PearlDiver:
+            return context.getResources().getString(R.string.Cards_Seaside_PearlDiver);
+        case Ambassador:
+            return context.getResources().getString(R.string.Cards_Seaside_Ambassador);
+        case FishingVillage:
+            return context.getResources().getString(R.string.Cards_Seaside_FishingVillage);
+        case Lookout:
+            return context.getResources().getString(R.string.Cards_Seaside_Lookout);
+        case Smugglers:
+            return context.getResources().getString(R.string.Cards_Seaside_Smugglers);
+        case Warehouse:
+            return context.getResources().getString(R.string.Cards_Seaside_Warehouse);
+        case Caravan:
+            return context.getResources().getString(R.string.Cards_Seaside_Caravan);
+        case Cutpurse:
+            return context.getResources().getString(R.string.Cards_Seaside_Cutpurse);
+        case Island:
+            return context.getResources().getString(R.string.Cards_Seaside_Island);
+        case Navigator:
+            return context.getResources().getString(R.string.Cards_Seaside_Navigator);
+        case PirateShip:
+            return context.getResources().getString(R.string.Cards_Seaside_PirateShip);
+        case Salvager:
+            return context.getResources().getString(R.string.Cards_Seaside_Salvager);
+        case SeaHag:
+            return context.getResources().getString(R.string.Cards_Seaside_SeaHag);
+        case TreasureMap:
+            return context.getResources().getString(R.string.Cards_Seaside_TreasureMap);
+        case Bazaar:
+            return context.getResources().getString(R.string.Cards_Seaside_Bazaar);
+        case Explorer:
+            return context.getResources().getString(R.string.Cards_Seaside_Explorer);
+        case GhostShip:
+            return context.getResources().getString(R.string.Cards_Seaside_GhostShip);
+        case MerchantShip:
+            return context.getResources().getString(R.string.Cards_Seaside_MerchantShip);
+        case Outpost:
+            return context.getResources().getString(R.string.Cards_Seaside_Outpost);
+        case Tactician:
+            return context.getResources().getString(R.string.Cards_Seaside_Tactician);
+        case Treasury:
+            return context.getResources().getString(R.string.Cards_Seaside_Treasury);
+        case Wharf:
+            return context.getResources().getString(R.string.Cards_Seaside_Wharf);
+        default:
+            return "<No Seaside Name matched>";
         }
 	}
 }
