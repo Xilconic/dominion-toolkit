@@ -80,39 +80,38 @@ public class DominionToolkitPreferences {
 		List<DominionSet> cardSets = new ArrayList<DominionSet>();
 		
 		boolean useCornucopiaFlag = preferences.getBoolean(useCornucopia, false);
-        Log.d("DominionToolkitPreferences", "useCornucopia = " + useCornucopiaFlag);
         if (useCornucopiaFlag){
             cardSets.add(DominionSet.Cornucopia);
         }
 		
 		boolean useDominionFlag = preferences.getBoolean(useDominion, false);
-		Log.d("DominionToolkitPreferences", "useDominion = " + useDominionFlag);
 		if (useDominionFlag){
 			cardSets.add(DominionSet.Dominion);
 		}
 		
 		boolean useIntrigueFlag = preferences.getBoolean(useIntrigue, false);
-		Log.d("DominionToolkitPreferences", "useIntrigue = " + useIntrigueFlag);
 		if (useIntrigueFlag){
 			cardSets.add(DominionSet.Intrigue);
 		}
 		
 		boolean useProsperityFlag = preferences.getBoolean(useProsperity, false);
-		Log.d("DominionToolkitPreferences", "useProsperity = " + useProsperityFlag);
 		if (useProsperityFlag){
 			cardSets.add(DominionSet.Prosperity);
 		}
 		
 		boolean useHinterlandsFlag = preferences.getBoolean(useHinterlands, false);
-		Log.d("DominionToolkitPreferences", "useHinterlands = " + useHinterlands);
 		if (useHinterlandsFlag){
 			cardSets.add(DominionSet.Hinterlands);
 		}
 		
 		boolean useSeasideFlag = preferences.getBoolean(useSeaside, false);
-        Log.d("DominionToolkitPreferences", "useSeaside = " + useSeaside);
         if (useSeasideFlag){
             cardSets.add(DominionSet.Seaside);
+        }
+        
+        boolean useDarkAgesFlag = preferences.getBoolean(useDarkAges, false);
+        if (useDarkAgesFlag){
+            cardSets.add(DominionSet.DarkAges);
         }
 		
 		return cardSets;

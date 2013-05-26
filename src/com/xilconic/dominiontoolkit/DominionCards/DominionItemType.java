@@ -37,6 +37,21 @@ public enum DominionItemType {
 	BagOfGold, Diadem, Followers, Princess, TrustySteed,
 	
 	// DominionSet.DarkAges:
+	// Ruins:
+	AbandonedMine, RuinedLibrary, RuinedMarket, RuinedVillage, Survivors,
+	// Shelters:
+	Hovel, Necropolis, OvergrownEstate,
+	// Knights:
+	DameAnna, DameJosephine, DameMolly, DameNatalie, DameSylvia, SirBailey, SirDestry, SirMartin, SirMichael, SirVander,
+	// Other
+	Madman, Mercenary, Spoils, 
+	
+	PoorHouse,
+	Beggar,Squire,Vagrant,
+	Forager, Hermit, MarketSquare, Sage, Storeroom, Urchin,
+	Armory, DeathCart, Feodum, Fortress, Ironmonger, Marauder, Procession, Rats, Scavenger, WanderingMinstrel,
+	BandOfMisfits, BanditCamp, Catacombs, Count, Counterfeit, Cultist, Graverobber, Junkdealer, Knights, Mystic, Pillage, Rebuild, Rogue,
+	Altar, HuntingGrounds,
 	
 	// DominionSet.Dominion:
 	Cellar, Chapel, Moat, 
@@ -72,7 +87,6 @@ public enum DominionItemType {
 	Goons, GrandMarket, Hoard, 
 	Bank, Expand, Forge, KingsCourt,
 	Peddler,
-	
 	
 	// DominionSet.Seaside:
 	IslandMat, NativeVillageMat, PirateShipMat, PirateShipCoinToken, EmbargoToken,

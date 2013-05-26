@@ -6,7 +6,6 @@ import com.xilconic.dominiontoolkit.R;
 import com.xilconic.dominiontoolkit.DominionCards.AmountOfDominionGameItem;
 import com.xilconic.dominiontoolkit.DominionCards.CardsDB;
 import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
-import com.xilconic.dominiontoolkit.DominionCards.DominionGameItem;
 import com.xilconic.dominiontoolkit.Utils.ResourcesHelper;
 
 import android.content.Context;
@@ -26,13 +25,12 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 	private GameSetupParentItem kingdomCardsStartsWithGroup;
 	private GameSetup setup;
 	private Context _context;
-	private final StringBuilder stringBuilder;
 	
 	public GameSetupExpandableListAdapter(Context context, GameSetup gameSetup){
 		this.setup = gameSetup;
 		this._context = context;
 		inflater = LayoutInflater.from(context);
-		stringBuilder = new StringBuilder(" ");
+		new StringBuilder(" ");
 		
 		if (!setup.isFullySetup()){
 			setup.SetUp();
@@ -101,11 +99,15 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 		
 		viewHolder.countText.setText(Integer.toString(AmountOfItem.getCount()));
 		
+		AmountOfDominionGameItem baneCardAmount = setup.getBaneCard();
+        boolean isBaneCard = baneCardAmount != null && AmountOfItem.getItem().equals(baneCardAmount.getItem());
+		
 		// Set card cost text and CardTypes:
 		if(AmountOfItem.getItem() instanceof DominionCard){
 			DominionCard card = (DominionCard)AmountOfItem.getItem();
 			viewHolder.costText.setText(Integer.toString(card.get_cost()));
-			viewHolder.cardTypesText.setText(getCardTypes(card));
+			
+			viewHolder.cardTypesText.setText(ResourcesHelper.getCardTypes(_context, card, isBaneCard));
 			
 			convertView.findViewById(R.id.coin_bg).setVisibility(View.VISIBLE);
 		}
@@ -116,11 +118,10 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 			convertView.findViewById(R.id.coin_bg).setVisibility(View.INVISIBLE);
 		}
 		
-		AmountOfDominionGameItem baneCardAmount = setup.getBaneCard();
-		if (baneCardAmount == null || !AmountOfItem.getItem().equals(baneCardAmount.getItem())){
-		    convertView.findViewById(R.id.arrowImage).setVisibility(View.GONE);
-		}else{
+		if (isBaneCard){
 		    convertView.findViewById(R.id.arrowImage).setVisibility(View.VISIBLE);
+		}else{
+		    convertView.findViewById(R.id.arrowImage).setVisibility(View.GONE);
 		}
 		
 		// Set card name text:
@@ -203,61 +204,6 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 	@Override
 	public void registerDataSetObserver(DataSetObserver observer){
 		super.registerDataSetObserver(observer);
-	}
-	
-	private CharSequence getCardTypes(DominionCard card) {
-		stringBuilder.delete(0, stringBuilder.length());
-		
-		boolean firstType = true;
-		AmountOfDominionGameItem baneCardAmount = setup.getBaneCard();
-		if (baneCardAmount != null && card.equals(baneCardAmount.getItem())){
-		    stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Bane));
-            firstType = false;
-		}
-		
-		if (card.isAction()){
-		    if (!firstType) stringBuilder.append(", ");
-			stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Action));
-			firstType = false;
-		}
-		
-		if (card.isAttack()){
-			if (!firstType) stringBuilder.append(", ");
-			stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Attack));
-			firstType = false;
-		}
-		
-		if (card.isReaction()){
-			if (!firstType) stringBuilder.append(", ");
-			stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Reaction));
-			firstType = false;
-		}
-		
-		if (card.isCurse()){
-			if (!firstType) stringBuilder.append(", ");
-			stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Curse));
-			firstType = false;
-		}
-		
-		if (card.isTreasure()){
-			if (!firstType) stringBuilder.append(", ");
-			stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Treasure));
-			firstType = false;
-		}
-		
-		if (card.isVictory()){
-			if (!firstType) stringBuilder.append(", ");
-			stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Victory));
-			firstType = false;
-		}
-		
-		if (card.isDuration()){
-            if (!firstType) stringBuilder.append(", ");
-            stringBuilder.append(_context.getResources().getString(R.string.Cards_Types_Duration));
-            firstType = false;
-        }
-
-		return stringBuilder.toString();
 	}
 	
 	public int getEachPlayerStartsWithGroupId(){

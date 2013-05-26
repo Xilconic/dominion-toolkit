@@ -29,6 +29,10 @@ public class DominionCard extends DominionGameItem implements Parcelable {
 	private boolean _isTreasure = false; // Is card a Treasure card
 	private boolean _isCurse = false; // Is card a Curse card
 	private boolean _isDuration = false; // Is card a Duration card
+	private boolean _isRuin = false; // Is card a Ruin card
+	private boolean _isShelter = false; // Is card a Shelter card
+	private boolean _isKnight = false; // Is card a Knight card
+	private boolean _isLooter = false; // Is card a Looter card
 	
 	public DominionCard(DominionItemType id, String name, DominionSet set){
 		super(id, name, set);
@@ -45,11 +49,17 @@ public class DominionCard extends DominionGameItem implements Parcelable {
 	 * @param _isVictory Indicates if the card is a victory card.
 	 * @param _isCurse Indicates if the card is a curse card.
 	 * @param _isDuration Indicates if the card is a duration card.
+	 * @param _isRuin Indicates if the card is a ruin card.
+	 * @param _isShelter Indicates if the card is a shelter card.
+	 * @param _isKnight Indicates if the card is a knight card.
+	 * @param _isLooter Indicates if the card is a looter card.
 	 * @param _dominionSet Indicates the set of the DominionCard.
 	 */
 	public DominionCard(int _id, String _name, int _cost, boolean _isAction,
 			boolean _isAttack, boolean _isReaction, boolean _isTreasure,
 			boolean _isVictory, boolean _isCurse, boolean _isDuration, 
+			boolean _isRuin, boolean _isShelter, boolean _isKnight,
+			boolean _isLooter,
 			DominionSet _dominionSet) {
 		super(DominionItemType.TODO, _name, _dominionSet);
 		this._cost = _cost;
@@ -59,7 +69,11 @@ public class DominionCard extends DominionGameItem implements Parcelable {
 		this._isVictory = _isVictory;
 		this._isTreasure = _isTreasure;
 		this._isCurse = _isCurse;
-		this.set_isDuration(_isDuration);
+		this._isDuration = _isDuration;
+		this._isRuin = _isRuin;
+		this._isShelter = _isShelter;
+		this._isKnight = _isKnight;
+		this._isLooter = _isLooter;
 	}
 	
 	public int get_cost() {
@@ -119,6 +133,38 @@ public class DominionCard extends DominionGameItem implements Parcelable {
         this._isDuration = _isDuration;
     }
 
+    public boolean isRuin() {
+        return _isRuin;
+    }
+
+    public void set_isRuin(boolean _isRuin) {
+        this._isRuin = _isRuin;
+    }
+
+    public boolean isShelter() {
+        return _isShelter;
+    }
+
+    public void set_isShelter(boolean _isShelter) {
+        this._isShelter = _isShelter;
+    }
+
+    public boolean isKnight() {
+        return _isKnight;
+    }
+
+    public void set_isKnight(boolean _isKnight) {
+        this._isKnight = _isKnight;
+    }
+
+    public boolean isLooter() {
+        return _isLooter;
+    }
+
+    public void set_isLooter(boolean _isLooter) {
+        this._isLooter = _isLooter;
+    }
+
     @Override
 	public int hashCode() {
 		final int prime = 31;
@@ -148,6 +194,12 @@ public class DominionCard extends DominionGameItem implements Parcelable {
 		if (_isTreasure != other._isTreasure) return false;
 		if (_isVictory != other._isVictory)	return false;
 		
+		if (_isDuration != other._isDuration)   return false;
+		if (_isRuin != other._isRuin)   return false;
+		if (_isShelter != other._isShelter)   return false;
+		if (_isKnight != other._isKnight)   return false;
+		if (_isLooter != other._isLooter)   return false;
+		
 		return true;
 	}
 
@@ -161,13 +213,16 @@ public class DominionCard extends DominionGameItem implements Parcelable {
 	public void writeToParcel(Parcel parcel, int flags) {
 		super.writeToParcel(parcel, flags);
 		parcel.writeInt(_cost);
-		parcel.writeBooleanArray(new boolean[]{_isAction, _isAttack, _isReaction, _isVictory, _isTreasure, _isCurse});
+		parcel.writeBooleanArray(new boolean[]{
+		        _isAction, _isAttack, _isReaction, _isVictory, _isTreasure, _isCurse,
+		        _isDuration, _isRuin, _isShelter, _isKnight, _isLooter
+		        });
 	}
 	
 	protected DominionCard(Parcel parcel){
 		super(parcel);
 		_cost = parcel.readInt();
-		boolean[] flags = new boolean[6];
+		boolean[] flags = new boolean[11];
 		parcel.readBooleanArray(flags);
 		_isAction = flags[0];
 		_isAttack = flags[1];
@@ -175,9 +230,14 @@ public class DominionCard extends DominionGameItem implements Parcelable {
 		_isVictory = flags[3];
 		_isTreasure = flags[4];
 		_isCurse = flags[5];
+		_isDuration = flags[6];
+		_isRuin = flags[7];
+		_isShelter = flags[8];
+		_isKnight = flags[9];
+		_isLooter = flags[10];
 	}
 
-	public static final Parcelable.Creator<DominionCard> CREATOR = new Parcelable.Creator<DominionCard>()
+    public static final Parcelable.Creator<DominionCard> CREATOR = new Parcelable.Creator<DominionCard>()
 	{
 		public DominionCard createFromParcel(Parcel parcel) {
 			return new DominionCard(parcel);
@@ -187,6 +247,5 @@ public class DominionCard extends DominionGameItem implements Parcelable {
 			return new DominionCard[size];
 		}
 	};
-	// = END Interface: Parcelable ======================
-	
+	// = END Interface: Parcelable ======================	
 }

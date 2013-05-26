@@ -18,13 +18,85 @@ package com.xilconic.dominiontoolkit.Utils;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-
 import com.xilconic.dominiontoolkit.R;
 import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
 import com.xilconic.dominiontoolkit.DominionCards.DominionGameItem;
 import com.xilconic.dominiontoolkit.DominionCards.DominionSet;
 
 public class ResourcesHelper {
+    
+    public static String getCardTypes(Context context, DominionCard card, boolean isBaneCard){
+        StringBuilder stringBuilder = new StringBuilder();
+        boolean firstType = true;
+        if (isBaneCard){
+            stringBuilder.append(context.getResources().getString(R.string.Cards_Types_Bane));
+            firstType = false;
+        }
+        
+        if (card.isAction()){
+            if (!firstType) stringBuilder.append(", ");
+            stringBuilder.append(context.getResources().getString(R.string.Cards_Types_Action));
+            firstType = false;
+        }
+        
+        if (card.isAttack()){
+            if (!firstType) stringBuilder.append(", ");
+            stringBuilder.append(context.getResources().getString(R.string.Cards_Types_Attack));
+            firstType = false;
+        }
+        
+        if (card.isReaction()){
+            if (!firstType) stringBuilder.append(", ");
+            stringBuilder.append(context.getResources().getString(R.string.Cards_Types_Reaction));
+            firstType = false;
+        }
+        
+        if (card.isCurse()){
+            if (!firstType) stringBuilder.append(", ");
+            stringBuilder.append(context.getResources().getString(R.string.Cards_Types_Curse));
+            firstType = false;
+        }
+        
+        if (card.isTreasure()){
+            if (!firstType) stringBuilder.append(", ");
+            stringBuilder.append(context.getResources().getString(R.string.Cards_Types_Treasure));
+            firstType = false;
+        }
+        
+        if (card.isVictory()){
+            if (!firstType) stringBuilder.append(", ");
+            stringBuilder.append(context.getResources().getString(R.string.Cards_Types_Victory));
+            firstType = false;
+        }
+        
+        if (card.isDuration()){
+            if (!firstType) stringBuilder.append(", ");
+            stringBuilder.append(context.getResources().getString(R.string.Cards_Types_Duration));
+            firstType = false;
+        }
+        
+        if (card.isKnight()){
+            if (!firstType) stringBuilder.append(", ");
+            stringBuilder.append(context.getResources().getString(R.string.Cards_Types_Knight));
+        }
+        
+        if (card.isLooter()){
+            if (!firstType) stringBuilder.append(", ");
+            stringBuilder.append(context.getResources().getString(R.string.Cards_Types_Looter));
+        }
+        
+        if (card.isRuin()){
+            if (!firstType) stringBuilder.append(", ");
+            stringBuilder.append(context.getResources().getString(R.string.Cards_Types_Ruin));
+        }
+        
+        if (card.isShelter()){
+            if (!firstType) stringBuilder.append(", ");
+            stringBuilder.append(context.getResources().getString(R.string.Cards_Types_Shelter));
+        }
+
+        return stringBuilder.toString();
+    }
 
 	/**
 	 * Returns the set icon corresponding with the given set.
@@ -133,6 +205,8 @@ public class ResourcesHelper {
 		    return getCornucopiaSetName(context, card);
 		case Seaside:
 		    return getSeasideSetName(context, card);
+		case DarkAges:
+		    return getDarkAgesSetName(context, card);
 		default:
 			return "<no card set matched>";
 		}
@@ -513,4 +587,106 @@ public class ResourcesHelper {
             return "<No Seaside Name matched>";
         }
 	}
+	
+	private static String getDarkAgesSetName(Context context, DominionCard card) {
+        switch (card.get_id()) {
+        case AbandonedMine:
+            return context.getResources().getString(R.string.Cards_DarkAges_AbandonedMine);
+        case RuinedLibrary:
+            return context.getResources().getString(R.string.Cards_DarkAges_RuinedLibrary);
+        case RuinedMarket:
+            return context.getResources().getString(R.string.Cards_DarkAges_RuinedMarket);
+        case RuinedVillage:
+            return context.getResources().getString(R.string.Cards_DarkAges_RuinedVillage);
+        case Survivors:
+            return context.getResources().getString(R.string.Cards_DarkAges_Survivors);
+            
+        case Hovel:
+            return context.getResources().getString(R.string.Cards_DarkAges_Hovel);
+        case Necropolis:
+            return context.getResources().getString(R.string.Cards_DarkAges_Necropolis);
+        case OvergrownEstate:
+            return context.getResources().getString(R.string.Cards_DarkAges_OvergrownEstate);
+            
+        case Madman:
+            return context.getResources().getString(R.string.Cards_DarkAges_Madman);
+        case Mercenary:
+            return context.getResources().getString(R.string.Cards_DarkAges_Mercenary);
+        case Spoils:
+            return context.getResources().getString(R.string.Cards_DarkAges_Spoils);
+            
+        case PoorHouse:
+            return context.getResources().getString(R.string.Cards_DarkAges_PoorHouse);
+        case Beggar:
+            return context.getResources().getString(R.string.Cards_DarkAges_Beggar);
+        case Squire:
+            return context.getResources().getString(R.string.Cards_DarkAges_Squire);
+        case Vagrant:
+            return context.getResources().getString(R.string.Cards_DarkAges_Vagrant);
+        case Forager:
+            return context.getResources().getString(R.string.Cards_DarkAges_Forager);
+        case Hermit:
+            return context.getResources().getString(R.string.Cards_DarkAges_Hermit);
+        case MarketSquare:
+            return context.getResources().getString(R.string.Cards_DarkAges_MarketSquare);
+        case Sage:
+            return context.getResources().getString(R.string.Cards_DarkAges_Sage);
+        case Storeroom:
+            return context.getResources().getString(R.string.Cards_DarkAges_Storeroom);
+        case Urchin:
+            return context.getResources().getString(R.string.Cards_DarkAges_Urchin);
+        case Armory:
+            return context.getResources().getString(R.string.Cards_DarkAges_Armory);
+        case DeathCart:
+            return context.getResources().getString(R.string.Cards_DarkAges_DeathCart);
+        case Feodum:
+            return context.getResources().getString(R.string.Cards_DarkAges_Feodum);
+        case Fortress:
+            return context.getResources().getString(R.string.Cards_DarkAges_Fortress);
+        case Ironmonger:
+            return context.getResources().getString(R.string.Cards_DarkAges_Ironmonger);
+        case Marauder:
+            return context.getResources().getString(R.string.Cards_DarkAges_Marauder);
+        case Procession:
+            return context.getResources().getString(R.string.Cards_DarkAges_Procession);
+        case Rats:
+            return context.getResources().getString(R.string.Cards_DarkAges_Rats);
+        case Scavenger:
+            return context.getResources().getString(R.string.Cards_DarkAges_Scavenger);
+        case WanderingMinstrel:
+            return context.getResources().getString(R.string.Cards_DarkAges_WanderingMinstrel);
+        case BandOfMisfits:
+            return context.getResources().getString(R.string.Cards_DarkAges_BandOfMisfits);
+        case BanditCamp:
+            return context.getResources().getString(R.string.Cards_DarkAges_BanditCamp);
+        case Catacombs:
+            return context.getResources().getString(R.string.Cards_DarkAges_Catacombs);
+        case Count:
+            return context.getResources().getString(R.string.Cards_DarkAges_Count);
+        case Counterfeit:
+            return context.getResources().getString(R.string.Cards_DarkAges_Counterfeit);
+        case Cultist:
+            return context.getResources().getString(R.string.Cards_DarkAges_Cultist);
+        case Graverobber:
+            return context.getResources().getString(R.string.Cards_DarkAges_Graverobber);
+        case Junkdealer:
+            return context.getResources().getString(R.string.Cards_DarkAges_Junkdealer);
+        case Knights:
+            return context.getResources().getString(R.string.Cards_DarkAges_Knights);
+        case Mystic:
+            return context.getResources().getString(R.string.Cards_DarkAges_Mystic);
+        case Pillage:
+            return context.getResources().getString(R.string.Cards_DarkAges_Pillage);
+        case Rebuild:
+            return context.getResources().getString(R.string.Cards_DarkAges_Rebuild);
+        case Rogue:
+            return context.getResources().getString(R.string.Cards_DarkAges_Rogue);
+        case Altar:
+            return context.getResources().getString(R.string.Cards_DarkAges_Altar);
+        case HuntingGrounds:
+            return context.getResources().getString(R.string.Cards_DarkAges_HuntingGrounds);
+        default:
+            return "<No Dark Ages Name matched>";
+        }
+    }
 }
