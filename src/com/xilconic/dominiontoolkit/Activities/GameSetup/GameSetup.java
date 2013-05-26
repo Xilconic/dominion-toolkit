@@ -192,6 +192,7 @@ public class GameSetup implements Parcelable{
 		eachPlayerReceives.clear();
 		
 		if (useDarkAgesSetup){
+		    eachPlayerReceives.add(new AmountOfDominionGameItem(CardsDB.Basic.Copper, 7));
 		    eachPlayerReceives.add(new AmountOfDominionGameItem(CardsDB.DarkAges.Hovel, 1));
 		    eachPlayerReceives.add(new AmountOfDominionGameItem(CardsDB.DarkAges.Necropolis, 1));
 		    eachPlayerReceives.add(new AmountOfDominionGameItem(CardsDB.DarkAges.OvergrownEstate, 1));
