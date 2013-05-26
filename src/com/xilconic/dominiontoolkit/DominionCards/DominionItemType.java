@@ -38,7 +38,7 @@ public enum DominionItemType {
 	
 	// DominionSet.DarkAges:
 	// Ruins:
-	AbandonedMine, RuinedLibrary, RuinedMarket, RuinedVillage, Survivors,
+	Ruin, AbandonedMine, RuinedLibrary, RuinedMarket, RuinedVillage, Survivors,
 	// Shelters:
 	Hovel, Necropolis, OvergrownEstate,
 	// Knights:

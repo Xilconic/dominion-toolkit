@@ -16,6 +16,7 @@
   along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
+    <string name="Cards.DarkAges.Ruin">Ruïne</string>
     <string name="Cards.DarkAges.AbandonedMine">Verlaten Mijn</string>
     <string name="Cards.DarkAges.RuinedLibrary">Ingestorte Bibliotheek</string>
     <string name="Cards.DarkAges.RuinedMarket">Verwoeste Markt</string>

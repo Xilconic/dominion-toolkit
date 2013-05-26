@@ -275,6 +275,7 @@ public class CardsDB {
 	    public static final DominionSet Set = DominionSet.DarkAges;
 	    
 	    // Ruins:
+	    public static final DominionCard Ruin = new DominionCardBuilder(DominionItemType.Ruin, Set, 0).action().ruins().create();
 	    public static final DominionCard AbandonedMine = new DominionCardBuilder(DominionItemType.AbandonedMine, Set, 0).action().ruins().create();
 	    public static final DominionCard RuinedLibrary = new DominionCardBuilder(DominionItemType.RuinedLibrary, Set, 0).action().ruins().create();
 	    public static final DominionCard RuinedMarket = new DominionCardBuilder(DominionItemType.RuinedMarket, Set, 0).action().ruins().create();
