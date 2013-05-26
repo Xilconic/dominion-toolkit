@@ -65,13 +65,14 @@ public class DominionCardTest extends AndroidTestCase {
 
 	public void testParcelableCreator(){
 		Parcel parcel = Parcel.obtain();
-		cardToTest.writeToParcel(parcel, 0);
+		DominionCard card = new DominionCard(0, "test", 5, true, true, true, true, true, true, true, true, true, true, true, DominionSet.BlackMarketPromo);
+		card.writeToParcel(parcel, 0);
 		
 		// Done writing, reset parcel for reading:
 		parcel.setDataPosition(0);
 		
 		// Retrieve:
 		DominionCard createdFromParcel = DominionCard.CREATOR.createFromParcel(parcel);
-		assertEquals("Cards should be equal", cardToTest, createdFromParcel);
+		assertEquals("Cards should be equal", card, createdFromParcel);
 	}
 }

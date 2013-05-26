@@ -20,7 +20,8 @@ public class DominionCardBuilder {
 	private DominionItemType _type = null;
 	private DominionSet _set = null;
 	private int _cost = 0;
-	private boolean _isAction, _isAttack, _isReaction, _isTreasure, _isVictory, _isCurse, _isDuration;
+	private boolean _isAction, _isAttack, _isReaction, _isTreasure, _isVictory, _isCurse,
+	_isDuration, _isRuin, _isShelter, _isKnight, _isLooter;
 	
 	/**
 	 * Sets up the initial must-have fields for a {@link DominionCard}.
@@ -93,6 +94,26 @@ public class DominionCardBuilder {
 	    return this;
 	}
 	
+    public DominionCardBuilder ruins() {
+        _isRuin = true;
+        return this;
+    }
+    
+    public DominionCardBuilder shelter() {
+        _isShelter = true;
+        return this;
+    }
+    
+    public DominionCardBuilder knight() {
+        _isKnight = true;
+        return this;
+    }
+
+    public DominionCardBuilder looter() {
+        _isLooter = true;
+        return this;
+    }
+	
 	/**
 	 * Creates the card as configured.
 	 * @return The built card.
@@ -108,6 +129,10 @@ public class DominionCardBuilder {
 		card.set_isVictory(_isVictory);
 		card.set_isCurse(_isCurse);
 		card.set_isDuration(_isDuration);
+		card.set_isRuin(_isRuin);
+		card.set_isShelter(_isShelter);
+		card.set_isKnight(_isKnight);
+		card.set_isLooter(_isLooter);
 		return card;
 	}
 	
@@ -115,7 +140,8 @@ public class DominionCardBuilder {
 		if (_type == null) throw new IllegalArgumentException("Type must be set");
 		if (_set == null) throw new IllegalArgumentException("Dominion Set must be set");
 		if (_cost < 0) throw new IllegalArgumentException("Cost cannot be engative");
-		if (!(_isAction || _isAttack || _isReaction || _isTreasure || _isVictory || _isCurse)){
+		if (!(_isAction || _isAttack || _isReaction || _isTreasure || _isVictory || _isCurse ||
+		        _isDuration || _isShelter || _isRuin || _isKnight || _isLooter)){
 			throw new IllegalArgumentException("Must specify at least one play type");
 		}
 	}

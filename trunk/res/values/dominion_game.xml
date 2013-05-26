@@ -24,6 +24,10 @@
     <string name="Cards.Types.Treasure">Geld</string>
     <string name="Cards.Types.Victory">Overwinning</string>
     <string name="Cards.Types.Duration">Duurzaam</string>
+    <string name="Cards.Types.Ruin">Ruïne</string>
+    <string name="Cards.Types.Looter">Plunderaar</string>
+    <string name="Cards.Types.Knight">Ridder</string>
+    <string name="Cards.Types.Shelter">Onderdak</string>
     
     <string name="Cards.Types.Bane">Ban-kaart</string>
     

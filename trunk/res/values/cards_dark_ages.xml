@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of Dominion Toolkit.
+  
+  Dominion Toolkit is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  Dominion Toolkit is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+    <string name="Cards.DarkAges.AbandonedMine">Verlaten Mijn</string>
+    <string name="Cards.DarkAges.RuinedLibrary">Ingestorte Bibliotheek</string>
+    <string name="Cards.DarkAges.RuinedMarket">Verwoeste Markt</string>
+    <string name="Cards.DarkAges.RuinedVillage">Vernield Dorp</string>
+    <string name="Cards.DarkAges.Survivors">Overlevenden</string>
+    
+    <string name="Cards.DarkAges.Hovel">Hutje</string>
+    <string name="Cards.DarkAges.Necropolis">Necropolis</string>
+    <string name="Cards.DarkAges.OvergrownEstate">Verwilderd Landgoed</string>
+    
+    <string name="Cards.DarkAges.Madman">Krankzinnige</string>
+    <string name="Cards.DarkAges.Mercenary">Huurling</string>
+    <string name="Cards.DarkAges.Spoils">Buit</string>
+    
+    <string name="Cards.DarkAges.PoorHouse">Armenhuis</string>
+    <string name="Cards.DarkAges.Beggar">Bedelaar</string>
+    <string name="Cards.DarkAges.Squire">Schildknaap</string>
+    <string name="Cards.DarkAges.Vagrant">Landloper</string>
+    <string name="Cards.DarkAges.Forager">Jager-Verzamelaar</string>
+    <string name="Cards.DarkAges.Hermit">Kluizenaar</string>
+    <string name="Cards.DarkAges.MarketSquare">Marktplein</string>
+    <string name="Cards.DarkAges.Sage">Wijsgeer</string>
+    <string name="Cards.DarkAges.Storeroom">Berghok</string>
+    <string name="Cards.DarkAges.Urchin">Straatjongen</string>
+    <string name="Cards.DarkAges.Armory">Wapenkamer</string>
+    <string name="Cards.DarkAges.DeathCart">Dodenkar</string>
+    <string name="Cards.DarkAges.Feodum">Feodum</string>
+    <string name="Cards.DarkAges.Fortress">Vesting</string>
+    <string name="Cards.DarkAges.Ironmonger">Metaalhandelaar</string>
+    <string name="Cards.DarkAges.Marauder">Stroper</string>
+    <string name="Cards.DarkAges.Procession">Optocht</string>
+    <string name="Cards.DarkAges.Rats">Ratten</string>
+    <string name="Cards.DarkAges.Scavenger">Scharrelaar</string>
+    <string name="Cards.DarkAges.WanderingMinstrel">Reizende Minstreel</string>
+    <string name="Cards.DarkAges.BandOfMisfits">Groep Mislukkelingen</string>
+    <string name="Cards.DarkAges.BanditCamp">Bandietenkamp</string>
+    <string name="Cards.DarkAges.Catacombs">Gewelven</string>
+    <string name="Cards.DarkAges.Count">Graaf</string>
+    <string name="Cards.DarkAges.Counterfeit">Vals Geld</string>
+    <string name="Cards.DarkAges.Cultist">Cultist</string>
+    <string name="Cards.DarkAges.Graverobber">Grafrover</string>
+    <string name="Cards.DarkAges.Junkdealer">Opkoper</string>
+    <string name="Cards.DarkAges.Knights">Ridders</string>
+    <string name="Cards.DarkAges.Mystic">Toverfeeks</string>
+    <string name="Cards.DarkAges.Pillage">Plundering</string>
+    <string name="Cards.DarkAges.Rebuild">Wederopbouw</string>
+    <string name="Cards.DarkAges.Rogue">Schurk</string>
+    <string name="Cards.DarkAges.Altar">Altaar</string>
+    <string name="Cards.DarkAges.HuntingGrounds">Jachtvelden</string>
+</resources>
