@@ -590,6 +590,8 @@ public class ResourcesHelper {
 	
 	private static String getDarkAgesSetName(Context context, DominionCard card) {
         switch (card.get_id()) {
+        case Ruin:
+            return context.getResources().getString(R.string.Cards_DarkAges_Ruin);
         case AbandonedMine:
             return context.getResources().getString(R.string.Cards_DarkAges_AbandonedMine);
         case RuinedLibrary:

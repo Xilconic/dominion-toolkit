@@ -20,7 +20,6 @@ import java.util.ArrayList;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
 import com.xilconic.dominiontoolkit.DominionCards.AmountOfDominionGameItem;
 import com.xilconic.dominiontoolkit.DominionCards.CardsDB;
 import com.xilconic.dominiontoolkit.DominionCards.DominionCard;
@@ -37,7 +36,7 @@ public class GameSetup implements Parcelable{
 	private ArrayList<AmountOfDominionGameItem> eachPlayerReceives;
 	private ArrayList<AmountOfDominionGameItem> gameStartsWith;
 	private int playerCount;
-	private boolean isFullySetUp;
+	private boolean isFullySetUp, useProsperitySetup, useDarkAgesSetup;
     private AmountOfDominionGameItem baneCard;
 	
 	/**
@@ -49,6 +48,8 @@ public class GameSetup implements Parcelable{
 		gameStartsWith = new ArrayList<AmountOfDominionGameItem>(6);
 		playerCount = 4;
 		isFullySetUp = false;
+		useProsperitySetup = false;
+		useDarkAgesSetup = false;
 	}
 	
 	/**
@@ -59,6 +60,22 @@ public class GameSetup implements Parcelable{
 		this();
 		setKingdomCardSet(kingdomCards);
 	}
+	
+	public boolean setUseProsperitySetup(){
+	    return useProsperitySetup;
+	}
+	
+	public void setUseProsperitySetup(boolean useSetup) {
+        useProsperitySetup = useSetup;
+    }
+
+	public boolean setUseDarkAgesSetup(){
+	    return useDarkAgesSetup;
+	}
+	
+    public void setUseDarkAgesSetup(boolean useSetup) {
+        useDarkAgesSetup = useSetup;
+    }
 	
 	/**
 	 * Checks if {@link GameSetup} has been fully configured for
@@ -101,23 +118,25 @@ public class GameSetup implements Parcelable{
 	private int getNumberOfOccurences(DominionCard card, CardPile pile){
 	    switch (pile) {
         case Kingdom:
-            if (card.isVictory()){
-                return 8 + (playerCount-2)*2;
-            }
+            if (card.isVictory()) return 8 + (playerCount-2)*2;
+            if (card.equals(CardsDB.DarkAges.Rats)) return 20;
+
             return 10;
         case GameStart:
-            if (card.isVictory()){
-                return 8 + (playerCount-2)*2;
+            if (card.isVictory()) return 8 + (playerCount-2)*2;
+            if (card.equals(CardsDB.Basic.Copper)) return 60 - playerCount * 7;
+            if (card.equals(CardsDB.Basic.Silver)) return 40;
+            if (card.equals(CardsDB.Basic.Gold)) return 30;
+            if (card.equals(CardsDB.Prosperity.Platinum)) return 12;
+            if (card.equals(CardsDB.Basic.Curse) || card.equals(CardsDB.DarkAges.Ruin)) return (playerCount-1)*10;
+            if (card.equals(CardsDB.DarkAges.Mercenary) ||
+                card.equals(CardsDB.DarkAges.Madman)){
+                return 10;
             }
-            if (card.equals(CardsDB.Basic.Copper)){
-                return 60 - playerCount * 7;
-            }
-            if (card.equals(CardsDB.Basic.Silver)){
-                return 40;
-            }
-            if (card.equals(CardsDB.Basic.Gold)){
-                return 30;
-            }
+            if (card.equals(CardsDB.DarkAges.Spoils) ||
+                card.equals(CardsDB.Seaside.EmbargoToken)) return 15;
+            if (card.equals(CardsDB.Seaside.PirateShipCoinToken)) return 25;
+
         default:
             break;
         }
@@ -172,8 +191,15 @@ public class GameSetup implements Parcelable{
 	private void setUpPlayerStartingItems(){
 		eachPlayerReceives.clear();
 		
-		eachPlayerReceives.add(new AmountOfDominionGameItem(CardsDB.Basic.Copper, 7));
-		eachPlayerReceives.add(new AmountOfDominionGameItem(CardsDB.Basic.Estate, 3));
+		if (useDarkAgesSetup){
+		    eachPlayerReceives.add(new AmountOfDominionGameItem(CardsDB.DarkAges.Hovel, 1));
+		    eachPlayerReceives.add(new AmountOfDominionGameItem(CardsDB.DarkAges.Necropolis, 1));
+		    eachPlayerReceives.add(new AmountOfDominionGameItem(CardsDB.DarkAges.OvergrownEstate, 1));
+		}
+		else{
+		    eachPlayerReceives.add(new AmountOfDominionGameItem(CardsDB.Basic.Copper, 7));
+	        eachPlayerReceives.add(new AmountOfDominionGameItem(CardsDB.Basic.Estate, 3));
+		}
 		
 		for (AmountOfDominionGameItem gameItemAmount : kingdomCardsAndCount) {
             DominionGameItem item = gameItemAmount.getItem();
@@ -190,11 +216,19 @@ public class GameSetup implements Parcelable{
 		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Copper, getNumberOfOccurences(CardsDB.Basic.Copper, CardPile.GameStart)));
 		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Silver, getNumberOfOccurences(CardsDB.Basic.Silver, CardPile.GameStart)));
 		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Gold, getNumberOfOccurences(CardsDB.Basic.Gold, CardPile.GameStart)));
+		if (useProsperitySetup){
+		    gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Prosperity.Platinum, getNumberOfOccurences(CardsDB.Prosperity.Platinum, CardPile.GameStart)));
+		}
 		
 		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Estate, getNumberOfOccurences(CardsDB.Basic.Estate, CardPile.GameStart)));
 		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Duchy, getNumberOfOccurences(CardsDB.Basic.Duchy, CardPile.GameStart)));
 		gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Basic.Province, getNumberOfOccurences(CardsDB.Basic.Province, CardPile.GameStart)));
+		if (useProsperitySetup){
+            gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Prosperity.Colony, getNumberOfOccurences(CardsDB.Prosperity.Colony, CardPile.GameStart)));
+        }
 		
+		boolean addedSpoils = false;
+		boolean addedRuins = false;
 		for (AmountOfDominionGameItem gameItemAmount : kingdomCardsAndCount) {
             DominionGameItem item = gameItemAmount.getItem();
             
@@ -206,6 +240,25 @@ public class GameSetup implements Parcelable{
             
             if (item.equals(CardsDB.Seaside.PirateShip)) gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Seaside.PirateShipCoinToken, 25));
             if (item.equals(CardsDB.Seaside.Embargo)) gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Seaside.EmbargoToken, 15));
+            if (item.equals(CardsDB.DarkAges.Hermit)) gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.DarkAges.Madman, getNumberOfOccurences(CardsDB.DarkAges.Madman, CardPile.GameStart)));
+            if (item.equals(CardsDB.DarkAges.Urchin)) gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.DarkAges.Mercenary, getNumberOfOccurences(CardsDB.DarkAges.Mercenary, CardPile.GameStart)));
+            if ((item.equals(CardsDB.DarkAges.BanditCamp) || 
+                item.equals(CardsDB.DarkAges.Marauder) || 
+                item.equals(CardsDB.DarkAges.Pillage)) && !addedSpoils) 
+            {
+                gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.DarkAges.Spoils, getNumberOfOccurences(CardsDB.DarkAges.Spoils, CardPile.GameStart)));
+                addedSpoils = true;
+            }
+            
+            if (gameItemAmount.isCard()){
+                DominionCard card = (DominionCard)item;
+                
+                if (card.isLooter() && !addedRuins) 
+                {
+                    gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.DarkAges.Ruin, getNumberOfOccurences(CardsDB.DarkAges.Ruin, CardPile.GameStart)));
+                    addedRuins = true;
+                }
+            }
         }
 	}
 
