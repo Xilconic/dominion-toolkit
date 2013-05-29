@@ -21,7 +21,7 @@ public class DominionCardBuilder {
 	private DominionSet _set = null;
 	private int _cost = 0;
 	private boolean _isAction, _isAttack, _isReaction, _isTreasure, _isVictory, _isCurse,
-	_isDuration, _isRuin, _isShelter, _isKnight, _isLooter;
+	_isDuration, _isRuin, _isShelter, _isKnight, _isLooter, _costsPotion;
 	
 	/**
 	 * Sets up the initial must-have fields for a {@link DominionCard}.
@@ -113,6 +113,11 @@ public class DominionCardBuilder {
         _isLooter = true;
         return this;
     }
+
+    public DominionCardBuilder potionCost() {
+        _costsPotion = true;
+        return this;
+    }
 	
 	/**
 	 * Creates the card as configured.
@@ -133,6 +138,7 @@ public class DominionCardBuilder {
 		card.set_isShelter(_isShelter);
 		card.set_isKnight(_isKnight);
 		card.set_isLooter(_isLooter);
+		card.set_costsPotion(_costsPotion);
 		return card;
 	}
 	
@@ -141,7 +147,7 @@ public class DominionCardBuilder {
 		if (_set == null) throw new IllegalArgumentException("Dominion Set must be set");
 		if (_cost < 0) throw new IllegalArgumentException("Cost cannot be engative");
 		if (!(_isAction || _isAttack || _isReaction || _isTreasure || _isVictory || _isCurse ||
-		        _isDuration || _isShelter || _isRuin || _isKnight || _isLooter)){
+		        _isDuration || _isShelter || _isRuin || _isKnight || _isLooter || _costsPotion)){
 			throw new IllegalArgumentException("Must specify at least one play type");
 		}
 	}

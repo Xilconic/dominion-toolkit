@@ -113,6 +113,11 @@ public class DominionToolkitPreferences {
         if (useDarkAgesFlag){
             cardSets.add(DominionSet.DarkAges);
         }
+        
+        boolean useAlchemyFlag = preferences.getBoolean(useAlchemy, false);
+        if (useAlchemyFlag){
+            cardSets.add(DominionSet.Alchemy);
+        }
 		
 		return cardSets;
 	}

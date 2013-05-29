@@ -25,6 +25,14 @@ public enum DominionItemType {
 	Copper, Silver, Gold, Estate, Duchy, Province, Curse,
 	
 	// DominionSet.Alchemy:
+	Potion,
+	Herbalist,
+	Apprentice,
+	Transmute, Vineyard,
+	Apothecary, ScryingPool, University,
+	Alchemist, Familiar, PhilosophersStone,
+	Golem,
+	Possession,
 	
 	// DominionSet.BlackMarkerPromo:
 	

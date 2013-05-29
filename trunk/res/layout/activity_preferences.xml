@@ -56,7 +56,6 @@
         android:id="@+id/preferencesAlchemyCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:enabled="false"
         android:text="@string/CardSet.Alchemy" />
 
     <CheckBox
@@ -89,11 +88,5 @@
         android:layout_height="wrap_content"
         android:enabled="false"
         android:text="@string/CardSet.PromoCards" />
-
-    <TextView
-        android:id="@+id/preferencesToDo1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TODO: Set Order preferences" />
 
 </LinearLayout>

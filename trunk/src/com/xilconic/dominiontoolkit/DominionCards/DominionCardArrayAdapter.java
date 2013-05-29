@@ -26,7 +26,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DominionCardArrayAdapter extends ArrayAdapter<DominionCard> {
@@ -53,7 +53,8 @@ public class DominionCardArrayAdapter extends ArrayAdapter<DominionCard> {
 			viewHolder.costText = (TextView) dominionCardView.findViewById(R.id.costText);
 			viewHolder.nameText = (TextView) dominionCardView.findViewById(R.id.cardNameText);
 			viewHolder.cardTypesText = (TextView) dominionCardView.findViewById(R.id.cardTypeText);
-			viewHolder.iconPlaceHolder = (RelativeLayout) dominionCardView.findViewById(R.id.set_icon);
+			viewHolder.iconPlaceHolder = (ImageView) dominionCardView.findViewById(R.id.set_icon);
+			viewHolder.potionIcon = (ImageView) dominionCardView.findViewById(R.id.potionImageView);
 			
 			// Collapse and hide the card count and reference arrow image:
 			dominionCardView.findViewById(R.id.countText).setVisibility(View.GONE);
@@ -75,7 +76,14 @@ public class DominionCardArrayAdapter extends ArrayAdapter<DominionCard> {
 		viewHolder.cardTypesText.setText(ResourcesHelper.getCardTypes(_context, card, false));
 		
 		// Set icon image:
-		viewHolder.iconPlaceHolder.setBackgroundDrawable(ResourcesHelper.GetSetIcon(_context, card.get_dominionSet()));
+		viewHolder.iconPlaceHolder.setImageDrawable(ResourcesHelper.GetSetIcon(_context, card.get_dominionSet()));
+		
+		if(card.is_costsPotion()){
+		    viewHolder.potionIcon.setVisibility(View.VISIBLE);
+		}else{
+		    viewHolder.potionIcon.setVisibility(View.GONE);
+		}
+		    
 		
 		return dominionCardView;
 	}
@@ -85,7 +93,8 @@ public class DominionCardArrayAdapter extends ArrayAdapter<DominionCard> {
 		public TextView costText;
 		public TextView nameText;
 		public TextView cardTypesText;
-		public RelativeLayout iconPlaceHolder;
+		public ImageView iconPlaceHolder;
+		public ImageView potionIcon;
 	}
 	
 }

@@ -362,6 +362,32 @@ public class CardsDB {
 	}
 	public static ArrayList<DominionCard> darkAgesCards = new ArrayList<DominionCard>(35);
 	
+	public static class Alchemy{
+	    public static DominionSet Set = DominionSet.Alchemy;
+	    
+	    public static final DominionCard Potion = new DominionCardBuilder(DominionItemType.Potion, Set, 4).treasure().create();
+	    
+	    public static final DominionCard Herbalist = new DominionCardBuilder(DominionItemType.Herbalist, Set, 2).action().create();
+	    
+	    public static final DominionCard Apprentice = new DominionCardBuilder(DominionItemType.Apprentice, Set, 5).action().create();
+	    
+	    public static final DominionCard Transmute = new DominionCardBuilder(DominionItemType.Transmute, Set, 0).action().potionCost().create();
+	    public static final DominionCard Vineyard = new DominionCardBuilder(DominionItemType.Vineyard, Set, 0).victory().potionCost().create();
+	    
+	    public static final DominionCard Apothecary = new DominionCardBuilder(DominionItemType.Apothecary, Set, 2).action().potionCost().create();
+	    public static final DominionCard ScryingPool = new DominionCardBuilder(DominionItemType.ScryingPool, Set, 2).action().potionCost().attack().create();
+	    public static final DominionCard University = new DominionCardBuilder(DominionItemType.University, Set, 2).action().potionCost().create();
+	    
+	    public static final DominionCard Alchemist = new DominionCardBuilder(DominionItemType.Alchemist, Set, 3).action().potionCost().create();
+	    public static final DominionCard Familiar = new DominionCardBuilder(DominionItemType.Familiar, Set, 3).action().potionCost().attack().create();
+	    public static final DominionCard PhilosophersStone = new DominionCardBuilder(DominionItemType.PhilosophersStone, Set, 3).treasure().potionCost().create();
+	    
+	    public static final DominionCard Golem = new DominionCardBuilder(DominionItemType.Golem, Set, 4).action().potionCost().create();
+	    
+	    public static final DominionCard Possession = new DominionCardBuilder(DominionItemType.Possession, Set, 6).action().potionCost().create();
+	}
+	public static ArrayList<DominionCard> alchemyCards = new ArrayList<DominionCard>(12);
+	
 	public static ArrayList<DominionCard> getAllCardsFromSets(List<DominionSet> sets){
 		ArrayList<DominionCard> allCards = new ArrayList<DominionCard>();
 		for (DominionSet set : sets) {
@@ -386,6 +412,8 @@ public class CardsDB {
 			case DarkAges:
 			    allCards.addAll(darkAgesCards);
 			    break;
+			case Alchemy:
+			    allCards.addAll(alchemyCards);
 			}
 		}
 		return allCards;
@@ -400,6 +428,7 @@ public class CardsDB {
 		createHinterlandsCards();
 		createSeasideCards();
 		createDarkAgesCards();
+		createAlchemyCards();
 	}
 	
 	private static void createBasicCards(){
@@ -646,6 +675,26 @@ public class CardsDB {
 	    
 	    darkAgesCards.add(DarkAges.Altar);
 	    darkAgesCards.add(DarkAges.HuntingGrounds);
-        
     }
+	
+	public static void createAlchemyCards(){
+	    alchemyCards.add(Alchemy.Herbalist);
+	    
+	    alchemyCards.add(Alchemy.Apprentice);
+	    
+	    alchemyCards.add(Alchemy.Transmute);
+	    alchemyCards.add(Alchemy.Vineyard);
+	    
+	    alchemyCards.add(Alchemy.Apothecary);
+	    alchemyCards.add(Alchemy.ScryingPool);
+	    alchemyCards.add(Alchemy.University);
+	    
+	    alchemyCards.add(Alchemy.Alchemist);
+	    alchemyCards.add(Alchemy.Familiar);
+	    alchemyCards.add(Alchemy.PhilosophersStone);
+	    
+	    alchemyCards.add(Alchemy.Golem);
+	    
+	    alchemyCards.add(Alchemy.Possession);
+	}
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of Dominion Toolkit.
+  
+  Dominion Toolkit is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  Dominion Toolkit is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+    <string name="Cards.Alchemy.Potion">Toverdrank</string> <!-- Translation improvised because they were not available -->
+    <string name="Cards.Alchemy.Herbalist">Kruidenexpert</string>
+    <string name="Cards.Alchemy.Apprentice">Leerling</string>
+    <string name="Cards.Alchemy.Transmute">Transformatie</string>
+    <string name="Cards.Alchemy.Vineyard">Wijngaard</string> <!-- Translation improvised because they were not available -->
+    <string name="Cards.Alchemy.Apothecary">Apotheker</string>
+    <string name="Cards.Alchemy.ScryingPool">Visioen</string>
+    <string name="Cards.Alchemy.University">Universiteit</string> <!-- Translation improvised because they were not available -->
+    <string name="Cards.Alchemy.Alchemist">Alchemist</string>
+    <string name="Cards.Alchemy.Familiar">Oude Bekende</string>
+    <string name="Cards.Alchemy.PhilisophersStone">Steen Der Wijzen</string>
+    <string name="Cards.Alchemy.Golem">Golem</string>
+    <string name="Cards.Alchemy.Possession">Bezeten</string> <!-- Translation improvised because they were not available -->
+</resources>
