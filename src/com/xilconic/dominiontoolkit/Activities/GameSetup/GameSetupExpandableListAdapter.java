@@ -14,7 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
@@ -89,7 +89,8 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 			viewHolder.nameText = (TextView) convertView.findViewById(R.id.cardNameText);
 			viewHolder.cardTypesText = (TextView) convertView.findViewById(R.id.cardTypeText);
 			viewHolder.countText = (TextView) convertView.findViewById(R.id.countText);
-			viewHolder.iconPlaceHolder = (RelativeLayout) convertView.findViewById(R.id.set_icon);
+			viewHolder.iconPlaceHolder = (ImageView) convertView.findViewById(R.id.set_icon);
+			viewHolder.potionIcon = (ImageView) convertView.findViewById(R.id.potionImageView);
 			
 			convertView.setTag(viewHolder);
 		}
@@ -106,14 +107,20 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 		if(AmountOfItem.getItem() instanceof DominionCard){
 			DominionCard card = (DominionCard)AmountOfItem.getItem();
 			viewHolder.costText.setText(Integer.toString(card.get_cost()));
-			
 			viewHolder.cardTypesText.setText(ResourcesHelper.getCardTypes(_context, card, isBaneCard));
+			if (card.is_costsPotion()){
+			    viewHolder.potionIcon.setVisibility(View.VISIBLE);
+			}
+			else{
+			    viewHolder.potionIcon.setVisibility(View.GONE);
+			}
 			
 			convertView.findViewById(R.id.coin_bg).setVisibility(View.VISIBLE);
 		}
 		else{
 			viewHolder.costText.setText("");
 			viewHolder.cardTypesText.setText("");
+			viewHolder.potionIcon.setVisibility(View.GONE);
 			
 			convertView.findViewById(R.id.coin_bg).setVisibility(View.INVISIBLE);
 		}
@@ -128,7 +135,7 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 		viewHolder.nameText.setText(ResourcesHelper.GetDominionItemName(_context, AmountOfItem.getItem()));
 		
 		// Set icon image:
-		viewHolder.iconPlaceHolder.setBackgroundDrawable(ResourcesHelper.GetSetIcon(_context, AmountOfItem.getItem().get_dominionSet()));
+		viewHolder.iconPlaceHolder.setImageDrawable(ResourcesHelper.GetSetIcon(_context, AmountOfItem.getItem().get_dominionSet()));
 		
 		return convertView;
 	}
@@ -224,6 +231,7 @@ public class GameSetupExpandableListAdapter extends BaseExpandableListAdapter {
 		public TextView nameText;
 		public TextView cardTypesText;
 		public TextView countText;
-		public RelativeLayout iconPlaceHolder;
+		public ImageView iconPlaceHolder;
+		public ImageView potionIcon;
 	}
 }

@@ -207,12 +207,47 @@ public class ResourcesHelper {
 		    return getSeasideSetName(context, card);
 		case DarkAges:
 		    return getDarkAgesSetName(context, card);
+		case Alchemy:
+		    return getAlchemySetNames(context, card);
 		default:
 			return "<no card set matched>";
 		}
 	}
 
-	private static String getBasicSetName(Context context, DominionCard card) {
+	private static String getAlchemySetNames(Context context, DominionCard card) {
+        switch (card.get_id()) {
+        case Potion:
+            return context.getResources().getString(R.string.Cards_Alchemy_Potion);
+        case Herbalist:
+            return context.getResources().getString(R.string.Cards_Alchemy_Herbalist);
+        case Apprentice:
+            return context.getResources().getString(R.string.Cards_Alchemy_Apprentice);
+        case Transmute:
+            return context.getResources().getString(R.string.Cards_Alchemy_Transmute);
+        case Vineyard:
+            return context.getResources().getString(R.string.Cards_Alchemy_Vineyard);
+        case Apothecary:
+            return context.getResources().getString(R.string.Cards_Alchemy_Apothecary);
+        case ScryingPool:
+            return context.getResources().getString(R.string.Cards_Alchemy_ScryingPool);
+        case University:
+            return context.getResources().getString(R.string.Cards_Alchemy_University);
+        case Alchemist:
+            return context.getResources().getString(R.string.Cards_Alchemy_Alchemist);
+        case Familiar:
+            return context.getResources().getString(R.string.Cards_Alchemy_Familiar);
+        case PhilosophersStone:
+            return context.getResources().getString(R.string.Cards_Alchemy_PhilisophersStone);
+        case Golem:
+            return context.getResources().getString(R.string.Cards_Alchemy_Golem);
+        case Possession:
+            return context.getResources().getString(R.string.Cards_Alchemy_Possession);
+        default:
+            return "<no basic name matched>";
+        }
+    }
+
+    private static String getBasicSetName(Context context, DominionCard card) {
 		switch (card.get_id()) {
 		case Copper:
 			return context.getResources().getString(R.string.Cards_Base_Copper);

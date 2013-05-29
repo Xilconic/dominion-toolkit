@@ -41,14 +41,15 @@
          android:layout_marginRight="8dp"
          android:text="@string/DominionCardArrayItem.CountDefaultText"
          android:textAppearance="?android:attr/textAppearanceLarge" />
-
+    
     <RelativeLayout
         android:id="@+id/coin_bg"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:layout_toRightOf="@id/countText"
         android:layout_alignParentTop="true"
-        android:background="@drawable/coin_bg" >
+        android:layout_toRightOf="@id/countText"
+        android:background="@drawable/coin_bg"
+        android:contentDescription="Icon for represention a coin cost requirement" >
 
         <TextView
             android:id="@+id/costText"
@@ -59,24 +60,25 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </RelativeLayout>
+    
+    <ImageView
+        android:id="@+id/potionImageView"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@+id/coin_bg"
+        android:contentDescription="Icon for represention a potion cost requirement"
+        android:src="@drawable/potion" />
 
     <TextView
         android:id="@+id/cardNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/coin_bg"
+        android:layout_toRightOf="@+id/potionImageView"
         android:text="@string/DominionCardArrayItem.NameDefaultText"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     
-    <RelativeLayout
-        android:id="@+id/set_icon"
-        android:layout_width="64dp"
-        android:layout_height="64dp" 
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/dominion_icon" />
-
     <TextView
         android:id="@+id/cardTypeText"
         android:layout_width="wrap_content"
@@ -87,5 +89,14 @@
         android:text="@string/DominionCardArrayItem.CardTypeDefaultText"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textStyle="italic" />
+    
+    <ImageView
+        android:id="@+id/set_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="Icon for represention of the dominion set"
+        android:src="@drawable/dominion_icon" />
 
 </RelativeLayout>

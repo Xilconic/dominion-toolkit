@@ -136,6 +136,7 @@ public class GameSetup implements Parcelable{
             if (card.equals(CardsDB.DarkAges.Spoils) ||
                 card.equals(CardsDB.Seaside.EmbargoToken)) return 15;
             if (card.equals(CardsDB.Seaside.PirateShipCoinToken)) return 25;
+            if (card.equals(CardsDB.Alchemy.Potion)) return 16;
 
         default:
             break;
@@ -230,6 +231,7 @@ public class GameSetup implements Parcelable{
 		
 		boolean addedSpoils = false;
 		boolean addedRuins = false;
+		boolean addedPotion = false;
 		for (AmountOfDominionGameItem gameItemAmount : kingdomCardsAndCount) {
             DominionGameItem item = gameItemAmount.getItem();
             
@@ -258,6 +260,11 @@ public class GameSetup implements Parcelable{
                 {
                     gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.DarkAges.Ruin, getNumberOfOccurences(CardsDB.DarkAges.Ruin, CardPile.GameStart)));
                     addedRuins = true;
+                }
+                
+                if (card.is_costsPotion() && !addedPotion){
+                    gameStartsWith.add(new AmountOfDominionGameItem(CardsDB.Alchemy.Potion, getNumberOfOccurences(CardsDB.Alchemy.Potion, CardPile.GameStart)));
+                    addedPotion = true;
                 }
             }
         }
