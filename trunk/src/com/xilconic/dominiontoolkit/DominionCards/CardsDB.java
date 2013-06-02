@@ -388,6 +388,17 @@ public class CardsDB {
 	}
 	public static ArrayList<DominionCard> alchemyCards = new ArrayList<DominionCard>(12);
 	
+	public static class Promo{
+	    public static DominionSet Set = DominionSet.Promos;
+	    
+	    public static final DominionCard Stash = new DominionCardBuilder(DominionItemType.Stash, DominionSet.StashPromo, 5).treasure().create();
+	    public static final DominionCard BlackMarket = new DominionCardBuilder(DominionItemType.BlackMarket, DominionSet.BlackMarketPromo, 3).action().create();
+	    public static final DominionCard Envoy = new DominionCardBuilder(DominionItemType.Envoy, DominionSet.EnvoyPromo, 4).action().create();
+	    public static final DominionCard WalledVillage = new DominionCardBuilder(DominionItemType.WalledVillage, DominionSet.WalledVillagePromo, 4).action().create();
+	    public static final DominionCard Governor = new DominionCardBuilder(DominionItemType.Governor, DominionSet.GovernorPromo, 5).action().create();
+	}
+	public static ArrayList<DominionCard> promoCards = new ArrayList<DominionCard>(5);
+	
 	public static ArrayList<DominionCard> getAllCardsFromSets(List<DominionSet> sets){
 		ArrayList<DominionCard> allCards = new ArrayList<DominionCard>();
 		for (DominionSet set : sets) {
@@ -414,6 +425,8 @@ public class CardsDB {
 			    break;
 			case Alchemy:
 			    allCards.addAll(alchemyCards);
+			case Promos:
+			    allCards.addAll(promoCards);
 			}
 		}
 		return allCards;
@@ -429,6 +442,7 @@ public class CardsDB {
 		createSeasideCards();
 		createDarkAgesCards();
 		createAlchemyCards();
+		createPromoCards();
 	}
 	
 	private static void createBasicCards(){
@@ -696,5 +710,13 @@ public class CardsDB {
 	    alchemyCards.add(Alchemy.Golem);
 	    
 	    alchemyCards.add(Alchemy.Possession);
+	}
+	
+	public static void createPromoCards(){
+	    promoCards.add(Promo.BlackMarket);
+	    promoCards.add(Promo.Envoy);
+	    promoCards.add(Promo.Governor);
+	    promoCards.add(Promo.Stash);
+	    promoCards.add(Promo.WalledVillage);
 	}
 }

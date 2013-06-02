@@ -34,8 +34,6 @@ public enum DominionItemType {
 	Golem,
 	Possession,
 	
-	// DominionSet.BlackMarkerPromo:
-	
 	// DominionSet.Cornucopia:
 	Hamlet,
 	FortuneTeller, Menagerie,
@@ -68,10 +66,6 @@ public enum DominionItemType {
 	CouncilRoom, Festival, Laboratory, Library, Market, Mine, Witch,
 	Adventurer,
 	
-	// DominionSet.EnvoryPromo:
-	
-	// DominionSet.GovernorPromo:
-	
 	// DominionSet.Hinterlands:
 	Crossroads, Duchess, FoolsGold,
 	Develop, Oasis, Oracle, Scheme, Tunnel,
@@ -103,7 +97,6 @@ public enum DominionItemType {
 	Caravan, Cutpurse, Island, Navigator, PirateShip, Salvager, SeaHag, TreasureMap,
 	Bazaar, Explorer, GhostShip, MerchantShip, Outpost, Tactician, Treasury, Wharf,
 	
-	// DominionSet.StashPromo:
-	
-	// DominionSet.WalledVillagePromo:
+	// Promo's:
+	Stash, BlackMarket, Envoy, WalledVillage, Governor
 }

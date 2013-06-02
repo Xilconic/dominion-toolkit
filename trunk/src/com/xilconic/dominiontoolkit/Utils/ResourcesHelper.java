@@ -209,6 +209,17 @@ public class ResourcesHelper {
 		    return getDarkAgesSetName(context, card);
 		case Alchemy:
 		    return getAlchemySetNames(context, card);
+		    
+		case WalledVillagePromo:
+		    return context.getResources().getString(R.string.Cards_Promo_WalledVillage);
+		case BlackMarketPromo:
+		    return context.getResources().getString(R.string.Cards_Promo_BlackMarket);
+		case EnvoyPromo:
+            return context.getResources().getString(R.string.Cards_Promo_Envoy);
+		case GovernorPromo:
+            return context.getResources().getString(R.string.Cards_Promo_Governor);
+		case StashPromo:
+            return context.getResources().getString(R.string.Cards_Promo_Stash);
 		default:
 			return "<no card set matched>";
 		}
