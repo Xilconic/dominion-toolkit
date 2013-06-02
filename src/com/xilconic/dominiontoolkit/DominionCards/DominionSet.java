@@ -15,22 +15,22 @@
  *  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
  */
 package com.xilconic.dominiontoolkit.DominionCards;
-// IMPORTANT NOTE: Changes to the items in this enum should be reflected in:
-// * dominioncards.txt
-// * new version of database
+
 public enum DominionSet {
-	Basic,
-	Alchemy,
-	BlackMarketPromo,
-	Cornucopia,
-	DarkAges,
-	Dominion,
-	EnvoyPromo,
-	GovernorPromo,
-	Hinterlands,
-	Intrigue,
-	Prosperity,
-	Seaside,
-	StashPromo,
-	WalledVillagePromo
+    Basic,
+    Alchemy,
+    Cornucopia,
+    DarkAges,
+    Dominion,
+    Hinterlands,
+    Intrigue,
+    Prosperity,
+    Seaside,
+    
+    Promos,
+    BlackMarketPromo,
+    EnvoyPromo,
+    GovernorPromo,
+    StashPromo,
+    WalledVillagePromo,
 }

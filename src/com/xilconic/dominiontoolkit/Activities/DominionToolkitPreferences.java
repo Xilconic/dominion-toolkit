@@ -118,6 +118,11 @@ public class DominionToolkitPreferences {
         if (useAlchemyFlag){
             cardSets.add(DominionSet.Alchemy);
         }
+        
+        boolean usePromosFlag = preferences.getBoolean(usePromos, false);
+        if (usePromosFlag){
+            cardSets.add(DominionSet.Promos);
+        }
 		
 		return cardSets;
 	}
