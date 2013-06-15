@@ -63,18 +63,14 @@ public class DominionToolkitMenuActivity extends Activity {
 	public void startCardListingActivity(View v){
 	    Intent intent = new Intent(DominionToolkitMenuActivity.this, CardListingActivity.class);
 		
-		//if (database == null) {
-		//	database = new DominionToolkitDatabaseHandler(DominionToolkitMenuActivity.this);
-		//}
 		List<DominionSet> cardSets = DominionToolkitPreferences.getActiveDominionSets(this);
-		//intent.putParcelableArrayListExtra("cardList", database.getDominionCardsByCardset(cardSets));
 		intent.putParcelableArrayListExtra(CardListingActivity.EXTRA_CARD_LIST_KEY, CardsDB.getAllCardsFromSets(cardSets));
 		
 		startActivity(intent);
 	}
 	
-	public void startPreferencesActivity(View v){
-		Intent intent = new Intent(DominionToolkitMenuActivity.this, PreferencesActivity.class);
-		startActivity(intent);
+	public void startSettingsActivity(View v){
+	    Intent intent = new Intent(DominionToolkitMenuActivity.this, DominionToolkitSettingsActivity.class);
+        startActivity(intent);
 	}
 }

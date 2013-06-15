@@ -39,7 +39,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.xilconic.dominiontoolkit.Activities.CardListing.CardListingActivity"></activity>
-        <activity android:name="com.xilconic.dominiontoolkit.Activities.PreferencesActivity"></activity>
+        <activity android:name="com.xilconic.dominiontoolkit.Activities.DominionToolkitSettingsActivity"></activity>
         <activity android:name="com.xilconic.dominiontoolkit.Activities.SetupRemindersActivity"></activity>
         <activity android:name="com.xilconic.dominiontoolkit.Activities.Randomizer.GameSetupRandomizerActivity"></activity>
     </application>

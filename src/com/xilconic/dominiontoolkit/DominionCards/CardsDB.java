@@ -420,13 +420,16 @@ public class CardsDB {
 				break;
 			case Seaside:
 			    allCards.addAll(seasideCards);
+			    break;
 			case DarkAges:
 			    allCards.addAll(darkAgesCards);
 			    break;
 			case Alchemy:
 			    allCards.addAll(alchemyCards);
+			    break;
 			case Promos:
 			    allCards.addAll(promoCards);
+			    break;
 			}
 		}
 		return allCards;
