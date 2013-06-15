@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of Dominion Toolkit.
+  
+  Dominion Toolkit is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  Dominion Toolkit is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+    <!-- Available dominion sets category: -->
+    <string name="preferences_catagory_dominion_set">Available Dominion sets</string>
+    <string name="preferences_dominion_set_use_dominion_on">Gebruik kaarten van \'Dominion\' basis set.</string>
+    <string name="preferences_dominion_set_use_dominion_off">Negeer kaarten van \'Dominion\' basis set.</string>
+    <string name="preferences_dominion_set_use_intrigue_on">Gebruik kaarten van \'Intrige\' basis set.</string>
+    <string name="preferences_dominion_set_use_intrigue_off">Negeer kaarten van \'Intrige\' basis set.</string>
+    <string name="preferences_dominion_set_use_seaside_on">Gebruik kaarten van \'Hijs de Zeilen\' uitbreiding.</string>
+    <string name="preferences_dominion_set_use_seaside_off">Negeer kaarten van \'Hijs de Zeilen\' uitbreiding.</string>
+    <string name="preferences_dominion_set_use_alchemy_on">Gebruik kaarten van \'De Alchemisten\' uitbreiding.</string>
+    <string name="preferences_dominion_set_use_alchemy_off">Negeer kaarten van \'De Alchemisten\' uitbreiding.</string>
+    <string name="preferences_dominion_set_use_prosperity_on">Gebruik kaarten van \'Welvaart\' uitbreiding.</string>
+    <string name="preferences_dominion_set_use_prosperity_off">Negeer kaarten van \'Welvaart\' uitbreiding.</string>
+    <string name="preferences_dominion_set_use_cornucopia_on">Gebruik kaarten van \'Overvloed\' uitbreiding.</string>
+    <string name="preferences_dominion_set_use_cornucopia_off">Negeer kaarten van \'Overvloed\' uitbreiding.</string>
+    <string name="preferences_dominion_set_use_hinterlands_on">Gebruik kaarten van \'Het Achterland\' uitbreiding.</string>
+    <string name="preferences_dominion_set_use_hinterlands_off">Negeer kaarten van \'Het Achterland\' uitbreiding.</string>
+    <string name="preferences_dominion_set_use_dark_ages_on">Gebruik kaarten van \'De Donkere Middeleeuwen\' uitbreiding.</string>
+    <string name="preferences_dominion_set_use_dark_ages_off">Negeer kaarten van \'De Donkere Middeleeuwen\' uitbreiding.</string>
+    <string name="preferences_dominion_set_use_promos_on">Gebruik promotie kaarten.</string>
+    <string name="preferences_dominion_set_use_promos_off">Negeer promotie kaarten.</string>
+</resources>

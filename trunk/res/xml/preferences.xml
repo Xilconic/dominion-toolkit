@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of Dominion Toolkit.
+  
+  Dominion Toolkit is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  Dominion Toolkit is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceScreen 
+        android:title="@string/preferences_catagory_dominion_set">
+        <CheckBoxPreference
+            android:key="preferences_use_dominion_base"
+            android:title="@string/CardSet.Dominion"
+            android:defaultValue="true"
+            android:summaryOn="@string/preferences_dominion_set_use_dominion_on"
+            android:summaryOff="@string/preferences_dominion_set_use_dominion_off"
+            />
+        <CheckBoxPreference 
+            android:key="preferences_use_intrige"
+            android:title="@string/CardSet.Intrigue"
+            android:defaultValue="false"
+            android:summaryOn="@string/preferences_dominion_set_use_intrigue_on"
+            android:summaryOff="@string/preferences_dominion_set_use_intrigue_off"
+            />
+        <CheckBoxPreference 
+            android:key="preferences_use_seaside"
+            android:title="@string/CardSet.Seaside"
+            android:defaultValue="false"
+            android:summaryOn="@string/preferences_dominion_set_use_seaside_on"
+            android:summaryOff="@string/preferences_dominion_set_use_seaside_off"
+            />
+        <CheckBoxPreference 
+            android:key="preferences_use_alchemy"
+            android:title="@string/CardSet.Alchemy"
+            android:defaultValue="false"
+            android:summaryOn="@string/preferences_dominion_set_use_alchemy_on"
+            android:summaryOff="@string/preferences_dominion_set_use_alchemy_off"
+            />
+        <CheckBoxPreference 
+            android:key="preferences_use_prosperity"
+            android:title="@string/CardSet.Prosperity"
+            android:defaultValue="false"
+            android:summaryOn="@string/preferences_dominion_set_use_prosperity_on"
+            android:summaryOff="@string/preferences_dominion_set_use_prosperity_off"
+            />
+        <CheckBoxPreference 
+            android:key="preferences_use_cornucopia"
+            android:title="@string/CardSet.Cornucopia"
+            android:defaultValue="false"
+            android:summaryOn="@string/preferences_dominion_set_use_cornucopia_on"
+            android:summaryOff="@string/preferences_dominion_set_use_cornucopia_off"
+            />
+        <CheckBoxPreference 
+            android:key="preferences_use_hinterlands"
+            android:title="@string/CardSet.Hinterlands"
+            android:defaultValue="false"
+            android:summaryOn="@string/preferences_dominion_set_use_hinterlands_on"
+            android:summaryOff="@string/preferences_dominion_set_use_hinterlands_off"
+            />
+        <CheckBoxPreference 
+            android:key="preferences_use_dark_ages"
+            android:title="@string/CardSet.DarkAges"
+            android:defaultValue="false"
+            android:summaryOn="@string/preferences_dominion_set_use_dark_ages_on"
+            android:summaryOff="@string/preferences_dominion_set_use_dark_ages_off"
+            />
+        <CheckBoxPreference 
+            android:key="preferences_use_promos"
+            android:title="@string/CardSet.PromoCards"
+            android:defaultValue="false"
+            android:summaryOn="@string/preferences_dominion_set_use_promos_on"
+            android:summaryOff="@string/preferences_dominion_set_use_promos_off"
+            />
+    </PreferenceScreen>
+
+</PreferenceScreen>

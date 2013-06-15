@@ -41,6 +41,6 @@
 	    android:text="@string/preferences_button_name"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content" 
-	    android:onClick="startPreferencesActivity" />
+	    android:onClick="startSettingsActivity" />
 
 </LinearLayout>

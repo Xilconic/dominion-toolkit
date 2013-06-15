@@ -21,8 +21,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
-
+import android.preference.PreferenceManager;
 import com.xilconic.dominiontoolkit.DominionCards.DominionSet;
 
 /**
@@ -31,99 +30,47 @@ import com.xilconic.dominiontoolkit.DominionCards.DominionSet;
  *
  */
 public class DominionToolkitPreferences {
-	private static String TOOLKIT_PREFERENCES = "DominionToolkitPreferences";
-	/**
-	 * Preferences setting if the "Dominion" card set should be used.
-	 */
-	public static final String useDominion = "useDominion";
-	/**
-	 * Preferences setting if the "Dominion: Intrigue" card set should be used.
-	 */
-	public static final String useIntrigue = "useIntrigue";
-	/**
-	 * Preferences setting if the "Dominion: Seaside" card set should be used.
-	 */
-	public static final String useSeaside = "useSeaside";
-	/**
-	 * Preferences setting if the "Dominion: Alchemy" card set should be used.
-	 */
-	public static final String useAlchemy = "useAlchemy";
-	/**
-	 * Preferences setting if the "Dominion: Prosperity" card set should be used.
-	 */
-	public static final String useProsperity = "useProsperity";
-	/**
-	 * Preferences setting if the "Dominion: Cornucopia" card set should be used.
-	 */
-	public static final String useCornucopia = "useCornucopia";
-	/**
-	 * Preferences setting if the "Dominion: Hinterlands" card set should be used.
-	 */
-	public static final String useHinterlands = "useHinterlands";
-	/**
-	 * Preferences setting if the "Dominion: Dark Ages" card set should be used.
-	 */
-	public static final String useDarkAges = "useDarkAges";
-	/**
-	 * Preferences setting if promotional cards set should be used.
-	 */
-	public static final String usePromos = "usePromos";
-	
 	public static SharedPreferences getPreferences(Context context){
-		return context.getSharedPreferences(TOOLKIT_PREFERENCES, Context.MODE_PRIVATE);
+	    return PreferenceManager.getDefaultSharedPreferences(context);
 	}
 	
 	public static List<DominionSet> getActiveDominionSets(Context context){
-		Log.d("DominionToolkitPreferences", "getActiveDominionSets()...");
-		SharedPreferences preferences = context.getSharedPreferences(TOOLKIT_PREFERENCES, Context.MODE_PRIVATE);
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
 		
 		List<DominionSet> cardSets = new ArrayList<DominionSet>();
 		
-		boolean useCornucopiaFlag = preferences.getBoolean(useCornucopia, false);
-        if (useCornucopiaFlag){
-            cardSets.add(DominionSet.Cornucopia);
-        }
-		
-		boolean useDominionFlag = preferences.getBoolean(useDominion, false);
-		if (useDominionFlag){
-			cardSets.add(DominionSet.Dominion);
-		}
-		
-		boolean useIntrigueFlag = preferences.getBoolean(useIntrigue, false);
-		if (useIntrigueFlag){
-			cardSets.add(DominionSet.Intrigue);
-		}
-		
-		boolean useProsperityFlag = preferences.getBoolean(useProsperity, false);
-		if (useProsperityFlag){
-			cardSets.add(DominionSet.Prosperity);
-		}
-		
-		boolean useHinterlandsFlag = preferences.getBoolean(useHinterlands, false);
-		if (useHinterlandsFlag){
-			cardSets.add(DominionSet.Hinterlands);
-		}
-		
-		boolean useSeasideFlag = preferences.getBoolean(useSeaside, false);
-        if (useSeasideFlag){
-            cardSets.add(DominionSet.Seaside);
-        }
-        
-        boolean useDarkAgesFlag = preferences.getBoolean(useDarkAges, false);
-        if (useDarkAgesFlag){
-            cardSets.add(DominionSet.DarkAges);
-        }
-        
-        boolean useAlchemyFlag = preferences.getBoolean(useAlchemy, false);
-        if (useAlchemyFlag){
-            cardSets.add(DominionSet.Alchemy);
-        }
-        
-        boolean usePromosFlag = preferences.getBoolean(usePromos, false);
-        if (usePromosFlag){
-            cardSets.add(DominionSet.Promos);
-        }
-		
+		addDominionSetUse(preferences, DominionSet.Dominion, cardSets);
+		addDominionSetUse(preferences, DominionSet.Intrigue, cardSets);
+		addDominionSetUse(preferences, DominionSet.Seaside, cardSets);
+		addDominionSetUse(preferences, DominionSet.Alchemy, cardSets);
+		addDominionSetUse(preferences, DominionSet.Prosperity, cardSets);
+		addDominionSetUse(preferences, DominionSet.Cornucopia, cardSets);
+		addDominionSetUse(preferences, DominionSet.Hinterlands, cardSets);
+		addDominionSetUse(preferences, DominionSet.DarkAges, cardSets);
+		addDominionSetUse(preferences, DominionSet.Promos, cardSets);
 		return cardSets;
+	}
+	
+	private static void addDominionSetUse(SharedPreferences preferences, DominionSet set, List<DominionSet> cardSets){
+	    boolean useSet = preferences.getBoolean(getSettingsIdForDominionSet(set), false);
+	    if (useSet){
+	        cardSets.add(set);
+	    }
+	}
+	
+	private static String getSettingsIdForDominionSet(DominionSet set){
+	    switch (set) {
+        case Dominion: return DominionToolkitSettingsActivity.USE_DOMINION;
+        case Intrigue: return DominionToolkitSettingsActivity.USE_INTRIGUE;
+        case Seaside: return DominionToolkitSettingsActivity.USE_SEASIDE;
+        case Alchemy: return DominionToolkitSettingsActivity.USE_ALCHEMY;
+        case Prosperity: return DominionToolkitSettingsActivity.USE_PROSPERITY;
+        case Cornucopia: return DominionToolkitSettingsActivity.USE_CORNUCOPIA;
+        case Hinterlands: return DominionToolkitSettingsActivity.USE_HINTERLANDS;
+        case DarkAges: return DominionToolkitSettingsActivity.USE_DARKAGES;
+        case Promos: return DominionToolkitSettingsActivity.USE_PROMOS;
+        default:
+            throw new IllegalStateException();
+        }
 	}
 }
