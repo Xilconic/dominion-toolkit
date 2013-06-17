@@ -20,6 +20,8 @@ import java.util.List;
 
 import com.xilconic.dominiontoolkit.R;
 import com.xilconic.dominiontoolkit.Activities.CardListing.CardListingActivity;
+import com.xilconic.dominiontoolkit.Activities.Preferences.DominionToolkitPreferences;
+import com.xilconic.dominiontoolkit.Activities.Preferences.DominionToolkitSettingsActivity;
 import com.xilconic.dominiontoolkit.Activities.Randomizer.GameSetupRandomizerActivity;
 import com.xilconic.dominiontoolkit.DominionCards.CardsDB;
 import com.xilconic.dominiontoolkit.DominionCards.DominionSet;

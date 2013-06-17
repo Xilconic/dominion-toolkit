@@ -61,5 +61,8 @@
 	<!-- fragment_game_setup_view -->
 	<string name="GameSetupFragment.DefaultTitle">TODO: Naam spel opzet</string>
 	<string name="GameSetupFragment.NumberOfPlayers">Aantal spelers:</string>
-
+	
+	<!-- integer_range_preference -->
+	<string name="integer_range_min_header">Minimum</string>
+	<string name="integer_range_max_header">Maximum</string>
 </resources>

@@ -16,8 +16,15 @@
   along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
+    <!-- IntegerRangePreference strings: -->
+    <string name="integerRangePreference_dialog_title">Geef een maximum en minimum op</string>
+    <string name="integerRangePreference_range">Omvang</string>
+    
+    <!-- Main preference window: -->
+    <string name="preferences_main">Dominion Toolkit instellingen</string>
+    
     <!-- Available dominion sets category: -->
-    <string name="preferences_catagory_dominion_set">Available Dominion sets</string>
+    <string name="preferences_catagory_dominion_set">Beschikbare Dominion sets</string>
     <string name="preferences_dominion_set_use_dominion_on">Gebruik kaarten van \'Dominion\' basis set.</string>
     <string name="preferences_dominion_set_use_dominion_off">Negeer kaarten van \'Dominion\' basis set.</string>
     <string name="preferences_dominion_set_use_intrigue_on">Gebruik kaarten van \'Intrige\' basis set.</string>
@@ -36,4 +43,8 @@
     <string name="preferences_dominion_set_use_dark_ages_off">Negeer kaarten van \'De Donkere Middeleeuwen\' uitbreiding.</string>
     <string name="preferences_dominion_set_use_promos_on">Gebruik promotie kaarten.</string>
     <string name="preferences_dominion_set_use_promos_off">Negeer promotie kaarten.</string>
+    
+    <!-- Randomizer settings category: -->
+    <string name="preferences_category_randomizer">Spel generator instellingen</string>
+    <string name="preferences_randomizer_category_ranges">Aantal kaarten uit een set</string>
 </resources>
