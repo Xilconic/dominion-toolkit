@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.xilconic.dominiontoolkit.Activities;
+package com.xilconic.dominiontoolkit.Activities.Preferences;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +22,7 @@ import java.util.List;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+
 import com.xilconic.dominiontoolkit.DominionCards.DominionSet;
 
 /**

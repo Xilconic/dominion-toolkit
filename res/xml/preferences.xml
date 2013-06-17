@@ -15,7 +15,8 @@
   You should have received a copy of the GNU General Public License
   along with Dominion Toolkit.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:title="@string/preferences_main" >
     <PreferenceScreen 
         android:title="@string/preferences_catagory_dominion_set">
         <CheckBoxPreference
@@ -81,6 +82,46 @@
             android:summaryOn="@string/preferences_dominion_set_use_promos_on"
             android:summaryOff="@string/preferences_dominion_set_use_promos_off"
             />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="@string/preferences_category_randomizer">
+        <PreferenceScreen android:title="@string/preferences_randomizer_category_ranges">
+            <com.xilconic.dominiontoolkit.Activities.Preferences.IntegerRangePreference
+	            android:key="preferences_range_dominion_base"
+	            android:title="@string/CardSet.Dominion"
+            />
+            <com.xilconic.dominiontoolkit.Activities.Preferences.IntegerRangePreference
+	            android:key="preferences_range_intrigue"
+	            android:title="@string/CardSet.Intrigue"
+            />
+            <com.xilconic.dominiontoolkit.Activities.Preferences.IntegerRangePreference
+	            android:key="preferences_range_seaside"
+	            android:title="@string/CardSet.Seaside"
+            />
+            <com.xilconic.dominiontoolkit.Activities.Preferences.IntegerRangePreference
+	            android:key="preferences_range_alchemy"
+	            android:title="@string/CardSet.Alchemy"
+            />
+            <com.xilconic.dominiontoolkit.Activities.Preferences.IntegerRangePreference
+	            android:key="preferences_range_prosperity"
+	            android:title="@string/CardSet.Prosperity"
+            />
+            <com.xilconic.dominiontoolkit.Activities.Preferences.IntegerRangePreference
+	            android:key="preferences_range_cornucopia"
+	            android:title="@string/CardSet.Cornucopia"
+            />
+            <com.xilconic.dominiontoolkit.Activities.Preferences.IntegerRangePreference
+	            android:key="preferences_range_hinterlands"
+	            android:title="@string/CardSet.Hinterlands"
+            />
+            <com.xilconic.dominiontoolkit.Activities.Preferences.IntegerRangePreference
+	            android:key="preferences_range_dark_ages"
+	            android:title="@string/CardSet.DarkAges"
+            />
+            <com.xilconic.dominiontoolkit.Activities.Preferences.IntegerRangePreference
+	            android:key="preferences_range_promos"
+	            android:title="@string/CardSet.PromoCards"
+            />
+        </PreferenceScreen>
     </PreferenceScreen>
 
 </PreferenceScreen>

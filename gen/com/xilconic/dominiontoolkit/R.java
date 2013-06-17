@@ -10,6 +10,7 @@ package com.xilconic.dominiontoolkit;
 public final class R {
     public static final class array {
         public static final int dominion_game_setup_player_count=0x7f070000;
+        public static final int integer_range_preference=0x7f070001;
     }
     public static final class attr {
     }
@@ -62,6 +63,10 @@ public final class R {
         public static final int gameSetupFragmentPlaceholder=0x7f0a0009;
         public static final int gameSetupRandomizerActivityTitleTextView=0x7f0a0006;
         public static final int gameSetupRandomizerKingdomCardListingTextView=0x7f0a0007;
+        public static final int integerMaxHeader=0x7f0a0034;
+        public static final int integerMinHeader=0x7f0a0033;
+        public static final int maxSpinner=0x7f0a0037;
+        public static final int minSpinner=0x7f0a0036;
         public static final int numberOfCurseCardsPlainTextTextView=0x7f0a001a;
         public static final int numberOfVictoryPointCardsPlainTextTextView=0x7f0a001c;
         public static final int playerCountTextView=0x7f0a0017;
@@ -86,6 +91,8 @@ public final class R {
         public static final int setupSectionTitle=0x7f0a0019;
         public static final int setup_reminders_button=0x7f0a0003;
         public static final int starterDeckPlainTextTextView=0x7f0a001e;
+        public static final int tableRow1=0x7f0a0032;
+        public static final int tableRow2=0x7f0a0035;
         public static final int victoryCountTextView=0x7f0a001d;
     }
     public static final class layout {
@@ -97,6 +104,7 @@ public final class R {
         public static final int dominion_card_array_item=0x7f030005;
         public static final int dominion_game_setup_parent_list_item=0x7f030006;
         public static final int fragment_game_setup_view=0x7f030007;
+        public static final int integer_range_preference=0x7f030008;
     }
     public static final class menu {
         public static final int activity_card_listing_menu=0x7f090000;
@@ -108,7 +116,7 @@ public final class R {
     public static final class string {
         /**  activity card Listing 
          */
-        public static final int CardListing_ActivityTitleText=0x7f050123;
+        public static final int CardListing_ActivityTitleText=0x7f050128;
         public static final int CardSet_Alchemy=0x7f0500f5;
         /**  Dominion Cardsets: 
          */
@@ -372,68 +380,83 @@ public final class R {
         public static final int Cards_Types_Shelter=0x7f0500ef;
         public static final int Cards_Types_Treasure=0x7f0500e9;
         public static final int Cards_Types_Victory=0x7f0500ea;
-        public static final int DominionCardArrayItem_CardTypeDefaultText=0x7f05012b;
-        public static final int DominionCardArrayItem_CostDefaultText=0x7f050129;
+        public static final int DominionCardArrayItem_CardTypeDefaultText=0x7f050130;
+        public static final int DominionCardArrayItem_CostDefaultText=0x7f05012e;
         /**  dominion card arry item 
          */
-        public static final int DominionCardArrayItem_CountDefaultText=0x7f050128;
-        public static final int DominionCardArrayItem_NameDefaultText=0x7f05012a;
+        public static final int DominionCardArrayItem_CountDefaultText=0x7f05012d;
+        public static final int DominionCardArrayItem_NameDefaultText=0x7f05012f;
         /**  fragment_game_setup_view 
          */
-        public static final int GameSetupFragment_DefaultTitle=0x7f05012c;
-        public static final int GameSetupFragment_NumberOfPlayers=0x7f05012d;
+        public static final int GameSetupFragment_DefaultTitle=0x7f050131;
+        public static final int GameSetupFragment_NumberOfPlayers=0x7f050132;
         /**  activity_preferences 
          */
-        public static final int Preferences_CardSets=0x7f050114;
+        public static final int Preferences_CardSets=0x7f050119;
         /**  activity randomizer 
          */
-        public static final int Randomizer_ActivityTitleText=0x7f050124;
-        public static final int Randomizer_KingdomCardsPlainText=0x7f050125;
-        public static final int Randomizer_ShuffleButtonText=0x7f050126;
-        public static final int Randomizer_UnableToCreateRandomizedSetup=0x7f050127;
+        public static final int Randomizer_ActivityTitleText=0x7f050129;
+        public static final int Randomizer_KingdomCardsPlainText=0x7f05012a;
+        public static final int Randomizer_ShuffleButtonText=0x7f05012b;
+        public static final int Randomizer_UnableToCreateRandomizedSetup=0x7f05012c;
         /**  activity setup & reminders 
          */
-        public static final int SetupReminders_ActivityTitleText=0x7f050115;
-        public static final int SetupReminders_AddPlayerButtonText=0x7f050118;
-        public static final int SetupReminders_CurseCardCountDefaultText=0x7f05011b;
-        public static final int SetupReminders_EndConditionKingdomCardsPlainText=0x7f050122;
-        public static final int SetupReminders_EndConditionProvincePlainText=0x7f050121;
-        public static final int SetupReminders_EndGameHeaderText=0x7f05011f;
-        public static final int SetupReminders_EndGamePlainText=0x7f050120;
-        public static final int SetupReminders_NumberOfCuseCardsPlainText=0x7f05011a;
-        public static final int SetupReminders_NumberOfVictoryCardsPlainText=0x7f05011c;
-        public static final int SetupReminders_PlayerCountDefaultText=0x7f050117;
-        public static final int SetupReminders_RemovePlayerButtonText=0x7f050116;
-        public static final int SetupReminders_SetupHeaderText=0x7f050119;
-        public static final int SetupReminders_StarterDeckPlainText=0x7f05011e;
-        public static final int SetupReminders_VictoryCardCountDefaultText=0x7f05011d;
-        public static final int app_name=0x7f05010e;
-        public static final int card_listing_button_name=0x7f050112;
-        public static final int menu_settings=0x7f05010f;
-        public static final int preferences_button_name=0x7f050113;
+        public static final int SetupReminders_ActivityTitleText=0x7f05011a;
+        public static final int SetupReminders_AddPlayerButtonText=0x7f05011d;
+        public static final int SetupReminders_CurseCardCountDefaultText=0x7f050120;
+        public static final int SetupReminders_EndConditionKingdomCardsPlainText=0x7f050127;
+        public static final int SetupReminders_EndConditionProvincePlainText=0x7f050126;
+        public static final int SetupReminders_EndGameHeaderText=0x7f050124;
+        public static final int SetupReminders_EndGamePlainText=0x7f050125;
+        public static final int SetupReminders_NumberOfCuseCardsPlainText=0x7f05011f;
+        public static final int SetupReminders_NumberOfVictoryCardsPlainText=0x7f050121;
+        public static final int SetupReminders_PlayerCountDefaultText=0x7f05011c;
+        public static final int SetupReminders_RemovePlayerButtonText=0x7f05011b;
+        public static final int SetupReminders_SetupHeaderText=0x7f05011e;
+        public static final int SetupReminders_StarterDeckPlainText=0x7f050123;
+        public static final int SetupReminders_VictoryCardCountDefaultText=0x7f050122;
+        public static final int app_name=0x7f050113;
+        public static final int card_listing_button_name=0x7f050117;
+        /**  IntegerRangePreference strings: 
+         */
+        public static final int integerRangePreference_dialog_title=0x7f0500fb;
+        public static final int integerRangePreference_range=0x7f0500fc;
+        public static final int integer_range_max_header=0x7f050134;
+        /**  integer_range_preference 
+         */
+        public static final int integer_range_min_header=0x7f050133;
+        public static final int menu_settings=0x7f050114;
+        public static final int preferences_button_name=0x7f050118;
         /**  Available dominion sets category: 
          */
-        public static final int preferences_catagory_dominion_set=0x7f0500fb;
-        public static final int preferences_dominion_set_use_alchemy_off=0x7f050103;
-        public static final int preferences_dominion_set_use_alchemy_on=0x7f050102;
-        public static final int preferences_dominion_set_use_cornucopia_off=0x7f050107;
-        public static final int preferences_dominion_set_use_cornucopia_on=0x7f050106;
-        public static final int preferences_dominion_set_use_dark_ages_off=0x7f05010b;
-        public static final int preferences_dominion_set_use_dark_ages_on=0x7f05010a;
-        public static final int preferences_dominion_set_use_dominion_off=0x7f0500fd;
-        public static final int preferences_dominion_set_use_dominion_on=0x7f0500fc;
-        public static final int preferences_dominion_set_use_hinterlands_off=0x7f050109;
-        public static final int preferences_dominion_set_use_hinterlands_on=0x7f050108;
-        public static final int preferences_dominion_set_use_intrigue_off=0x7f0500ff;
-        public static final int preferences_dominion_set_use_intrigue_on=0x7f0500fe;
-        public static final int preferences_dominion_set_use_promos_off=0x7f05010d;
-        public static final int preferences_dominion_set_use_promos_on=0x7f05010c;
-        public static final int preferences_dominion_set_use_prosperity_off=0x7f050105;
-        public static final int preferences_dominion_set_use_prosperity_on=0x7f050104;
-        public static final int preferences_dominion_set_use_seaside_off=0x7f050101;
-        public static final int preferences_dominion_set_use_seaside_on=0x7f050100;
-        public static final int randomizer_button_name=0x7f050110;
-        public static final int setup_reminders_button_name=0x7f050111;
+        public static final int preferences_catagory_dominion_set=0x7f0500fe;
+        /**  Randomizer settings category: 
+         */
+        public static final int preferences_category_randomizer=0x7f050111;
+        public static final int preferences_dominion_set_use_alchemy_off=0x7f050106;
+        public static final int preferences_dominion_set_use_alchemy_on=0x7f050105;
+        public static final int preferences_dominion_set_use_cornucopia_off=0x7f05010a;
+        public static final int preferences_dominion_set_use_cornucopia_on=0x7f050109;
+        public static final int preferences_dominion_set_use_dark_ages_off=0x7f05010e;
+        public static final int preferences_dominion_set_use_dark_ages_on=0x7f05010d;
+        public static final int preferences_dominion_set_use_dominion_off=0x7f050100;
+        public static final int preferences_dominion_set_use_dominion_on=0x7f0500ff;
+        public static final int preferences_dominion_set_use_hinterlands_off=0x7f05010c;
+        public static final int preferences_dominion_set_use_hinterlands_on=0x7f05010b;
+        public static final int preferences_dominion_set_use_intrigue_off=0x7f050102;
+        public static final int preferences_dominion_set_use_intrigue_on=0x7f050101;
+        public static final int preferences_dominion_set_use_promos_off=0x7f050110;
+        public static final int preferences_dominion_set_use_promos_on=0x7f05010f;
+        public static final int preferences_dominion_set_use_prosperity_off=0x7f050108;
+        public static final int preferences_dominion_set_use_prosperity_on=0x7f050107;
+        public static final int preferences_dominion_set_use_seaside_off=0x7f050104;
+        public static final int preferences_dominion_set_use_seaside_on=0x7f050103;
+        /**  Main preference window: 
+         */
+        public static final int preferences_main=0x7f0500fd;
+        public static final int preferences_randomizer_category_ranges=0x7f050112;
+        public static final int randomizer_button_name=0x7f050115;
+        public static final int setup_reminders_button_name=0x7f050116;
     }
     public static final class style {
         /** 

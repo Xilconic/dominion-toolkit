@@ -430,6 +430,9 @@ public class CardsDB {
 			case Promos:
 			    allCards.addAll(promoCards);
 			    break;
+		    default:
+		        // do nothing
+		        break;
 			}
 		}
 		return allCards;
