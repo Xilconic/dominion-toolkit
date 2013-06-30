@@ -26,6 +26,7 @@ public enum DominionSet {
     Intrigue,
     Prosperity,
     Seaside,
+    Guilds,
     
     Promos,
     BlackMarketPromo,

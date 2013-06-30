@@ -41,6 +41,8 @@
     <string name="preferences_dominion_set_use_hinterlands_off">Negeer kaarten van \'Het Achterland\' uitbreiding.</string>
     <string name="preferences_dominion_set_use_dark_ages_on">Gebruik kaarten van \'De Donkere Middeleeuwen\' uitbreiding.</string>
     <string name="preferences_dominion_set_use_dark_ages_off">Negeer kaarten van \'De Donkere Middeleeuwen\' uitbreiding.</string>
+    <string name="preferences_dominion_set_use_guilds_on">Gebruik kaarten van \'De Gilden\' uitbreiding.</string>
+    <string name="preferences_dominion_set_use_guilds_off">Negeer kaarten van \'De Gilden\' uitbreiding.</string>
     <string name="preferences_dominion_set_use_promos_on">Gebruik promotie kaarten.</string>
     <string name="preferences_dominion_set_use_promos_off">Negeer promotie kaarten.</string>
     

@@ -30,7 +30,19 @@ public class DominionToolkitSettingsActivity extends PreferenceActivity {
     public static final String USE_CORNUCOPIA = "preferences_use_cornucopia";
     public static final String USE_HINTERLANDS = "preferences_use_hinterlands";
     public static final String USE_DARKAGES = "preferences_use_dark_ages";
+    public static final String USE_GUILDS = "preferences_use_guilds";
     public static final String USE_PROMOS = "preferences_use_promos";
+    
+    public static final String RANGE_DOMINION = "preferences_range_dominion_base";
+    public static final String RANGE_INTRIGUE = "preferences_range_intrigue";
+    public static final String RANGE_SEASIDE = "preferences_range_seaside";
+    public static final String RANGE_ALCHEMY = "preferences_range_alchemy";
+    public static final String RANGE_PROSPERITY = "preferences_range_prosperity";
+    public static final String RANGE_CORNUCOPIA = "preferences_range_cornucopia";
+    public static final String RANGE_HINTERLANDS = "preferences_range_hinterlands";
+    public static final String RANGE_DARKAGES = "preferences_range_dark_ages";
+    public static final String RANGE_GUILDS = "preferences_range_guilds";
+    public static final String RANGE_PROMOS = "preferences_range_promos";
     
     @Override
     public void onCreate(Bundle savedInstanceState){

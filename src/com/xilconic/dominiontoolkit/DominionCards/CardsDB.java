@@ -399,6 +399,25 @@ public class CardsDB {
 	}
 	public static ArrayList<DominionCard> promoCards = new ArrayList<DominionCard>(5);
 	
+	public static class Guilds{
+	    public static DominionSet Set = DominionSet.Guilds;
+	    
+	    public static final DominionCard CandlestickMaker = new DominionCardBuilder(DominionItemType.CandlestickMaker, Set, 2).action().create();
+	    public static final DominionCard Stonemason = new DominionCardBuilder(DominionItemType.StoneMason, Set, 2).action().create();
+	    public static final DominionCard Doctor = new DominionCardBuilder(DominionItemType.Doctor, Set, 3).action().create();
+	    public static final DominionCard Masterpiece = new DominionCardBuilder(DominionItemType.Masterpiece, Set, 3).treasure().create();
+	    public static final DominionCard Advisor = new DominionCardBuilder(DominionItemType.Advisor, Set, 4).action().create();
+	    public static final DominionCard Plaza = new DominionCardBuilder(DominionItemType.Plaza, Set, 4).action().create();
+	    public static final DominionCard Taxman = new DominionCardBuilder(DominionItemType.Taxman, Set, 4).action().attack().create();
+	    public static final DominionCard Herald = new DominionCardBuilder(DominionItemType.Herald, Set, 4).action().create();
+	    public static final DominionCard Baker = new DominionCardBuilder(DominionItemType.Baker, Set, 5).action().create();
+	    public static final DominionCard Butcher = new DominionCardBuilder(DominionItemType.Butcher, Set, 5).action().create();
+	    public static final DominionCard Journeyman = new DominionCardBuilder(DominionItemType.Journeyman, Set, 5).action().create();
+	    public static final DominionCard MerchantGuild = new DominionCardBuilder(DominionItemType.MerchantGuild, Set, 5).action().create();
+	    public static final DominionCard Soothsayer = new DominionCardBuilder(DominionItemType.Soothsayer, Set, 5).action().attack().create();
+	}
+	private static ArrayList<DominionCard> guildsCards = new ArrayList<DominionCard>(13);
+	
 	public static ArrayList<DominionCard> getAllCardsFromSets(List<DominionSet> sets){
 		ArrayList<DominionCard> allCards = new ArrayList<DominionCard>();
 		for (DominionSet set : sets) {
@@ -430,12 +449,32 @@ public class CardsDB {
 			case Promos:
 			    allCards.addAll(promoCards);
 			    break;
+			case Guilds:
+			    allCards.addAll(guildsCards);
 		    default:
 		        // do nothing
 		        break;
 			}
 		}
 		return allCards;
+	}
+	
+	// TODO: Make these lists readonly.
+	public static ArrayList<DominionCard> getCardsFromDominionSet(DominionSet set){
+	    switch (set) {
+        case Dominion: return dominionCards;
+        case Intrigue: return intrigueCards;
+        case Seaside: return seasideCards;
+        case Alchemy: return alchemyCards;
+        case Prosperity: return prosperityCards;
+        case Cornucopia: return cornucopiaCards;
+        case Hinterlands: return hinterlandsCards;
+        case DarkAges: return darkAgesCards;
+        case Promos: return promoCards;
+        case Guilds: return guildsCards;
+        default:
+            throw new IllegalStateException();
+        }
 	}
 
 	static {
@@ -449,6 +488,7 @@ public class CardsDB {
 		createDarkAgesCards();
 		createAlchemyCards();
 		createPromoCards();
+		createGuildsCards();
 	}
 	
 	private static void createBasicCards(){
@@ -724,5 +764,21 @@ public class CardsDB {
 	    promoCards.add(Promo.Governor);
 	    promoCards.add(Promo.Stash);
 	    promoCards.add(Promo.WalledVillage);
+	}
+	
+	public static void createGuildsCards(){
+	    guildsCards.add(Guilds.CandlestickMaker);
+	    guildsCards.add(Guilds.Stonemason);
+	    guildsCards.add(Guilds.Doctor);
+	    guildsCards.add(Guilds.Masterpiece);
+	    guildsCards.add(Guilds.Advisor);
+	    guildsCards.add(Guilds.Plaza);
+	    guildsCards.add(Guilds.Taxman);
+	    guildsCards.add(Guilds.Herald);
+	    guildsCards.add(Guilds.Baker);
+	    guildsCards.add(Guilds.Butcher);
+	    guildsCards.add(Guilds.Journeyman);
+	    guildsCards.add(Guilds.MerchantGuild);
+	    guildsCards.add(Guilds.Soothsayer);
 	}
 }
