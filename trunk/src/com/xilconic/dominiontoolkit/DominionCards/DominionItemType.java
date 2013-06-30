@@ -97,6 +97,13 @@ public enum DominionItemType {
 	Caravan, Cutpurse, Island, Navigator, PirateShip, Salvager, SeaHag, TreasureMap,
 	Bazaar, Explorer, GhostShip, MerchantShip, Outpost, Tactician, Treasury, Wharf,
 	
+	// DominionSet.Guilds:
+	CoinToken,
+	CandlestickMaker, StoneMason,
+	Doctor, Masterpiece,
+	Advisor, Plaza, Taxman, Herald,
+	Baker, Butcher, Journeyman, MerchantGuild, Soothsayer,
+	
 	// Promo's:
 	Stash, BlackMarket, Envoy, WalledVillage, Governor
 }

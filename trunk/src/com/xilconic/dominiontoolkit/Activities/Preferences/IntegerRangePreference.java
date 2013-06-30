@@ -19,6 +19,7 @@ package com.xilconic.dominiontoolkit.Activities.Preferences;
 import com.xilconic.dominiontoolkit.R;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.preference.DialogPreference;
 import android.util.AttributeSet;
@@ -26,8 +27,9 @@ import android.view.View;
 import android.widget.Spinner;
 
 public class IntegerRangePreference extends DialogPreference {
-    private final int DEFAULT_MIN_VALUE = 0;
-    private final int DEFAULT_MAX_VALUE = 10;
+    private static final int DEFAULT_MIN_VALUE = 0;
+    private static final int DEFAULT_MAX_VALUE = 10;
+    private static final int DEFAULT_PERSISTED_VALUE = createPersistedValue(DEFAULT_MIN_VALUE, DEFAULT_MAX_VALUE);
     Spinner minSpinner, maxSpinner;
     int min = DEFAULT_MIN_VALUE, max = DEFAULT_MAX_VALUE;
     
@@ -71,8 +73,7 @@ public class IntegerRangePreference extends DialogPreference {
         // Get persisted value or default value:
         int persistedValue;
         if (restorePersistedValue){
-            int persistedDefault = createPersistedValue(DEFAULT_MIN_VALUE, DEFAULT_MAX_VALUE);
-            persistedValue = getPersistedInt(persistedDefault);
+            persistedValue = getPersistedInt(DEFAULT_PERSISTED_VALUE);
         }else {
             persistedValue = (Integer) defaultValue;
         }
@@ -85,8 +86,7 @@ public class IntegerRangePreference extends DialogPreference {
     
     @Override
     protected Object onGetDefaultValue(TypedArray a, int index){
-        int persistedDefault = createPersistedValue(DEFAULT_MIN_VALUE, DEFAULT_MAX_VALUE);
-        return a.getInteger(index, persistedDefault);
+        return a.getInteger(index, DEFAULT_PERSISTED_VALUE);
     }
     
     /**
@@ -108,6 +108,16 @@ public class IntegerRangePreference extends DialogPreference {
      */
     public static int getMinValueFromPersisted(int persistedValue){
         return persistedValue % 100;
+    }
+    
+    public static int getMinValueFromSharedPreferences(SharedPreferences preferences, String persistanceId){
+        int persistedValue = preferences.getInt(persistanceId, DEFAULT_PERSISTED_VALUE);
+        return getMinValueFromPersisted(persistedValue);
+    }
+    
+    public static int getMaxValueFromSharedPreferences(SharedPreferences preferences, String persistanceId){
+        int persistedValue = preferences.getInt(persistanceId, DEFAULT_PERSISTED_VALUE);
+        return getMaxValueFromPersisted(persistedValue);
     }
     
     /**

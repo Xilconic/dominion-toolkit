@@ -24,6 +24,22 @@ import com.xilconic.dominiontoolkit.DominionCards.DominionGameItem;
 import com.xilconic.dominiontoolkit.DominionCards.DominionSet;
 
 public class ResourcesHelper {
+    public static String getDominionSetName(Context context, DominionSet set){
+        switch (set) {
+        case Dominion: context.getResources().getString(R.string.CardSet_Dominion);
+        case Intrigue: context.getResources().getString(R.string.CardSet_Intrigue);
+        case Seaside: context.getResources().getString(R.string.CardSet_Seaside);
+        case Alchemy: context.getResources().getString(R.string.CardSet_Alchemy);
+        case Prosperity: context.getResources().getString(R.string.CardSet_Prosperity);
+        case Cornucopia: context.getResources().getString(R.string.CardSet_Cornucopia);
+        case Hinterlands: context.getResources().getString(R.string.CardSet_Hinterlands);
+        case DarkAges: context.getResources().getString(R.string.CardSet_DarkAges);
+        case Promos: context.getResources().getString(R.string.CardSet_PromoCards);
+        case Guilds: context.getResources().getString(R.string.CardSet_Guilds);
+        default:
+            throw new IllegalStateException();
+        }
+    }
     
     public static String getCardTypes(Context context, DominionCard card, boolean isBaneCard){
         StringBuilder stringBuilder = new StringBuilder();
@@ -134,6 +150,8 @@ public class ResourcesHelper {
 			return context.getResources().getDrawable(R.drawable.stash_icon);
 		case WalledVillagePromo:
 			return context.getResources().getDrawable(R.drawable.walledvillage_icon);
+		case Guilds:
+		    return context.getResources().getDrawable(R.drawable.guilds_icon);
 		default:
 			return null;
 		}
@@ -148,6 +166,8 @@ public class ResourcesHelper {
 			return getProsperitySetItemName(context, item);
 		case Seaside:
 		    return getSeasideSetItemName(context, item);
+		case Guilds:
+		    return getGuildsSetItemName(context, item);
 		default:
 			return "<no item matched>";
 		}
@@ -189,6 +209,15 @@ public class ResourcesHelper {
         }
 	}
 	
+	public static String getGuildsSetItemName(Context context, DominionGameItem item){
+        switch (item.get_id()) {
+        case CoinToken:
+            return context.getResources().getString(R.string.Cards_Guilds_CoinToken);
+        default:
+            return "<No guilds set Item Name matched>";
+        }
+    }
+	
 	public static String GetDominionCardName(Context context, DominionCard card){
 		switch (card.get_dominionSet()) {
 		case Basic:
@@ -209,6 +238,8 @@ public class ResourcesHelper {
 		    return getDarkAgesSetName(context, card);
 		case Alchemy:
 		    return getAlchemySetNames(context, card);
+		case Guilds:
+		    return getGuildsSetNames(context, card);
 		    
 		case WalledVillagePromo:
 		    return context.getResources().getString(R.string.Cards_Promo_WalledVillage);
@@ -223,6 +254,39 @@ public class ResourcesHelper {
 		default:
 			return "<no card set matched>";
 		}
+	}
+	
+	private static String getGuildsSetNames(Context context, DominionCard card) {
+	    switch (card.get_id()) {
+	    case CandlestickMaker:
+	        return context.getResources().getString(R.string.Cards_Guilds_CandlestickMaker);
+	    case StoneMason:
+            return context.getResources().getString(R.string.Cards_Guilds_Stonemason);
+	    case Doctor:
+            return context.getResources().getString(R.string.Cards_Guilds_Doctor);
+	    case Masterpiece:
+            return context.getResources().getString(R.string.Cards_Guilds_Masterpiece);
+	    case Advisor:
+            return context.getResources().getString(R.string.Cards_Guilds_Advisor);
+	    case Plaza:
+            return context.getResources().getString(R.string.Cards_Guilds_Plaza);
+	    case Taxman:
+            return context.getResources().getString(R.string.Cards_Guilds_Taxman);
+	    case Herald:
+            return context.getResources().getString(R.string.Cards_Guilds_Herald);
+	    case Baker:
+            return context.getResources().getString(R.string.Cards_Guilds_Baker);
+	    case Butcher:
+            return context.getResources().getString(R.string.Cards_Guilds_Butcher);
+	    case Journeyman:
+            return context.getResources().getString(R.string.Cards_Guilds_Journeyman);
+	    case MerchantGuild:
+            return context.getResources().getString(R.string.Cards_Guilds_MerchantGuild);
+	    case Soothsayer:
+            return context.getResources().getString(R.string.Cards_Guilds_Soothsayer);
+        default:
+            return "<no guilds name matched card>";
+	    }
 	}
 
 	private static String getAlchemySetNames(Context context, DominionCard card) {

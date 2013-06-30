@@ -76,6 +76,13 @@
             android:summaryOff="@string/preferences_dominion_set_use_dark_ages_off"
             />
         <CheckBoxPreference 
+            android:key="preferences_use_guilds"
+            android:title="@string/CardSet.Guilds"
+            android:defaultValue="false"
+            android:summaryOn="@string/preferences_dominion_set_use_guilds_on"
+            android:summaryOff="@string/preferences_dominion_set_use_guilds_off"
+            />
+        <CheckBoxPreference 
             android:key="preferences_use_promos"
             android:title="@string/CardSet.PromoCards"
             android:defaultValue="false"
@@ -116,6 +123,10 @@
             <com.xilconic.dominiontoolkit.Activities.Preferences.IntegerRangePreference
 	            android:key="preferences_range_dark_ages"
 	            android:title="@string/CardSet.DarkAges"
+            />
+            <com.xilconic.dominiontoolkit.Activities.Preferences.IntegerRangePreference
+	            android:key="preferences_range_guilds"
+	            android:title="@string/CardSet.Guilds"
             />
             <com.xilconic.dominiontoolkit.Activities.Preferences.IntegerRangePreference
 	            android:key="preferences_range_promos"
